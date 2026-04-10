@@ -41,6 +41,11 @@ export default function MenuProvider({ children }: { children: React.ReactNode }
   const linksRef    = useRef<HTMLDivElement>(null);
   const isAnimating = useRef(false);
 
+  // Register initial position with GSAP so it can animate from it
+  useEffect(() => {
+    gsap.set(overlayRef.current, { yPercent: 100 });
+  }, []);
+
   // Show MENU button only after navbar has scrolled away
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 55);
