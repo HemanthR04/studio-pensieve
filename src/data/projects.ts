@@ -69,6 +69,18 @@ function imgRmK(filename: string): string {
   return `/Projects/RmK/${encodeURIComponent(filename)}`;
 }
 
+function imgGodrej(filename: string): string {
+  return `/Projects/Godrej/${encodeURIComponent(filename)}`;
+}
+
+function imgRajiv(filename: string): string {
+  return `/Projects/Rajiv/${encodeURIComponent(filename)}`;
+}
+
+function imgVilla1(filename: string): string {
+  return `/Projects/Villa%201/${encodeURIComponent(filename)}`;
+}
+
 export const projects: Project[] = [
   {
     slug: "emb-pristine",
@@ -381,6 +393,115 @@ export const projects: Project[] = [
       { src: imgRmK("7.jpg"), orientation: "landscape" },
       { src: imgRmK("8.jpg"), orientation: "landscape" },
       { src: imgRmK("9.jpg"), orientation: "landscape" },
+    ],
+  },
+  {
+    slug: "godrej",
+    index: "10",
+    title: "Godrej",
+    category: "Interiors",
+    location: "Bangalore",
+    year: "—",
+    size: "—",
+    aspect: "landscape",
+    bg: "bg-teal-50",
+    color: "#f0fdfa",
+
+    cover: imgGodrej("1.jpg"),
+    hero:  imgGodrej("1.jpg"),
+
+    credits: [
+      { label: "Lead Architects",  value: "Shashank Shetty\nSanjan Hoode" },
+      { label: "Category",         value: "Residential" },
+      { label: "Junior Architect", value: "Sahana Prabhu" },
+      { label: "Status",           value: "Completed" },
+    ],
+
+    images: [
+      { src: imgGodrej("2.jpg"),  orientation: "landscape" },
+      { src: imgGodrej("3.jpg"),  orientation: "portrait"  },
+      { src: imgGodrej("4.jpg"),  orientation: "landscape" },
+      { src: imgGodrej("5.jpg"),  orientation: "landscape" },
+      { src: imgGodrej("6.jpg"),  orientation: "portrait"  },
+      { src: imgGodrej("7.jpg"),  orientation: "landscape" },
+      { src: imgGodrej("8.jpg"),  orientation: "landscape" },
+      { src: imgGodrej("9.jpg"),  orientation: "portrait"  },
+      { src: imgGodrej("10.jpg"), orientation: "landscape" },
+      { src: imgGodrej("11.jpg"), orientation: "landscape" },
+    ],
+  },
+  {
+    slug: "rajiv-residence",
+    index: "11",
+    title: "Rajiv Residence",
+    category: "Interiors",
+    location: "Bangalore",
+    year: "—",
+    size: "—",
+    aspect: "portrait",
+    bg: "bg-rose-50",
+    color: "#fff1f2",
+
+    cover: imgRajiv("1.jpg"),
+    hero:  imgRajiv("1.jpg"),
+
+    credits: [
+      { label: "Lead Architects",  value: "Shashank Shetty\nSanjan Hoode" },
+      { label: "Category",         value: "Residential" },
+      { label: "Junior Architect", value: "Sahana Prabhu" },
+      { label: "Status",           value: "Completed" },
+    ],
+
+    images: [
+      { src: imgRajiv("2.jpg"), orientation: "portrait"  },
+      { src: imgRajiv("3.jpg"), orientation: "landscape" },
+      { src: imgRajiv("4.jpg"), orientation: "portrait"  },
+      { src: imgRajiv("5.jpg"), orientation: "landscape" },
+      { src: imgRajiv("6.jpg"), orientation: "portrait"  },
+      { src: imgRajiv("7.jpg"), orientation: "landscape" },
+      { src: imgRajiv("8.jpg"), orientation: "portrait"  },
+      { src: imgRajiv("9.jpg"), orientation: "landscape" },
+    ],
+  },
+  {
+    slug: "villa-1",
+    index: "12",
+    title: "Villa 1",
+    category: "Architecture",
+    location: "Bangalore",
+    year: "—",
+    size: "—",
+    aspect: "landscape",
+    bg: "bg-orange-50",
+    color: "#fff7ed",
+
+    cover: imgVilla1("1.jpg"),
+    hero:  imgVilla1("1.jpg"),
+
+    credits: [
+      { label: "Lead Architects",  value: "Shashank Shetty\nSanjan Hoode" },
+      { label: "Category",         value: "Architecture" },
+      { label: "Junior Architect", value: "Sahana Prabhu" },
+      { label: "Status",           value: "Completed" },
+    ],
+
+    images: [
+      { src: imgVilla1("2.jpg"),  orientation: "landscape" },
+      { src: imgVilla1("3.jpg"),  orientation: "portrait"  },
+      { src: imgVilla1("4.jpg"),  orientation: "landscape" },
+      { src: imgVilla1("5.jpg"),  orientation: "landscape" },
+      { src: imgVilla1("6.jpg"),  orientation: "portrait"  },
+      { src: imgVilla1("7.jpg"),  orientation: "landscape" },
+      { src: imgVilla1("8.jpg"),  orientation: "portrait"  },
+      { src: imgVilla1("9.jpg"),  orientation: "landscape" },
+      { src: imgVilla1("10.jpg"), orientation: "landscape" },
+      { src: imgVilla1("11.jpg"), orientation: "portrait"  },
+      { src: imgVilla1("12.jpg"), orientation: "landscape" },
+      { src: imgVilla1("13.jpg"), orientation: "landscape" },
+      { src: imgVilla1("14.jpg"), orientation: "portrait"  },
+      { src: imgVilla1("15.jpg"), orientation: "landscape" },
+      { src: imgVilla1("16.jpg"), orientation: "landscape" },
+      { src: imgVilla1("17.jpg"), orientation: "landscape" },
     ],
   },
 ];
