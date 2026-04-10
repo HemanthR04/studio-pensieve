@@ -112,7 +112,7 @@ export default function MenuProvider({ children }: { children: React.ReactNode }
       <div
         ref={overlayRef}
         className="fixed inset-0 z-[150] bg-[#111] flex"
-        style={{ transform: "translateY(100%)", pointerEvents: open ? "auto" : "none" }}
+        style={{ pointerEvents: open ? "auto" : "none" }}
       >
 
         {/* Left: studio name */}
