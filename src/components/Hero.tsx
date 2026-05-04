@@ -5,10 +5,21 @@ import Image from "next/image";
 import Link from "next/link";
 import gsap from "gsap";
 
+import blurUrls from "@/data/blurDataUrls.json";
+
 const IMAGES = [
-  "/Hero/WhatsApp Image 2026-03-31 at 17.35.07.jpeg",
-  "/Hero/WhatsApp Image 2026-03-31 at 17.36.28.jpeg",
-  "/Hero/WhatsApp Image 2026-03-31 at 17.36.29.jpeg",
+  {
+    src:  "/Hero/WhatsApp Image 2026-03-31 at 17.35.07.jpeg",
+    blur: blurUrls["public/Hero/WhatsApp Image 2026-03-31 at 17.35.07.jpeg"],
+  },
+  {
+    src:  "/Hero/WhatsApp Image 2026-03-31 at 17.36.28.jpeg",
+    blur: blurUrls["public/Hero/WhatsApp Image 2026-03-31 at 17.36.28.jpeg"],
+  },
+  {
+    src:  "/Hero/WhatsApp Image 2026-03-31 at 17.36.29.jpeg",
+    blur: blurUrls["public/Hero/WhatsApp Image 2026-03-31 at 17.36.29.jpeg"],
+  },
 ];
 
 const INTERVAL = 8000; // ms per slide
@@ -108,7 +119,7 @@ export default function Hero() {
         className="relative w-full h-screen overflow-hidden"
       >
         {/* Image stack — crossfade */}
-        {IMAGES.map((src, i) => {
+        {IMAGES.map(({ src, blur }, i) => {
           const isActive = i === current;
           const isPrev   = i === prev;
           return (
@@ -124,6 +135,8 @@ export default function Hero() {
                 priority={i === 0}
                 className="object-cover"
                 sizes="100vw"
+                placeholder="blur"
+                blurDataURL={blur}
               />
             </div>
           );
@@ -149,7 +162,7 @@ export default function Hero() {
 
             {/* Slide progress indicators */}
             <div className="flex items-center gap-2">
-              {IMAGES.map((_, i) => (
+              {IMAGES.map((_img, i) => (
                 <button
                   key={i}
                   onClick={() => { setPrev(current); setCurrent(i); }}

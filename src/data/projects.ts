@@ -1,3 +1,7 @@
+import blurUrls from "./blurDataUrls.json";
+
+const B = blurUrls as Record<string, string>;
+
 export type ProjectImage = {
   src: string;
   orientation: "portrait" | "landscape";
@@ -26,6 +30,7 @@ export type Project = {
   color: string;
   cover?: string;
   hero?: string;
+  blur?: string;
   floorPlan?: string;
   description?: string[];     // paragraphs
   credits?: ProjectCredit[];
@@ -96,6 +101,7 @@ export const projects: Project[] = [
 
     cover: img(" 1 Foyer.jpg"),
     hero:  img(" 1 Foyer.jpg"),
+    blur:  B["public/Projects/Emb Pristine / 1 Foyer.jpg"],
 
     description: [
       "A serene three-bedroom apartment in one of Indiranagar's quieter lanes, designed around a single governing idea: that the surrounding canopy of rain trees should be present in every room. The brief asked for calm — a retreat from the city that felt generous without feeling grand.",
@@ -157,6 +163,7 @@ export const projects: Project[] = [
 
     cover: imgKishore("1.jpg"),
     hero:  imgKishore("1.jpg"),
+    blur:  B["public/Projects/Kishore Residence/1.jpg"],
 
     description: [
       "This residence is envisioned as a calm, materially rich home where every space flows into the next with quiet intention. Guided by a Japandi sensibility with subtle Indian nuances, the design relies on lime-washed surfaces, warm natural wood, and a soft palette of neutrals and pastels to create an atmosphere of ease and refinement. The materiality is tactile yet restrained, allowing the architecture and custom-crafted elements to take centre stage.",
@@ -198,6 +205,7 @@ export const projects: Project[] = [
 
     cover: imgUber("1.jpg"),
     hero:  imgUber("1.jpg"),
+    blur:  B["public/Projects/Uber Residence/1.jpg"],
 
     description: [
       "This 850 sq ft apartment proves that thoughtful design can create a safe, comfortable haven for seniors. Prioritising their needs, the interiors promote ease of use while feeling warm and inviting. Senior-friendly flooring replaces slippery tiles to minimise falls, while a white and neutral palette makes rooms feel more spacious — with clever half-wall paint adding a touch of visual interest. Woodwork features textured grooves and rounded edges for safety, green furniture complements the neutrals, and strategically placed teak grab bars blend seamlessly to aid navigation.",
@@ -238,6 +246,7 @@ export const projects: Project[] = [
 
     cover: imgTapTales("1.jpg"),
     hero:  imgTapTales("1.jpg"),
+    blur:  B["public/Projects/Tap Tales/1.jpg"],
 
     description: [
       "Tap Tales articulates a refined interplay between industrial honesty and crafted warmth, where material precision shapes the spatial identity. The interior composition layers exposed concrete textures, oxidised metal finishes, and corrugated steel railings to create a tactile, structurally expressive environment. Warm timber surfaces and muted upholstery temper the palette's rawness, while a calibrated lighting strategy — from suspended geometric pendants to concealed linear profiles — defines depth, hierarchy, and texture.",
@@ -277,6 +286,7 @@ export const projects: Project[] = [
 
     cover: imgVibranium("1.jpg"),
     hero:  imgVibranium("1.jpg"),
+    blur:  B["public/Projects/Vibranium/1.jpg"],
 
     description: [
       "Vibranium Ventures' office embodies a refined architectural narrative where spatial fluidity, material depth, and controlled lighting converge to create a sophisticated work environment. The layout is organised around a seamless circulation spine defined by curved walls and transparent partitions, allowing light to flow naturally across zones. A tactile palette of wood, glass, and textured wall treatments establishes warmth and balance, while elements like the green glass-block partition and fluted panelling introduce rhythm and contrast.",
@@ -315,6 +325,7 @@ export const projects: Project[] = [
 
     cover: imgChanpatna("1.jpg"),
     hero:  imgChanpatna("1.jpg"),
+    blur:  B["public/Projects/Chanpatna/1.jpg"],
 
     images: [
       { src: imgChanpatna("2.jpg"), orientation: "landscape" },
@@ -338,6 +349,7 @@ export const projects: Project[] = [
 
     cover: imgKarjat("1.jpg"),
     hero:  imgKarjat("1.jpg"),
+    blur:  B["public/Projects/Karjat/1.jpg"],
 
     images: [
       { src: imgKarjat("2.jpg"), orientation: "portrait"  },
@@ -360,6 +372,7 @@ export const projects: Project[] = [
 
     cover: imgRajankunte("1.jpg"),
     hero:  imgRajankunte("1.jpg"),
+    blur:  B["public/Projects/Rajankunte/1.jpg"],
 
     images: [
       { src: imgRajankunte("2.jpg"), orientation: "portrait"  },
@@ -384,6 +397,7 @@ export const projects: Project[] = [
 
     cover: imgRmK("1.jpg"),
     hero:  imgRmK("1.jpg"),
+    blur:  B["public/Projects/RmK/1.jpg"],
 
     images: [
       { src: imgRmK("2.jpg"), orientation: "landscape" },
@@ -409,6 +423,7 @@ export const projects: Project[] = [
 
     cover: imgGodrej("1.jpg"),
     hero:  imgGodrej("1.jpg"),
+    blur:  B["public/Projects/Godrej/1.jpg"],
 
     credits: [
       { label: "Lead Architects",  value: "Shashank Shetty\nSanjan Hoode" },
@@ -444,6 +459,7 @@ export const projects: Project[] = [
 
     cover: imgRajiv("1.jpg"),
     hero:  imgRajiv("1.jpg"),
+    blur:  B["public/Projects/Rajiv/1.jpg"],
 
     credits: [
       { label: "Lead Architects",  value: "Shashank Shetty\nSanjan Hoode" },
@@ -477,6 +493,7 @@ export const projects: Project[] = [
 
     cover: imgVilla1("1.jpg"),
     hero:  imgVilla1("1.jpg"),
+    blur:  B["public/Projects/Villa 1/1.jpg"],
 
     credits: [
       { label: "Lead Architects",  value: "Shashank Shetty\nSanjan Hoode" },

@@ -132,6 +132,8 @@ export default function ProjectsPageClient() {
                       sizes="(max-width: 768px) 50vw, 25vw"
                       className="object-cover"
                       priority={i < 6}
+                      placeholder={project.blur ? "blur" : "empty"}
+                      blurDataURL={project.blur}
                     />
                   )}
                   {hover && (

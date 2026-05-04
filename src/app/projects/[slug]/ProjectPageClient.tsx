@@ -214,7 +214,16 @@ export default function ProjectPageClient({ project }: { project: Project }) {
       <div className="relative h-screen w-full overflow-hidden">
         <div className={`absolute inset-0 ${project.bg}`}>
           {heroSrc && (
-            <Image src={heroSrc} alt={project.title} fill sizes="100vw" priority className="object-cover" />
+            <Image
+              src={heroSrc}
+              alt={project.title}
+              fill
+              sizes="100vw"
+              priority
+              className="object-cover"
+              placeholder={project.blur ? "blur" : "empty"}
+              blurDataURL={project.blur}
+            />
           )}
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />

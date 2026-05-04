@@ -94,24 +94,25 @@ export default function Portfolio({ limit }: { limit?: number }) {
             onMouseEnter={() => setHoveredSlug(project.slug)}
             onMouseLeave={() => setHoveredSlug(null)}
           >
-            {/* Image — fixed height, landscape source, width auto */}
-            <div data-project-image className="relative overflow-hidden">
+            {/* Image — fixed height container, landscape source */}
+            <div
+              data-project-image
+              className="relative overflow-hidden"
+              style={{ height: "65vh", aspectRatio: "3/2" }}
+            >
               {landscapeSrc(project) ? (
                 <Image
                   src={landscapeSrc(project)!}
                   alt={project.title}
-                  width={0}
-                  height={0}
+                  fill
                   sizes="(max-width: 768px) 80vw, 45vw"
-                  style={{ height: "65vh", width: "auto", display: "block" }}
-                  className="transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
                   priority
+                  placeholder={project.blur ? "blur" : "empty"}
+                  blurDataURL={project.blur}
                 />
               ) : (
-                <div
-                  className={project.bg}
-                  style={{ height: "65vh", aspectRatio: "4/3" }}
-                />
+                <div className={`absolute inset-0 ${project.bg}`} />
               )}
 
               {/* Hover: subtle dark veil */}
