@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import StudioIntro from "@/components/StudioIntro";
 import Portfolio from "@/components/Portfolio";
 import Footer from "@/components/Footer";
+import { projects } from "@/data/projects";
 
 const STATS = [
   { value: "25+",       label: "Projects Completed" },
@@ -50,7 +51,7 @@ export default function Home() {
         <div className="px-8 md:px-16 py-14 border-t border-foreground/10">
           <div className="mx-auto max-w-7xl flex items-center justify-between">
             <p className="text-[11px] tracking-[0.2em] uppercase text-foreground/30">
-              Showing 5 of 9 projects
+              Showing 5 of {projects.length} projects
             </p>
             <Link
               href="/projects"
