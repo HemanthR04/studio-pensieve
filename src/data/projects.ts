@@ -236,8 +236,8 @@ export const projects: Project[] = [
     bg: "bg-amber-50",
     color: "#fffbeb",
 
-    cover: imgTapTales("1.png"),
-    hero:  imgTapTales("1.png"),
+    cover: imgTapTales("1.jpg"),
+    hero:  imgTapTales("1.jpg"),
 
     description: [
       "Tap Tales articulates a refined interplay between industrial honesty and crafted warmth, where material precision shapes the spatial identity. The interior composition layers exposed concrete textures, oxidised metal finishes, and corrugated steel railings to create a tactile, structurally expressive environment. Warm timber surfaces and muted upholstery temper the palette's rawness, while a calibrated lighting strategy — from suspended geometric pendants to concealed linear profiles — defines depth, hierarchy, and texture.",
@@ -253,14 +253,14 @@ export const projects: Project[] = [
     ],
 
     images: [
-      { src: imgTapTales("2.png"),             orientation: "landscape" },
-      { src: imgTapTales("3.png"),             orientation: "landscape" },
-      { src: imgTapTales("Copy of 10.png"),    orientation: "landscape" },
-      { src: imgTapTales("Copy of 11.png"),    orientation: "landscape" },
-      { src: imgTapTales("Copy of 14.png"),    orientation: "landscape" },
-      { src: imgTapTales("Copy of 15.png"),    orientation: "landscape" },
-      { src: imgTapTales("Copy of 16.png"),    orientation: "landscape" },
-      { src: imgTapTales("Copy of 18.png"),    orientation: "landscape" },
+      { src: imgTapTales("2.jpg"),             orientation: "landscape" },
+      { src: imgTapTales("3.jpg"),             orientation: "landscape" },
+      { src: imgTapTales("Copy of 10.jpg"),    orientation: "landscape" },
+      { src: imgTapTales("Copy of 11.jpg"),    orientation: "landscape" },
+      { src: imgTapTales("Copy of 14.jpg"),    orientation: "landscape" },
+      { src: imgTapTales("Copy of 15.jpg"),    orientation: "landscape" },
+      { src: imgTapTales("Copy of 16.jpg"),    orientation: "landscape" },
+      { src: imgTapTales("Copy of 18.jpg"),    orientation: "landscape" },
     ],
   },
   {
@@ -275,8 +275,8 @@ export const projects: Project[] = [
     bg: "bg-zinc-300",
     color: "#d4d4d8",
 
-    cover: imgVibranium("1.png"),
-    hero:  imgVibranium("1.png"),
+    cover: imgVibranium("1.jpg"),
+    hero:  imgVibranium("1.jpg"),
 
     description: [
       "Vibranium Ventures' office embodies a refined architectural narrative where spatial fluidity, material depth, and controlled lighting converge to create a sophisticated work environment. The layout is organised around a seamless circulation spine defined by curved walls and transparent partitions, allowing light to flow naturally across zones. A tactile palette of wood, glass, and textured wall treatments establishes warmth and balance, while elements like the green glass-block partition and fluted panelling introduce rhythm and contrast.",
@@ -292,13 +292,13 @@ export const projects: Project[] = [
     ],
 
     images: [
-      { src: imgVibranium("2.png"), orientation: "landscape" },
-      { src: imgVibranium("3.png"), orientation: "portrait"  },
-      { src: imgVibranium("4.png"), orientation: "landscape" },
-      { src: imgVibranium("5.png"), orientation: "landscape" },
-      { src: imgVibranium("6.png"), orientation: "landscape" },
-      { src: imgVibranium("7.png"), orientation: "landscape" },
-      { src: imgVibranium("8.png"), orientation: "landscape" },
+      { src: imgVibranium("2.jpg"), orientation: "landscape" },
+      { src: imgVibranium("3.jpg"), orientation: "portrait"  },
+      { src: imgVibranium("4.jpg"), orientation: "landscape" },
+      { src: imgVibranium("5.jpg"), orientation: "landscape" },
+      { src: imgVibranium("6.jpg"), orientation: "landscape" },
+      { src: imgVibranium("7.jpg"), orientation: "landscape" },
+      { src: imgVibranium("8.jpg"), orientation: "landscape" },
     ],
   },
   {
@@ -313,15 +313,15 @@ export const projects: Project[] = [
     bg: "bg-green-50",
     color: "#f0fdf4",
 
-    cover: imgChanpatna("1.png"),
-    hero:  imgChanpatna("1.png"),
+    cover: imgChanpatna("1.jpg"),
+    hero:  imgChanpatna("1.jpg"),
 
     images: [
-      { src: imgChanpatna("2.png"), orientation: "landscape" },
-      { src: imgChanpatna("3.png"), orientation: "landscape" },
-      { src: imgChanpatna("4.png"), orientation: "landscape" },
-      { src: imgChanpatna("5.png"), orientation: "landscape" },
-      { src: imgChanpatna("6.png"), orientation: "portrait"  },
+      { src: imgChanpatna("2.jpg"), orientation: "landscape" },
+      { src: imgChanpatna("3.jpg"), orientation: "landscape" },
+      { src: imgChanpatna("4.jpg"), orientation: "landscape" },
+      { src: imgChanpatna("5.jpg"), orientation: "landscape" },
+      { src: imgChanpatna("6.jpg"), orientation: "portrait"  },
     ],
   },
   {
@@ -336,14 +336,14 @@ export const projects: Project[] = [
     bg: "bg-stone-100",
     color: "#f5f5f4",
 
-    cover: imgKarjat("1.png"),
-    hero:  imgKarjat("1.png"),
+    cover: imgKarjat("1.jpg"),
+    hero:  imgKarjat("1.jpg"),
 
     images: [
-      { src: imgKarjat("2.png"), orientation: "portrait"  },
-      { src: imgKarjat("3.png"), orientation: "landscape" },
-      { src: imgKarjat("4.png"), orientation: "landscape" },
-      { src: imgKarjat("5.png"), orientation: "portrait"  },
+      { src: imgKarjat("2.jpg"), orientation: "portrait"  },
+      { src: imgKarjat("3.jpg"), orientation: "landscape" },
+      { src: imgKarjat("4.jpg"), orientation: "landscape" },
+      { src: imgKarjat("5.jpg"), orientation: "portrait"  },
     ],
   },
   {
@@ -358,16 +358,16 @@ export const projects: Project[] = [
     bg: "bg-yellow-50",
     color: "#fefce8",
 
-    cover: imgRajankunte("1.png"),
-    hero:  imgRajankunte("1.png"),
+    cover: imgRajankunte("1.jpg"),
+    hero:  imgRajankunte("1.jpg"),
 
     images: [
-      { src: imgRajankunte("2.png"), orientation: "portrait"  },
-      { src: imgRajankunte("3.png"), orientation: "landscape" },
-      { src: imgRajankunte("4.png"), orientation: "landscape" },
-      { src: imgRajankunte("5.png"), orientation: "landscape" },
-      { src: imgRajankunte("6.png"), orientation: "landscape" },
-      { src: imgRajankunte("7.png"), orientation: "landscape" },
+      { src: imgRajankunte("2.jpg"), orientation: "portrait"  },
+      { src: imgRajankunte("3.jpg"), orientation: "landscape" },
+      { src: imgRajankunte("4.jpg"), orientation: "landscape" },
+      { src: imgRajankunte("5.jpg"), orientation: "landscape" },
+      { src: imgRajankunte("6.jpg"), orientation: "landscape" },
+      { src: imgRajankunte("7.jpg"), orientation: "landscape" },
     ],
   },
   {

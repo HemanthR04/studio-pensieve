@@ -156,37 +156,37 @@ const ITEMS: CanvasItem[] = [
   // ── X · Grain (Chanpatna) ─────────────────────────────────────
   //   pencil-house anchors top; chanpatna photo overlaps; wooden struct tucks below
   { kind:"sketch", src:SK.pencil,                     w:235, h:177, x:5380, y:62,  z:25, rot:-3   },
-  { kind:"photo",  src:chanpatna("1.png"),             w:290, h:218, x:5598, y:90,  z:45, rot:2    },
+  { kind:"photo",  src:chanpatna("1.jpg"),             w:290, h:218, x:5598, y:90,  z:45, rot:2    },
   { kind:"sketch", src:SK.wooden,                     w:208, h:156, x:5388, y:298, z:60, rot:6    },
-  { kind:"photo",  src:chanpatna("3.png"),             w:148, h:198, x:5858, y:165, z:65, rot:-8   },
+  { kind:"photo",  src:chanpatna("3.jpg"),             w:148, h:198, x:5858, y:165, z:65, rot:-8   },
   { kind:"text",   lines:["grain", "+ warmth"],        size:20, x:5605, y:355, z:20, rot:-2 },
 
   // ── XI · The Sketch Comes First ───────────────────────────────
   //   initial sketch top; rajankunte hero; chanpatna 5 accent right
   { kind:"sketch", src:SK.init,                       w:248, h:188, x:5945, y:52,  z:25, rot:4    },
-  { kind:"photo",  src:rajankunte("1.png"),            w:272, h:205, x:5958, y:295, z:50, rot:-1.5 },
-  { kind:"photo",  src:chanpatna("5.png"),             w:150, h:200, x:6215, y:118, z:68, rot:9    },
+  { kind:"photo",  src:rajankunte("1.jpg"),            w:272, h:205, x:5958, y:295, z:50, rot:-1.5 },
+  { kind:"photo",  src:chanpatna("5.jpg"),             w:150, h:200, x:6215, y:118, z:68, rot:9    },
   { kind:"text",   lines:["the sketch", "comes first"], size:16, x:6220, y:372, z:20, rot:-3 },
 
   // ── XII · Material Honesty (RmK) ─────────────────────────────
   //   rmk hero straight; wooden struct floats top-right; rajankunte 3 peeks below
   { kind:"photo",  src:rmk("1.jpg"),                  w:298, h:224, x:6462, y:80,  z:30, rot:-2   },
   { kind:"sketch", src:SK.wooden,                     w:192, h:144, x:6730, y:52,  z:50, rot:6    },
-  { kind:"photo",  src:rajankunte("3.png"),            w:155, h:207, x:6472, y:358, z:68, rot:-7   },
+  { kind:"photo",  src:rajankunte("3.jpg"),            w:155, h:207, x:6472, y:358, z:68, rot:-7   },
   { kind:"text",   lines:["material", "honesty"],      size:17, x:6732, y:252, z:20, rot:2  },
   { kind:"photo",  src:rmk("4.jpg"),                  w:218, h:164, x:6882, y:155, z:45, rot:8    },
 
   // ── XIII · What the client said (Uber) ───────────────────────
   //   long text as hero; uber photo flanks; pencil sketch balances
   { kind:"text",   lines:["make it feel", "like it was", "always there"], size:15, x:7235, y:248, z:20, rot:1 },
-  { kind:"photo",  src:chanpatna("2.png"),             w:238, h:180, x:6995, y:72,  z:30, rot:3    },
+  { kind:"photo",  src:chanpatna("2.jpg"),             w:238, h:180, x:6995, y:72,  z:30, rot:3    },
   { kind:"sketch", src:SK.pencil,                     w:178, h:134, x:7242, y:58,  z:52, rot:-5   },
   { kind:"photo",  src:uber("1.jpg"),                  w:148, h:198, x:7005, y:308, z:62, rot:-4   },
   { kind:"text",   lines:["—client note,", "Chanpatna"],  size:11, x:7250, y:408, z:20, rot:0 },
 
   // ── XIV · Light Study (Vibranium) ────────────────────────────
   //   vibranium hero; init sketch top-right; uber 3 below; poetic text
-  { kind:"photo",  src:vibranium("1.png"),             w:305, h:230, x:7515, y:88,  z:30, rot:-1   },
+  { kind:"photo",  src:vibranium("1.jpg"),             w:305, h:230, x:7515, y:88,  z:30, rot:-1   },
   { kind:"sketch", src:SK.init,                       w:195, h:148, x:7792, y:62,  z:52, rot:7    },
   { kind:"photo",  src:uber("3.jpg"),                  w:165, h:220, x:7528, y:372, z:68, rot:-6   },
   { kind:"text",   lines:["every room", "has a mood", "before it", "has a plan"],  size:14, x:7795, y:268, z:20, rot:-2 },
@@ -195,14 +195,14 @@ const ITEMS: CanvasItem[] = [
   //   rmk 6 straight; wooden struct accent; vibranium 3 tucks right; text
   { kind:"photo",  src:rmk("6.jpg"),                  w:252, h:190, x:8082, y:78,  z:30, rot:2    },
   { kind:"sketch", src:SK.wooden,                     w:218, h:164, x:8088, y:325, z:58, rot:-4   },
-  { kind:"photo",  src:vibranium("3.png"),             w:162, h:216, x:8342, y:108, z:62, rot:8    },
+  { kind:"photo",  src:vibranium("3.jpg"),             w:162, h:216, x:8342, y:108, z:62, rot:8    },
   { kind:"text",   lines:["drawn by hand", "built by hand"],  size:16, x:8348, y:382, z:20, rot:-3 },
 
   // ── XVI · Threshold (Uber + Rajankunte) ──────────────────────
   //   uber 5 hero; rajankunte 5 overlaps; arch-biel revisited behind
   { kind:"photo",  src:uber("5.jpg"),                  w:295, h:222, x:8655, y:85,  z:30, rot:-1.5 },
   { kind:"sketch", src:SK.archBiel,                   w:225, h:170, x:8660, y:358, z:55, rot:5    },
-  { kind:"photo",  src:rajankunte("5.png"),            w:148, h:198, x:8928, y:145, z:65, rot:-7   },
+  { kind:"photo",  src:rajankunte("5.jpg"),            w:148, h:198, x:8928, y:145, z:65, rot:-7   },
   { kind:"text",   lines:["the threshold", "between rooms", "is a pause"],  size:14, x:8932, y:392, z:20, rot:2 },
   { kind:"text",   lines:["∎"],                        size:28, x:9200, y:490, z:20, rot:0 },
 ];
