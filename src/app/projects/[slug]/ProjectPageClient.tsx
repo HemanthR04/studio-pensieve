@@ -153,6 +153,23 @@ function GallerySection({
         }
 
         if (block.type === "single" && item.orientation === "portrait") {
+          if (item.caption) {
+            return (
+              <div key={key} className="grid grid-cols-2 gap-[28px] items-end">
+                <RevealBlock>
+                  <GalleryImage
+                    src={item.src}
+                    alt={`${title} — ${key + 1}`}
+                    sizes="(max-width: 768px) 50vw, calc(50vw - 4rem)"
+                    aspect="2/3"
+                  />
+                </RevealBlock>
+                <RevealBlock delay={0.1} className="flex flex-col justify-end pb-2">
+                  <p className="text-[11px] leading-relaxed text-foreground/45">{item.caption}</p>
+                </RevealBlock>
+              </div>
+            );
+          }
           return (
             <div key={key} className="grid grid-cols-2 gap-[28px]">
               <RevealBlock>
@@ -162,9 +179,6 @@ function GallerySection({
                   sizes="(max-width: 768px) 50vw, calc(50vw - 4rem)"
                   aspect="2/3"
                 />
-                {item.caption && (
-                  <p className="mt-4 text-[11px] leading-relaxed text-foreground/45">{item.caption}</p>
-                )}
               </RevealBlock>
               <div />
             </div>
