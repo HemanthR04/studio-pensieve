@@ -5,6 +5,7 @@ const B = blurUrls as Record<string, string>;
 export type ProjectImage = {
   src: string;
   orientation: "portrait" | "landscape";
+  caption?: string;
 };
 
 export type ProjectCredit = {
@@ -224,13 +225,13 @@ export const projects: Project[] = [
     ],
 
     images: [
-      { src: imgUber("2.jpg"),  orientation: "portrait" },
-      { src: imgUber("3.jpg"),  orientation: "portrait" },
-      { src: imgUber("4.jpg"),  orientation: "portrait" },
+      { src: imgUber("2.jpg"),  orientation: "portrait", caption: "The apartment is finished in a warm white, neutral palette that keeps spaces open and well-lit. A muted taupe half-wall adds depth without compromising volume." },
+      { src: imgUber("3.jpg"),  orientation: "portrait", caption: "Fluted woodwork runs throughout, unifying wardrobes, TV backdrops, wall cladding, and built-in cabinetry. The vertical texture adds depth while maintaining a clean, tailored expression, with rounded edges reinforcing the focus on safety." },
+      { src: imgUber("4.jpg"),  orientation: "portrait", caption: "Woodwork boasts textured grooves and rounded edges for safety. Sage green furniture complements the neutrals, creating a subtle connection to the lush greenery outdoor. Strategically placed teak grab bars blend seamlessly, aiding navigation." },
       { src: imgUber("5.jpg"),  orientation: "portrait" },
-      { src: imgUber("6.jpg"),  orientation: "portrait" },
+      { src: imgUber("6.jpg"),  orientation: "portrait", caption: "The dining zone is anchored by a monolithic foyer element that transitions into a crockery unit at the rear. A recessed seat with vertical teak slats, a curved canopy, and integrated drawers below is primarily part of the foyer, while also forming an engaging backdrop to the dining space. A sculptural brass chandelier above the dining table introduces a refined warmth to the lighting scheme." },
       { src: imgUber("7.jpg"),  orientation: "portrait" },
-      { src: imgUber("9.jpg"),  orientation: "portrait" },
+      { src: imgUber("9.jpg"),  orientation: "portrait", caption: "The kitchen was redesigned with ergonomics at its core. Lower counter heights reduce reach and strain during extended use. A built-in counter with a high stool offers a comfortable perch for food prep — small in gesture, significant in impact. Warm almond-finish cabinetry lines the perimeter, paired with matte black stone counters. Open steel shelving replaces overhead cupboards, keeping essentials within easy reach. A cool grey micro-cement splashback completes the palette." },
       { src: imgUber("10.jpg"), orientation: "portrait" },
       { src: imgUber("11.jpg"), orientation: "portrait" },
     ],

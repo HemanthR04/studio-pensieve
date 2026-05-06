@@ -145,6 +145,9 @@ function GallerySection({
                 sizes="(max-width: 768px) calc(100vw - 4rem), calc(100vw - 7rem)"
                 aspect="3/2"
               />
+              {item.caption && (
+                <p className="mt-4 text-[11px] leading-relaxed text-foreground/45 max-w-prose">{item.caption}</p>
+              )}
             </RevealBlock>
           );
         }
@@ -159,6 +162,9 @@ function GallerySection({
                   sizes="(max-width: 768px) 50vw, calc(50vw - 4rem)"
                   aspect="2/3"
                 />
+                {item.caption && (
+                  <p className="mt-4 text-[11px] leading-relaxed text-foreground/45">{item.caption}</p>
+                )}
               </RevealBlock>
               <div />
             </div>
@@ -175,6 +181,9 @@ function GallerySection({
                   sizes="(max-width: 768px) 50vw, calc(50vw - 4rem)"
                   aspect="2/3"
                 />
+                {img.caption && (
+                  <p className="mt-4 text-[11px] leading-relaxed text-foreground/45">{img.caption}</p>
+                )}
               </RevealBlock>
             ))}
           </div>
