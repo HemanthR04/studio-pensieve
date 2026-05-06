@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import { projects } from "@/data/projects";
 import type { Project } from "@/data/projects";
@@ -18,8 +18,13 @@ export default function Portfolio({ limit }: { limit?: number }) {
   const trackRef = useRef<HTMLDivElement>(null);
   const drag = useRef({ active: false, startX: 0, scrollLeft: 0, moved: false });
   const [hoveredSlug, setHoveredSlug] = useState<string | null>(null);
+  const [isTouch, setIsTouch] = useState(false);
   const pillRef = useRef<HTMLDivElement>(null);
   const visible = limit ? projects.slice(0, limit) : projects;
+
+  useEffect(() => {
+    setIsTouch(window.matchMedia("(pointer: coarse)").matches);
+  }, []);
 
   function onMouseDown(e: React.MouseEvent) {
     const el = trackRef.current;
@@ -40,6 +45,24 @@ export default function Portfolio({ limit }: { limit?: number }) {
   function onMouseUp() {
     drag.current.active = false;
     if (trackRef.current) trackRef.current.style.cursor = "grab";
+  }
+
+  function onTouchStart(e: React.TouchEvent) {
+    const el = trackRef.current;
+    if (!el) return;
+    drag.current = { active: true, startX: e.touches[0].pageX - el.offsetLeft, scrollLeft: el.scrollLeft, moved: false };
+  }
+
+  function onTouchMove(e: React.TouchEvent) {
+    if (!drag.current.active || !trackRef.current) return;
+    const x = e.touches[0].pageX - trackRef.current.offsetLeft;
+    const walk = (x - drag.current.startX) * 1.2;
+    if (Math.abs(walk) > 5) drag.current.moved = true;
+    trackRef.current.scrollLeft = drag.current.scrollLeft - walk;
+  }
+
+  function onTouchEnd() {
+    drag.current.active = false;
   }
 
   function handleMouseMove(e: React.MouseEvent) {
@@ -85,8 +108,11 @@ export default function Portfolio({ limit }: { limit?: number }) {
         onMouseMove={onMouseMove}
         onMouseUp={onMouseUp}
         onMouseLeave={onMouseUp}
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        onTouchEnd={onTouchEnd}
       >
-        {visible.map((project) => (
+        {visible.map((project, i) => (
           <article
             key={project.slug}
             className="shrink-0 group cursor-pointer"
@@ -98,7 +124,7 @@ export default function Portfolio({ limit }: { limit?: number }) {
             <div
               data-project-image
               className="relative overflow-hidden"
-              style={{ height: "65vh", aspectRatio: "3/2" }}
+              style={{ height: "clamp(240px, 65vh, 700px)", aspectRatio: "3/2" }}
             >
               {landscapeSrc(project) ? (
                 <Image
@@ -107,7 +133,7 @@ export default function Portfolio({ limit }: { limit?: number }) {
                   fill
                   sizes="(max-width: 768px) 80vw, 45vw"
                   className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
-                  priority
+                  priority={i === 0}
                   placeholder={project.blur ? "blur" : "empty"}
                   blurDataURL={project.blur}
                 />
@@ -131,11 +157,11 @@ export default function Portfolio({ limit }: { limit?: number }) {
         <div className="shrink-0 w-px" />
       </div>
 
-      {/* Cursor-following open pill — color tinted from project */}
+      {/* Cursor-following open pill — hidden on touch devices */}
       <div
         ref={pillRef}
         className="fixed z-50 pointer-events-none -translate-x-1/2 -translate-y-1/2 transition-opacity duration-200"
-        style={{ opacity: hoveredSlug ? 1 : 0 }}
+        style={{ opacity: hoveredSlug && !isTouch ? 1 : 0 }}
       >
         <span
           className="flex items-center gap-2 text-foreground text-[11px] font-medium tracking-wide px-4 py-2.5 rounded-full transition-colors duration-500"

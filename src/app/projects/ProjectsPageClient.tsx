@@ -31,8 +31,13 @@ export default function ProjectsPageClient() {
   const { navigate } = usePageTransition();
   const [hoveredSlug, setHoveredSlug]     = useState<string | null>(null);
   const [activeCategory, setActiveCategory] = useState("All");
+  const [isTouch, setIsTouch] = useState(false);
   const pillRef = useRef<HTMLDivElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setIsTouch(window.matchMedia("(pointer: coarse)").matches);
+  }, []);
 
   const filtered = activeCategory === "All"
     ? projects
@@ -174,7 +179,7 @@ export default function ProjectsPageClient() {
       <div
         ref={pillRef}
         className="fixed z-50 pointer-events-none -translate-x-1/2 -translate-y-1/2"
-        style={{ opacity: hoveredSlug ? 1 : 0, transition: "opacity 0.2s" }}
+        style={{ opacity: hoveredSlug && !isTouch ? 1 : 0, transition: "opacity 0.2s" }}
       >
         <span
           className="flex items-center gap-2 text-foreground text-[11px] font-medium tracking-wide px-4 py-2.5 rounded-full"

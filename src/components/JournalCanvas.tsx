@@ -361,7 +361,7 @@ export default function JournalCanvas() {
               return (
                 <div key={i} style={{
                   ...base,
-                  fontFamily: "Caveat, cursive",
+                  fontFamily: "var(--font-caveat), cursive",
                   fontSize: item.size,
                   lineHeight: 1.3,
                   color: "rgba(38,28,18,0.48)",

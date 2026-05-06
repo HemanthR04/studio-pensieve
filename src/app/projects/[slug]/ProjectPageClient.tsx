@@ -33,7 +33,9 @@ function ScrollProgress() {
 
 type GalleryBlock =
   | { type: "single"; items: [ProjectImage] }
-  | { type: "duo";    items: [ProjectImage, ProjectImage] };
+  | { type: "duo";    items: [ProjectImage, ProjectImage] }
+  | { type: "trio";   items: [ProjectImage, ProjectImage, ProjectImage] }
+  | { type: "quad";   items: [ProjectImage, ProjectImage, ProjectImage, ProjectImage] };
 
 /**
  * Rules:
@@ -50,14 +52,36 @@ function buildBlocks(images: ProjectImage[]): GalleryBlock[] {
       blocks.push({ type: "single", items: [cur] } as GalleryBlock);
       i++;
     } else {
-      // portrait — look ahead for a second portrait to pair with
       const next = images[i + 1];
-      if (next && next.orientation === "portrait") {
-        blocks.push({ type: "duo", items: [cur, next] } as GalleryBlock);
-        i += 2;
-      } else {
+      if (cur.pairedCaption) {
+        const layout = cur.layout ?? "duo";
+        const [n1, n2, n3] = [images[i+1], images[i+2], images[i+3]];
+        if (layout === "quad" && n1 && n2 && n3) {
+          blocks.push({ type: "quad", items: [cur, n1, n2, n3] } as GalleryBlock);
+          i += 4;
+        } else if (layout === "trio" && n1 && n2) {
+          blocks.push({ type: "trio", items: [cur, n1, n2] } as GalleryBlock);
+          i += 3;
+        } else if (n1 && n1.orientation === "portrait") {
+          blocks.push({ type: "duo", items: [cur, n1] } as GalleryBlock);
+          i += 2;
+        } else {
+          blocks.push({ type: "single", items: [cur] } as GalleryBlock);
+          i++;
+        }
+      } else if (cur.caption) {
+        // captioned portrait → always solo; caption in right column
         blocks.push({ type: "single", items: [cur] } as GalleryBlock);
         i++;
+      } else {
+        // uncaptioned portrait — pair with next uncaptioned portrait
+        if (next && next.orientation === "portrait" && !next.caption && !next.pairedCaption) {
+          blocks.push({ type: "duo", items: [cur, next] } as GalleryBlock);
+          i += 2;
+        } else {
+          blocks.push({ type: "single", items: [cur] } as GalleryBlock);
+          i++;
+        }
       }
     }
   }
@@ -131,7 +155,7 @@ function GallerySection({
   offset?: number;
 }) {
   return (
-    <div className="flex flex-col gap-[46px]">
+    <div className="flex flex-col gap-14 md:gap-20">
       {blocks.map((block, bi) => {
         const item = block.items[0];
         const key  = offset + bi;
@@ -146,7 +170,7 @@ function GallerySection({
                 aspect="3/2"
               />
               {item.caption && (
-                <p className="mt-4 text-[11px] leading-relaxed text-foreground/45 max-w-prose">{item.caption}</p>
+                <p className="mt-6 text-[15px] leading-relaxed text-foreground/50 max-w-prose">{item.caption}</p>
               )}
             </RevealBlock>
           );
@@ -154,52 +178,114 @@ function GallerySection({
 
         if (block.type === "single" && item.orientation === "portrait") {
           if (item.caption) {
+            const align = item.captionAlign ?? "top";
+            const gridAlign = align === "bottom" ? "items-end" : align === "center" ? "items-center" : "items-start";
             return (
-              <div key={key} className="grid grid-cols-2 gap-[28px] items-end">
+              <div key={key} className={`grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-[28px] ${gridAlign}`}>
                 <RevealBlock>
                   <GalleryImage
                     src={item.src}
                     alt={`${title} — ${key + 1}`}
-                    sizes="(max-width: 768px) 50vw, calc(50vw - 4rem)"
+                    sizes="(max-width: 768px) 100vw, calc(50vw - 4rem)"
                     aspect="2/3"
                   />
                 </RevealBlock>
-                <RevealBlock delay={0.1} className="flex flex-col justify-end pb-2">
-                  <p className="text-[11px] leading-relaxed text-foreground/45">{item.caption}</p>
+                <RevealBlock delay={0.1}>
+                  <p className="text-[15px] leading-relaxed text-foreground/50">{item.caption}</p>
                 </RevealBlock>
               </div>
             );
           }
           return (
-            <div key={key} className="grid grid-cols-2 gap-[28px]">
+            <div key={key} className="grid grid-cols-1 md:grid-cols-2 md:gap-[28px]">
               <RevealBlock>
                 <GalleryImage
                   src={item.src}
                   alt={`${title} — ${key + 1}`}
-                  sizes="(max-width: 768px) 50vw, calc(50vw - 4rem)"
+                  sizes="(max-width: 768px) 100vw, calc(50vw - 4rem)"
                   aspect="2/3"
                 />
               </RevealBlock>
-              <div />
             </div>
           );
         }
 
+        const pairedCaptions = block.items[0].pairedCaption ?? [];
+
+        if (block.type === "quad") {
+          return (
+            <div key={key} className="flex flex-col gap-6 md:gap-8">
+              <div className="grid grid-cols-2 gap-3 md:gap-[28px]">
+                {block.items.map((img, col) => (
+                  <RevealBlock key={col} delay={col * 0.05}>
+                    <GalleryImage
+                      src={img.src}
+                      alt={`${title} — ${key + 1}.${col + 1}`}
+                      sizes="(max-width: 768px) 50vw, 25vw"
+                      aspect="2/3"
+                    />
+                  </RevealBlock>
+                ))}
+              </div>
+              {pairedCaptions.length > 0 && (
+                <RevealBlock className="flex flex-col gap-4">
+                  {pairedCaptions.map((p, i) => (
+                    <p key={i} className="text-[15px] leading-relaxed text-foreground/50">{p}</p>
+                  ))}
+                </RevealBlock>
+              )}
+            </div>
+          );
+        }
+
+        if (block.type === "trio") {
+          return (
+            <div key={key} className="flex flex-col gap-6 md:gap-8">
+              <div className="grid grid-cols-3 gap-2 md:gap-[20px]">
+                {block.items.map((img, col) => (
+                  <RevealBlock key={col} delay={col * 0.05}>
+                    <GalleryImage
+                      src={img.src}
+                      alt={`${title} — ${key + 1}.${col + 1}`}
+                      sizes="(max-width: 768px) 33vw, 20vw"
+                      aspect="2/3"
+                    />
+                  </RevealBlock>
+                ))}
+              </div>
+              {pairedCaptions.length > 0 && (
+                <RevealBlock className="flex flex-col gap-4">
+                  {pairedCaptions.map((p, i) => (
+                    <p key={i} className="text-[15px] leading-relaxed text-foreground/50">{p}</p>
+                  ))}
+                </RevealBlock>
+              )}
+            </div>
+          );
+        }
+
+        // duo
         return (
-          <div key={key} className="grid grid-cols-2 gap-[28px]">
-            {block.items.map((img, col) => (
-              <RevealBlock key={col} delay={col * 0.1}>
-                <GalleryImage
-                  src={img.src}
-                  alt={`${title} — ${key + 1}.${col + 1}`}
-                  sizes="(max-width: 768px) 50vw, calc(50vw - 4rem)"
-                  aspect="2/3"
-                />
-                {img.caption && (
-                  <p className="mt-4 text-[11px] leading-relaxed text-foreground/45">{img.caption}</p>
-                )}
+          <div key={key} className="flex flex-col gap-6 md:gap-8">
+            <div className="grid grid-cols-2 gap-3 md:gap-[28px]">
+              {block.items.map((img, col) => (
+                <RevealBlock key={col} delay={col * 0.1}>
+                  <GalleryImage
+                    src={img.src}
+                    alt={`${title} — ${key + 1}.${col + 1}`}
+                    sizes="(max-width: 768px) 50vw, calc(50vw - 4rem)"
+                    aspect="2/3"
+                  />
+                </RevealBlock>
+              ))}
+            </div>
+            {pairedCaptions.length > 0 && (
+              <RevealBlock className="flex flex-col gap-4">
+                {pairedCaptions.map((p, i) => (
+                  <p key={i} className="text-[15px] leading-relaxed text-foreground/50">{p}</p>
+                ))}
               </RevealBlock>
-            ))}
+            )}
           </div>
         );
       })}
@@ -222,12 +308,6 @@ export default function ProjectPageClient({ project }: { project: Project }) {
   const desc   = project.description ?? [];
   const blocks = buildBlocks(project.images ?? []);
 
-  // Split gallery into three roughly equal sections
-  const cut1 = Math.ceil(blocks.length / 3);
-  const cut2 = Math.ceil((blocks.length * 2) / 3);
-  const part1 = blocks.slice(0, cut1);
-  const part2 = blocks.slice(cut1, cut2);
-  const part3 = blocks.slice(cut2);
 
   return (
     <div className="bg-[#faf9f7] min-h-screen">
@@ -269,7 +349,7 @@ export default function ProjectPageClient({ project }: { project: Project }) {
       </div>
 
       {/* ── Metadata strip ───────────────────────────────────────── */}
-      <RevealBlock className="px-8 md:px-14 py-8 border-b border-foreground/[0.07] flex flex-wrap items-baseline gap-x-10 gap-y-2">
+      <RevealBlock className="px-8 md:px-14 py-8 border-b border-foreground/[0.07] flex flex-wrap items-baseline gap-x-5 md:gap-x-10 gap-y-2">
         <span className="text-[10px] tracking-[0.28em] uppercase text-foreground/35">{project.index}</span>
         <span className="font-display text-sm font-medium">{project.title}</span>
         {project.location !== "—" && <span className="text-[11px] text-foreground/40">{project.location}</span>}
@@ -291,7 +371,7 @@ export default function ProjectPageClient({ project }: { project: Project }) {
             ))}
 
             {project.credits && (
-              <div className="grid grid-cols-2 gap-x-10 gap-y-8 mt-4">
+              <div className="grid grid-cols-2 gap-x-6 gap-y-6 md:gap-x-10 md:gap-y-8 mt-4">
                 {project.credits.map(({ label, value }) => (
                   <div key={label}>
                     <p className="text-[10px] tracking-[0.22em] uppercase text-foreground/38 mb-1.5">{label}</p>
@@ -337,26 +417,10 @@ export default function ProjectPageClient({ project }: { project: Project }) {
         </div>
       </RevealBlock>
 
-      {/* ── Gallery part 1 ───────────────────────────────────────── */}
-      {part1.length > 0 && (
+      {/* ── Gallery ──────────────────────────────────────────────── */}
+      {blocks.length > 0 && (
         <div className="px-8 md:px-14 pt-20">
-          <GallerySection blocks={part1} title={project.title} offset={0} />
-        </div>
-      )}
-
-
-      {/* ── Gallery part 2 ───────────────────────────────────────── */}
-      {part2.length > 0 && (
-        <div className="px-8 md:px-14">
-          <GallerySection blocks={part2} title={project.title} offset={cut1} />
-        </div>
-      )}
-
-
-      {/* ── Gallery part 3 ───────────────────────────────────────── */}
-      {part3.length > 0 && (
-        <div className="px-8 md:px-14">
-          <GallerySection blocks={part3} title={project.title} offset={cut2} />
+          <GallerySection blocks={blocks} title={project.title} offset={0} />
         </div>
       )}
 

@@ -5,7 +5,10 @@ const B = blurUrls as Record<string, string>;
 export type ProjectImage = {
   src: string;
   orientation: "portrait" | "landscape";
-  caption?: string;
+  caption?: string;              // solo portrait: text to the right
+  captionAlign?: "top" | "center" | "bottom";
+  pairedCaption?: string[];      // paragraphs shown below the group
+  layout?: "duo" | "quad" | "trio"; // grouping layout (default: duo)
 };
 
 export type ProjectCredit = {
@@ -105,8 +108,9 @@ export const projects: Project[] = [
     blur:  B["public/Projects/Emb Pristine / 1 Foyer.jpg"],
 
     description: [
-      "A serene three-bedroom apartment in one of Indiranagar's quieter lanes, designed around a single governing idea: that the surrounding canopy of rain trees should be present in every room. The brief asked for calm — a retreat from the city that felt generous without feeling grand.",
-      "Materials were selected for their ability to age honestly. Pale limestone floors, oiled walnut joinery, and hand-plastered walls in a warm white create a palette that recedes and lets light do the work. Furniture was a mix of custom-made pieces and carefully sourced antiques, each chosen for its quality of stillness.",
+      "This pre-owned 3BHK apartment, overlooking expansive forest views, was reimagined as a calm, contemporary home rooted in an Indian-modern sensibility. The design prioritises simplicity, function, and a strong connection to its surroundings.",
+      "The brief was clear — avoid excess, focus on what is necessary, and create a space that would age well. The resulting palette is restrained and earthy, with brick, wood, cane, whites, and muted greens, layered over a cement-finish floor.",
+      "Subtle textures and patterns add depth without drawing attention, allowing the home to remain quiet, grounded, and closely tied to the landscape beyond.",
     ],
 
     credits: [
@@ -128,22 +132,22 @@ export const projects: Project[] = [
     ],
 
     images: [
-      { src: img(" 2 Foyer.jpg"),              orientation: "portrait"  },
+      { src: img(" 2 Foyer.jpg"),              orientation: "portrait",  caption: "The entry was reworked to create a functional foyer from an underutilised utility space. Teak-shutter storage, open shelves, and a floating bench bring clarity, utility, and ease to the transition into the home." },
       { src: img(" 3 Dining area.jpg"),        orientation: "portrait"  },
       { src: img(" 4 Dining area.jpg"),        orientation: "portrait"  },
       { src: img("5 Crockery Bar.jpg"),        orientation: "portrait"  },
-      { src: img("6 Living room.jpg"),         orientation: "portrait"  },
-      { src: img("7 Living room.jpg"),         orientation: "landscape" },
-      { src: img("8 Living room.jpg"),         orientation: "landscape" },
+      { src: img("6 Living room.jpg"),         orientation: "portrait",  caption: "The living room is oriented around conversation and the view, with no television interrupting the space. Teak and cane furniture set a warm, tactile base, while lighting combines functional fixtures with pieces sourced locally. Subtle Indian influences come through in the decor, fabrics, and artwork, many commissioned directly from rural artisans, reflecting a conscious effort to support craft at its source." },
+      { src: img("7 Living room.jpg"),         orientation: "landscape", caption: "Instead of enclosing the small balcony to expand the living room, it was extended by combining it with the adjacent library and TV area. An L-shaped glass enclosure defines it from the living and dining spaces while keeping it visually connected." },
+      { src: img("8 Living room.jpg"),         orientation: "landscape", caption: "The brick-clad wall from the dining area continues into the balcony, creating a strong horizontal link between spaces. A dining table runs parallel to a floating wooden unit that functions as a cutlery and bar counter, with additional ledges reinforcing the linear composition." },
       { src: img("9 Balcony + Dining.jpg"),    orientation: "landscape" },
       { src: img("9 Balcony + Dining(1).jpg"), orientation: "landscape" },
       { src: img("10 Guest room_study.jpg"),   orientation: "portrait"  },
       { src: img("11 Living + Dining.jpg"),    orientation: "portrait"  },
-      { src: img("12 Kitchen.jpg"),            orientation: "portrait"  },
+      { src: img("12 Kitchen.jpg"),            orientation: "portrait",  pairedCaption: ["The membrane-finish kitchen is kept simple, with Shaker-style base shutters and wall units in white frames with ribbed glass. Black granite countertops paired with a Statuario backsplash bring the palette together."] },
       { src: img("13 Kitchen.jpg"),            orientation: "portrait"  },
       { src: img("14 Son_s room.jpg"),         orientation: "portrait"  },
       { src: img("16 Son_s room.jpg"),         orientation: "landscape" },
-      { src: img("17 Master bedroom.jpg"),     orientation: "portrait"  },
+      { src: img("17 Master bedroom.jpg"),     orientation: "portrait",  pairedCaption: ["The master bedroom pairs a teak-beaded wardrobe with a storage bed and an antique side table, while a repurposed dining table forms a long study desk opposite. Indian patterns in the wallpaper and blinds add character, with cane-woven shutters on the TV console introducing texture."] },
       { src: img("18 Master bedroom.jpg"),     orientation: "portrait"  },
       { src: img("19 Son_s bathroom.jpg"),     orientation: "portrait"  },
       { src: img("20 Study bathroom.jpg"),     orientation: "portrait"  },
@@ -167,9 +171,9 @@ export const projects: Project[] = [
     blur:  B["public/Projects/Kishore Residence/1.jpg"],
 
     description: [
-      "This residence is envisioned as a calm, materially rich home where every space flows into the next with quiet intention. Guided by a Japandi sensibility with subtle Indian nuances, the design relies on lime-washed surfaces, warm natural wood, and a soft palette of neutrals and pastels to create an atmosphere of ease and refinement. The materiality is tactile yet restrained, allowing the architecture and custom-crafted elements to take centre stage.",
-      "The planning follows an open, unobstructed layout that emphasises visual continuity. Rooms are connected through clean sightlines, muted tones, and consistent detailing rather than partitions, giving the home an expansive and harmonious character. Custom-made furniture forms a major part of the design language — each piece meticulously crafted with crisp profiles, balanced proportions, and a quiet elegance that complements the architecture instead of overpowering it.",
-      "Subtle spatial gestures enhance the home's experience, such as the curved ceiling that marks the transition from the hallway into the main living zones, softening movement and grounding the circulation. Throughout the residence, the interplay of light, texture, and warm wood accents creates a serene rhythm, resulting in an interior that feels cohesive, calm, and deeply connected to its material palette.",
+      "This residence is conceived as a calm, materially rich home where spaces unfold with quiet continuity. Guided by a Japandi sensibility and subtle Indian nuances, the design balances restraint with warmth, letting material, light, and proportion shape the experience.",
+      "Lime-washed surfaces, natural wood, and a soft palette of neutrals and muted pastels create a tactile, understated base. Character emerges through consistency of tone, detail, and craft rather than overt gestures.",
+      "The planning remains open and fluid. Spaces connect through shifts in material, light, and geometry instead of walls, resulting in a home that feels cohesive, expansive, and quietly intentional.",
     ],
 
     credits: [
@@ -181,16 +185,16 @@ export const projects: Project[] = [
     ],
 
     images: [
-      { src: imgKishore("2.jpg"),         orientation: "portrait" },
-      { src: imgKishore("3.jpg"),         orientation: "portrait" },
-      { src: imgKishore("4.jpg"),         orientation: "portrait" },
-      { src: imgKishore("5 gif.1.jpg"),   orientation: "portrait" },
-      { src: imgKishore("6.jpg"),         orientation: "portrait" },
-      { src: imgKishore("7.jpg"),         orientation: "portrait" },
-      { src: imgKishore("8.jpg"),         orientation: "portrait" },
-      { src: imgKishore("9.jpg"),         orientation: "portrait" },
-      { src: imgKishore("10.jpg"),        orientation: "portrait" },
-      { src: imgKishore("11.jpg"),        orientation: "portrait" },
+      { src: imgKishore("2.jpg"),       orientation: "portrait", layout: "quad", pairedCaption: ["The living space is defined by a soft, earthy palette, with olive greens and warm beiges set against textured lime-washed walls. Low, linear furniture keeps the room open while retaining a sense of intimacy.", "Custom pieces are carefully proportioned to feel light yet grounded. Black accents add contrast, while indoor planting softens the composition.", "A vertical wood panel anchors the seating area, defining the space without disrupting flow. Designed as a movable element, it introduces a subtle sense of drama."] },
+      { src: imgKishore("3.jpg"),       orientation: "portrait" },
+      { src: imgKishore("4.jpg"),       orientation: "portrait" },
+      { src: imgKishore("5 gif.1.jpg"), orientation: "portrait" },
+      { src: imgKishore("6.jpg"),       orientation: "portrait", caption: "The dining area continues the home's earthy material language. A solid wood table is paired with black-framed armchairs upholstered in natural linen, their squared geometry echoing the graphic lattice screen that divides the dining and passage zones. Antique-finish ceramic vessels and taper candles complete the tableau.", captionAlign: "center" },
+      { src: imgKishore("7.jpg"),       orientation: "portrait", layout: "trio", pairedCaption: ["The bedrooms continue a restrained language, shifting toward softer textures and more personal expression.", "Material transitions from wood to fabric to wall finish remain subtle and cohesive. Cane inserts, pastel wardrobes, and upholstered elements add variation without disrupting the calm.", "Compact study niches and integrated storage maintain clarity, ensuring utility does not clutter the space."] },
+      { src: imgKishore("8.jpg"),       orientation: "portrait" },
+      { src: imgKishore("9.jpg"),       orientation: "portrait" },
+      { src: imgKishore("10.jpg"),      orientation: "portrait" },
+      { src: imgKishore("11.jpg"),      orientation: "portrait" },
     ],
   },
   {
@@ -225,15 +229,15 @@ export const projects: Project[] = [
     ],
 
     images: [
-      { src: imgUber("2.jpg"),  orientation: "portrait", caption: "The apartment is finished in a warm white, neutral palette that keeps spaces open and well-lit. A muted taupe half-wall adds depth without compromising volume." },
-      { src: imgUber("3.jpg"),  orientation: "portrait", caption: "Fluted woodwork runs throughout, unifying wardrobes, TV backdrops, wall cladding, and built-in cabinetry. The vertical texture adds depth while maintaining a clean, tailored expression, with rounded edges reinforcing the focus on safety." },
-      { src: imgUber("4.jpg"),  orientation: "portrait", caption: "Woodwork boasts textured grooves and rounded edges for safety. Sage green furniture complements the neutrals, creating a subtle connection to the lush greenery outdoor. Strategically placed teak grab bars blend seamlessly, aiding navigation." },
+      { src: imgUber("4.jpg"),  orientation: "portrait", pairedCaption: ["The apartment is finished in a warm white, neutral palette that keeps spaces open and well-lit. A muted taupe half-wall adds depth without compromising volume.", "Fluted woodwork runs throughout, unifying wardrobes, TV backdrops, wall cladding, and built-in cabinetry. The vertical texture adds depth while maintaining a clean, tailored expression, with rounded edges reinforcing the focus on safety."] },
       { src: imgUber("5.jpg"),  orientation: "portrait" },
-      { src: imgUber("6.jpg"),  orientation: "portrait", caption: "The dining zone is anchored by a monolithic foyer element that transitions into a crockery unit at the rear. A recessed seat with vertical teak slats, a curved canopy, and integrated drawers below is primarily part of the foyer, while also forming an engaging backdrop to the dining space. A sculptural brass chandelier above the dining table introduces a refined warmth to the lighting scheme." },
-      { src: imgUber("7.jpg"),  orientation: "portrait" },
-      { src: imgUber("9.jpg"),  orientation: "portrait", caption: "The kitchen was redesigned with ergonomics at its core. Lower counter heights reduce reach and strain during extended use. A built-in counter with a high stool offers a comfortable perch for food prep — small in gesture, significant in impact. Warm almond-finish cabinetry lines the perimeter, paired with matte black stone counters. Open steel shelving replaces overhead cupboards, keeping essentials within easy reach. A cool grey micro-cement splashback completes the palette." },
+      { src: imgUber("2.jpg"),  orientation: "portrait", pairedCaption: ["Woodwork boasts textured grooves and rounded edges for safety. Sage green furniture complements the neutrals, creating a subtle connection to the lush greenery outdoor. Strategically placed teak grab bars blend seamlessly, aiding navigation."] },
+      { src: imgUber("3.jpg"),  orientation: "portrait" },
+      { src: imgUber("6.jpg"),  orientation: "portrait", caption: "The dining zone is anchored by a monolithic foyer element that transitions into a crockery unit at the rear. A recessed seat with vertical teak slats, a curved canopy, and integrated drawers below is primarily part of the foyer, while also forming an engaging backdrop to the dining space. A sculptural brass chandelier above the dining table introduces a refined warmth to the lighting scheme.", captionAlign: "bottom" },
+      { src: imgUber("7.jpg"),  orientation: "portrait", caption: "The kitchen was redesigned with ergonomics at its core. Lower counter heights reduce reach and strain during extended use. A built-in counter with a high stool offers a comfortable perch for food prep—small in gesture, significant in impact. Warm almond-finish cabinetry lines the perimeter, paired with matte black stone counters. Open steel shelving replaces overhead cupboards, keeping essentials within easy reach. A cool grey micro-cement splashback completes the palette." },
       { src: imgUber("10.jpg"), orientation: "portrait" },
       { src: imgUber("11.jpg"), orientation: "portrait" },
+      { src: imgUber("9.jpg"),  orientation: "portrait" },
     ],
   },
   {
@@ -318,11 +322,11 @@ export const projects: Project[] = [
   {
     slug: "chanpatna",
     index: "06",
-    title: "Chanpatna",
+    title: "Channapatna Farmhouse",
     category: "Architecture",
-    location: "—",
+    location: "Channapatna",
     year: "—",
-    size: "—",
+    size: "2,400 sq ft",
     aspect: "landscape",
     bg: "bg-green-50",
     color: "#f0fdf4",
@@ -331,12 +335,25 @@ export const projects: Project[] = [
     hero:  imgChanpatna("1.jpg"),
     blur:  B["public/Projects/Chanpatna/1.jpg"],
 
+    description: [
+      "Located in Channapatna, this 2,400 sq.ft. farmhouse is conceived as a quiet retreat within a working rural landscape. The house takes on a linear form, aligning with the site to maintain continuous visual engagement with the surrounding fields.",
+      "A fluid ground floor brings together living, dining, and kitchen spaces within a double-height volume that extends into a long, shaded porch, mediating between interior and landscape. Above, bedrooms open into balconies carved within sloping, Mangalore-tiled roofs, framing expansive views.",
+      "Rooted in vernacular references yet restrained in expression, the architecture combines lime-washed surfaces, stone, and brick with subtle contemporary detailing. The project ultimately prioritizes immersion, creating a built form that remains open, porous, and deeply connected to its setting.",
+    ],
+
+    credits: [
+      { label: "Lead Architects",  value: "Shashank Shetty\nSanjan Hoode" },
+      { label: "Category",         value: "Architecture" },
+      { label: "Status",           value: "Completed" },
+    ],
+
     images: [
-      { src: imgChanpatna("2.jpg"), orientation: "landscape" },
-      { src: imgChanpatna("3.jpg"), orientation: "landscape" },
-      { src: imgChanpatna("4.jpg"), orientation: "landscape" },
-      { src: imgChanpatna("5.jpg"), orientation: "landscape" },
-      { src: imgChanpatna("6.jpg"), orientation: "portrait"  },
+      { src: imgChanpatna("1.jpg"), orientation: "landscape", caption: "The shaded porch runs along the length of the house, acting as a climatic and spatial buffer. It creates a threshold where interior life gradually transitions into the openness of the fields." },
+      { src: imgChanpatna("2.jpg"), orientation: "landscape", caption: "A low, linear form stretches along the site, allowing the surrounding farmland to remain uninterrupted and visually dominant. The staggered sloping roofs establish a strong horizontal identity while subtly breaking the massing." },
+      { src: imgChanpatna("3.jpg"), orientation: "landscape", caption: "The double-height living space anchors the ground floor, bringing volume and light into the core of the house. Large openings ensure the interior remains visually porous, extending toward the landscape." },
+      { src: imgChanpatna("4.jpg"), orientation: "landscape", caption: "Lime-plastered fins line the corridor, forming a sequence of arched openings. These layered thresholds filter light and create depth, mediating between movement and enclosure." },
+      { src: imgChanpatna("5.jpg"), orientation: "landscape", caption: "Balconies are carved into the sloping roof, creating shaded outdoor extensions for the upper rooms. They frame long views across the farmland while softening the overall mass of the structure." },
+      { src: imgChanpatna("6.jpg"), orientation: "portrait",  caption: "A restrained material palette of stone, lime, and brick reinforces a grounded, tactile quality. Subtle contemporary elements introduce precision, complementing the otherwise vernacular character." },
     ],
   },
   {
@@ -430,9 +447,9 @@ export const projects: Project[] = [
     blur:  B["public/Projects/Godrej/1.jpg"],
 
     description: [
-      "Set on the 16th floor of a high-rise, this 3BHK apartment is a striking blend of modern minimalism, mid-century charm, and personal expression. Designed as a canvas of storytelling through space, the home beautifully balances sleek forms with bold colour, warmth, and lived-in comfort. The open living and dining area forms the vibrant heart — anchored by an eye-catching mustard yellow sofa, olive green wall panels, and rust-orange dining chairs. Furniture and lighting nod to mid-century modern design throughout, with teak wood finishes bringing cohesion and quiet elegance.",
-      "A standout intervention is the reimagined kitchen partition: the original static divide was replaced with a collapsible teak panel, adding both flexibility and a sense of connection. The children's bedroom embraces a light, whimsical feel with a custom bunk bed framed by soft-toned carpentry and playful wallpaper. The master bedroom offers a serene, restorative palette — a fluted teak wall panel behind the bed brings visual texture, while rust-toned accents and a floating dressing-study unit blend beauty with functionality.",
-      "The clients' openness to colour and character resulted in a home that perfectly reflects their warm, vibrant personalities. With one half of the couple a trained architect, the process was built on trust and clear intent — making this a truly collaborative and delightful experience.",
+      "This project began with clients who brought a clear point of view: a young family with an appetite for colour, warmth, and spaces that reflect who they are. With one half of the couple a trained architect, the brief was precise and the conversation direct, allowing the design to move quickly and commit confidently.",
+      "The response is a home built around contrast and cohesion. A palette of deep olive green, mustard yellow, rust orange, and warm teak runs through every room, shifting in character from space to space while remaining unmistakably part of the same whole. Mid-century furniture forms and clean-lined joinery provide the structural logic, while colour and personal objects provide the life.",
+      "Teak woodwork appears throughout as both a material and a motif, in slatted cabinet fronts, fluted wall panels, and a reimagined kitchen partition, giving the apartment continuity without uniformity. The result is a home that feels genuinely inhabited, shaped by the people who live in it rather than assembled around them.",
     ],
 
     credits: [
@@ -444,15 +461,15 @@ export const projects: Project[] = [
     ],
 
     images: [
-      { src: imgGodrej("2.jpg"),  orientation: "portrait" },
+      { src: imgGodrej("2.jpg"),  orientation: "portrait", pairedCaption: ["A teak table with a dark stone top anchors the space against a white wall, with rust-orange chairs adding warmth.", "A teak sideboard runs along the adjacent wall below an oversized print, with slim sconces providing light. The dining–kitchen partition is reworked as a collapsible teak-framed panel, allowing the spaces to open up and connect when needed."] },
       { src: imgGodrej("3.jpg"),  orientation: "portrait" },
-      { src: imgGodrej("4.jpg"),  orientation: "portrait" },
+      { src: imgGodrej("4.jpg"),  orientation: "portrait", layout: "trio", pairedCaption: ["Anchored by a deep olive panelled wall with a fluted teak rail, the space is held by a mustard sofa. A leather armchair and black-stone coffee table complete the seating, with a twin-globe pendant above. Opposite, a floating TV unit and suspended puja cabinet in teak and olive keep the wall composed, while poufs tuck below to keep the layout open."] },
       { src: imgGodrej("5.jpg"),  orientation: "portrait" },
       { src: imgGodrej("6.jpg"),  orientation: "portrait" },
-      { src: imgGodrej("7.jpg"),  orientation: "portrait" },
+      { src: imgGodrej("7.jpg"),  orientation: "portrait", layout: "trio", pairedCaption: ["A custom olive green bunk anchors the room, with a teak ladder and patterned wallpaper adding a light, playful layer. A framed chalkboard panel allows the space to evolve over time.", "A full-width teak desk with white overhead storage forms the study, with a subtle yellow edge tying back to the home's palette. The wardrobe in off-white and teal with brass knobs stays simple and composed."] },
       { src: imgGodrej("8.jpg"),  orientation: "portrait" },
       { src: imgGodrej("9.jpg"),  orientation: "portrait" },
-      { src: imgGodrej("10.jpg"), orientation: "portrait" },
+      { src: imgGodrej("10.jpg"), orientation: "portrait", pairedCaption: ["A continuous teak fluted panel organises the bed wall, integrating the headboard, with a compact brass sconce for light.", "Opposite, a floating study runs along the wall. A split palette with a teak ledge allows for light display. Materials and colours stay consistent with the home, in a quieter tone."] },
       { src: imgGodrej("11.jpg"), orientation: "portrait" },
     ],
   },
@@ -473,8 +490,10 @@ export const projects: Project[] = [
     blur:  B["public/Projects/Rajiv/1.jpg"],
 
     description: [
-      "Set against the calm expanse of Zion Hill's landscape, this residence unfolds as a contemporary sanctuary where sculptural form, custom craftsmanship, and nature-driven palettes work in effortless harmony. The living and dining areas establish the home's design language — a symphony of curved furniture, ribbed textures, muted neutrals, and controlled bursts of blue and green that echo the terrain outside. A caramel-toned bespoke sofa anchors the living room, complemented by marble-topped tables, organic decor, and a hand-tufted rug that mimics topographical patterns. The kitchen introduces a bolder visual moment: sage green cabinetry paired with herringbone tiles and patterned flooring, framed by fluted-glass and metal partitions that add architectural rhythm while keeping the space light and open.",
-      "As the home transitions into its more private zones, the palette deepens into quieter, textural expressions of comfort. The bedrooms are styled in soft neutrals and warm wood, where tufted headboards, ribbed wall panels, and woven textiles create a sense of intimacy. A dedicated bar lounge sits between the social and private wings — layered with modern bar furniture, a sculptural console, curated collectibles, and subtle golf-inspired decor nodding to the community's identity. Across the home, custom furniture pieces anchor each room with intention, while diffused daylight, generous greenery, and thoughtful details bring a sense of lived-in elegance.",
+      "Set in the quiet landscape of Zion Hill, this weekend home is designed as a place to slow down.",
+      "The planning keeps spaces open and connected, allowing the living, dining, and kitchen to flow into each other. A consistent palette of warm wood, textured walls, stone, and muted greens and blues draws from the surroundings and keeps the home grounded.",
+      "Custom furniture and built-ins bring clarity without overcomplicating the space. As the house moves into private areas, the mood becomes softer and more relaxed.",
+      "The focus is simple: create a home that feels calm, easy, and removed from the pace of the city.",
     ],
 
     credits: [
@@ -485,13 +504,13 @@ export const projects: Project[] = [
     ],
 
     images: [
-      { src: imgRajiv("2.jpg"), orientation: "portrait"  },
-      { src: imgRajiv("3.jpg"), orientation: "landscape" },
-      { src: imgRajiv("4.jpg"), orientation: "portrait"  },
+      { src: imgRajiv("2.jpg"), orientation: "portrait",  caption: "The dining table is conceived as a sculptural piece, with a solid base supporting a stone top. Its weight and materiality ground the space, balancing the softness of light, fabric, and surrounding elements." },
+      { src: imgRajiv("3.jpg"), orientation: "landscape", caption: "A relaxed living space shaped by soft curves and quiet materiality. The furniture takes cues from the rolling topography of the golf course beyond, translating it into gentle forms, muted tones, and an easy, unhurried atmosphere." },
+      { src: imgRajiv("4.jpg"), orientation: "portrait",  pairedCaption: ["The kitchen is defined by muted green cabinetry and textured tiles, framed by fluted glass partitions that keep the space open yet contained."] },
       { src: imgRajiv("5.jpg"), orientation: "portrait"  },
       { src: imgRajiv("6.jpg"), orientation: "portrait"  },
       { src: imgRajiv("7.jpg"), orientation: "portrait"  },
-      { src: imgRajiv("8.jpg"), orientation: "portrait"  },
+      { src: imgRajiv("8.jpg"), orientation: "portrait",  pairedCaption: ["Layered in warm neutrals and natural textures, the bedroom is designed for ease. Upholstered surfaces, soft drapery, and integrated storage keep the space calm and uncluttered."] },
       { src: imgRajiv("9.jpg"), orientation: "portrait"  },
     ],
   },
@@ -511,6 +530,12 @@ export const projects: Project[] = [
     hero:  imgVilla1("1.jpg"),
     blur:  B["public/Projects/Villa 1/1.jpg"],
 
+    description: [
+      "Set within Bangalore's urban context, this home is conceived as a calm, contemporary space. A minimal approach guides the design, with clean lines, open planning, and a restrained use of colour.",
+      "Each space is carefully composed, where furniture and built-ins serve both functional and sculptural roles. The palette remains subtle, allowing material and proportion to take precedence.",
+      "Natural light is central to the experience, opening up the interiors. The result is a home that feels open, balanced, and thoughtfully put together.",
+    ],
+
     credits: [
       { label: "Lead Architects",  value: "Shashank Shetty\nSanjan Hoode" },
       { label: "Category",         value: "Architecture" },
@@ -519,20 +544,20 @@ export const projects: Project[] = [
     ],
 
     images: [
-      { src: imgVilla1("2.jpg"),  orientation: "portrait" },
+      { src: imgVilla1("2.jpg"),  orientation: "portrait", layout: "quad", pairedCaption: ["The living and dining areas are designed to feel warm, comfortable, and easy to use. Furniture balances softness with function, creating spaces that are both practical and inviting."] },
       { src: imgVilla1("3.jpg"),  orientation: "portrait" },
       { src: imgVilla1("4.jpg"),  orientation: "portrait" },
       { src: imgVilla1("5.jpg"),  orientation: "portrait" },
-      { src: imgVilla1("6.jpg"),  orientation: "portrait" },
-      { src: imgVilla1("7.jpg"),  orientation: "portrait" },
+      { src: imgVilla1("6.jpg"),  orientation: "portrait", caption: "Tucked beneath the staircase, the bar area makes efficient use of space while maintaining the home's overall language. Compact yet well-defined, it blends function with a sense of quiet detail, turning an otherwise residual corner into a purposeful feature." },
+      { src: imgVilla1("7.jpg"),  orientation: "portrait", layout: "trio", pairedCaption: ["In the dining area, a sculptural table anchors the room, complemented by a chandelier that adds focus and soft light. Together, these elements create a setting that is simple, refined, and well-composed."] },
       { src: imgVilla1("8.jpg"),  orientation: "portrait" },
       { src: imgVilla1("9.jpg"),  orientation: "portrait" },
-      { src: imgVilla1("10.jpg"), orientation: "portrait" },
+      { src: imgVilla1("10.jpg"), orientation: "portrait", pairedCaption: ["Adorned with a tasteful palette of powder blue and pristine white, the cabinetry exudes a sense of serene sophistication. The floor becomes a canvas of intricate patterns, thanks to meticulously chosen tiles that add a touch of artistic flair to the culinary space."] },
       { src: imgVilla1("11.jpg"), orientation: "portrait" },
       { src: imgVilla1("12.jpg"), orientation: "portrait" },
-      { src: imgVilla1("13.jpg"), orientation: "portrait" },
+      { src: imgVilla1("13.jpg"), orientation: "portrait", caption: "The master bedroom is anchored by a four-poster bed in a muted blue, setting the tone for the space. Creams and warm wood form the base palette, with blue accents carried through in a restrained way." },
       { src: imgVilla1("14.jpg"), orientation: "portrait" },
-      { src: imgVilla1("15.jpg"), orientation: "portrait" },
+      { src: imgVilla1("15.jpg"), orientation: "portrait", pairedCaption: ["The bedroom is defined by a neutral palette of white and warm wood, creating a calm and inviting base. Soft creams and subtle greens add lightness without overpowering the space. The headboard wall introduces a playful note through a patterned wallpaper, bringing character while maintaining the room's overall restraint."] },
       { src: imgVilla1("16.jpg"), orientation: "portrait" },
       { src: imgVilla1("17.jpg"), orientation: "portrait" },
     ],

@@ -1,11 +1,17 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function CustomCursor() {
   const ref = useRef<HTMLDivElement>(null);
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
+    setShow(!window.matchMedia("(pointer: coarse)").matches);
+  }, []);
+
+  useEffect(() => {
+    if (!show) return;
     const el = ref.current;
     if (!el) return;
 
@@ -42,6 +48,8 @@ export default function CustomCursor() {
       window.removeEventListener("mouseover", onOver);
     };
   }, []);
+
+  if (!show) return null;
 
   return (
     <div

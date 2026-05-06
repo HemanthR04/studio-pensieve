@@ -163,7 +163,7 @@ export default function MenuProvider({ children }: { children: React.ReactNode }
                 key={label}
                 href={href}
                 onClick={closeMenu}
-                className="menu-link font-sans text-[6vw] md:text-[3.2vw] lg:text-[2.6vw] font-medium text-white leading-[1.2] hover:opacity-25 transition-opacity"
+                className="menu-link font-sans text-[clamp(1.5rem,6vw,3rem)] md:text-[3.2vw] lg:text-[2.6vw] font-medium text-white leading-[1.2] hover:opacity-25 transition-opacity"
               >
                 {label}
               </Link>

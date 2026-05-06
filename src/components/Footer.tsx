@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const NAV_LINKS = [
   { label: "Home",     href: "/" },
@@ -54,11 +55,15 @@ export default function Footer() {
         {/* ── Bottom: wordmark · copyright · nav + social + email ── */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-10">
 
-          {/* Wordmark */}
+          {/* Logo */}
           <div className="shrink-0">
-            <p className="font-display text-2xl md:text-3xl font-medium tracking-[0.12em] uppercase leading-[1.15]">
-              Studio<br />Pensieve
-            </p>
+            <Image
+              src="/logo.png"
+              alt="Studio Pensieve"
+              width={120}
+              height={120}
+              className="w-32 md:w-64 h-auto"
+            />
           </div>
 
           {/* Copyright — centered on desktop */}
@@ -67,7 +72,7 @@ export default function Footer() {
           </p>
 
           {/* Nav + social + email */}
-          <div className="flex gap-14 md:gap-16 items-start shrink-0">
+          <div className="flex flex-wrap gap-8 md:gap-16 items-start shrink-0">
 
             {/* Page links */}
             <div className="flex flex-col gap-2.5">

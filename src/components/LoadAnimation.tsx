@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 export default function LoadAnimation() {
   const [phase, setPhase] = useState<"enter" | "hold" | "fade" | "done">("enter");
@@ -31,51 +32,21 @@ export default function LoadAnimation() {
         transition: phase === "fade" ? "opacity 800ms cubic-bezier(0.4,0,0.2,1)" : "none",
       }}
     >
-      <div className="flex flex-col items-center gap-5">
-        {/* Wordmark */}
-        <div
-          style={{
-            opacity: visible ? 1 : 0,
-            transform: visible ? "translateY(0)" : "translateY(8px)",
-            transition: "opacity 600ms ease, transform 600ms ease",
-          }}
-        >
-          <p
-            style={{
-              fontFamily: "General Sans, sans-serif",
-              fontWeight: 300,
-              fontSize: "11px",
-              letterSpacing: "0.55em",
-              textTransform: "uppercase",
-              color: "#1a1a1a",
-              marginBottom: "6px",
-            }}
-          >
-            Studio
-          </p>
-          <p
-            style={{
-              fontFamily: "General Sans, sans-serif",
-              fontWeight: 500,
-              fontSize: "22px",
-              letterSpacing: "0.35em",
-              textTransform: "uppercase",
-              color: "#1a1a1a",
-            }}
-          >
-            Pensieve
-          </p>
-        </div>
-
-        {/* Thin animated rule */}
-        <div
-          style={{
-            height: "1px",
-            background: "#1a1a1a",
-            width: visible ? "48px" : "0px",
-            opacity: visible ? 0.25 : 0,
-            transition: "width 700ms cubic-bezier(0.4,0,0.2,1) 200ms, opacity 700ms ease 200ms",
-          }}
+      <div
+        style={{
+          opacity: visible ? 1 : 0,
+          transform: visible ? "translateY(0)" : "translateY(8px)",
+          transition: "opacity 600ms ease, transform 600ms ease",
+        }}
+      >
+        <Image
+          src="/logo.png"
+          alt="Studio Pensieve"
+          width={600}
+          height={600}
+          className="w-[60vw] max-w-[480px] min-w-[220px] h-auto"
+          style={{ objectFit: "contain" }}
+          priority
         />
       </div>
     </div>
