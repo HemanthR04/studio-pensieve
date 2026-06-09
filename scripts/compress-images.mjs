@@ -12,9 +12,10 @@ import sharp from "sharp";
 import { readdir, stat, readFile, writeFile, unlink } from "fs/promises";
 import { join, extname, basename, dirname } from "path";
 
-const ROOT        = new URL("..", import.meta.url).pathname;
-const PROJECTS_DIR = join(ROOT, "public/Projects");
-const JPEG_QUALITY = 80;
+const ROOT          = new URL("..", import.meta.url).pathname;
+const PROJECTS_DIR  = join(ROOT, "public/Projects");
+const LANDING_DIR   = join(ROOT, "public/LANDING PHOTOS");
+const JPEG_QUALITY  = 80;
 
 let totalBefore = 0;
 let totalAfter  = 0;
@@ -64,8 +65,10 @@ function mb(b)  { return (b / 1024 / 1024).toFixed(2) + " MB"; }
 
 // ── main ──────────────────────────────────────────────────────────
 
-const files = await walk(PROJECTS_DIR);
-console.log(`\nProcessing ${files.length} files in public/Projects…\n`);
+const projectFiles = await walk(PROJECTS_DIR);
+const landingFiles = await walk(LANDING_DIR);
+const files = [...projectFiles, ...landingFiles];
+console.log(`\nProcessing ${files.length} files in public/Projects + public/LANDING PHOTOS…\n`);
 
 for (const f of files) {
   const ext = extname(f).toLowerCase();
@@ -91,6 +94,7 @@ console.log(`\nPatching source files for ${converted.length} PNG→JPEG conversi
 const SRC_FILES = [
   join(ROOT, "src/data/projects.ts"),
   join(ROOT, "src/components/JournalCanvas.tsx"),
+  join(ROOT, "src/components/Hero.tsx"),
 ];
 
 for (const srcFile of SRC_FILES) {

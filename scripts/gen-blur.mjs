@@ -13,10 +13,14 @@ const ROOT = new URL("..", import.meta.url).pathname;
 
 // All images that need a blur placeholder
 const TARGETS = [
+  // Estate Retreat cover
+  "public/Projects/Estate Retreat/1.jpg",
   // Hero slideshow
-  "public/Hero/WhatsApp Image 2026-03-31 at 17.35.07.jpeg",
-  "public/Hero/WhatsApp Image 2026-03-31 at 17.36.28.jpeg",
-  "public/Hero/WhatsApp Image 2026-03-31 at 17.36.29.jpeg",
+  "public/LANDING PHOTOS/1.jpg",
+  "public/LANDING PHOTOS/2.jpg",
+  "public/LANDING PHOTOS/3.jpg",
+  "public/LANDING PHOTOS/4.jpg",
+  "public/LANDING PHOTOS/5.jpg",
   // Project covers (first image of each project)
   "public/Projects/Emb Pristine / 1 Foyer.jpg",
   "public/Projects/Kishore Residence/1.jpg",

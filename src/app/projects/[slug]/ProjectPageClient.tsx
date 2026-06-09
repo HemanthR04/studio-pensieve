@@ -355,7 +355,11 @@ export default function ProjectPageClient({ project }: { project: Project }) {
         {project.location !== "—" && <span className="text-[11px] text-foreground/40">{project.location}</span>}
         {project.year     !== "—" && <span className="text-[11px] text-foreground/40">{project.year}</span>}
         {project.size     !== "—" && <span className="text-[11px] text-foreground/40">{project.size}</span>}
-        {project.category !== "—" && <span className="text-[11px] text-foreground/40">{project.category}</span>}
+        {project.category !== "—" && (
+            <span className="text-[11px] text-foreground/40">
+              {project.category.toLowerCase().includes("architecture") ? "Architecture" : "Interiors"}
+            </span>
+          )}
       </RevealBlock>
 
       {/* ── Details: description + credits  |  floor plan + rooms ── */}
@@ -387,14 +391,18 @@ export default function ProjectPageClient({ project }: { project: Project }) {
           {/* Right col — floor plan + rooms */}
           <div className="md:col-span-5 flex flex-col gap-8">
             {project.floorPlan ? (
-              <div className="relative w-full aspect-[4/3]">
-                <Image
-                  src={project.floorPlan}
-                  alt="Floor plan"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 40vw"
-                  className="object-contain"
-                />
+              <div className={`flex gap-3 ${Array.isArray(project.floorPlan) && project.floorPlan.length > 1 ? "flex-row" : "flex-col"}`}>
+                {(Array.isArray(project.floorPlan) ? project.floorPlan : [project.floorPlan]).map((src, i) => (
+                  <div key={src} className="relative flex-1 aspect-[4/3]">
+                    <Image
+                      src={src}
+                      alt={`Floor plan${Array.isArray(project.floorPlan) && project.floorPlan.length > 1 ? ` ${i + 1}` : ""}`}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 40vw"
+                      className="object-contain"
+                    />
+                  </div>
+                ))}
               </div>
             ) : (
               <div className="relative w-full aspect-[4/3] bg-stone-50 flex items-center justify-center">

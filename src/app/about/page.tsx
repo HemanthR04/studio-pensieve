@@ -31,18 +31,21 @@ export default function AboutPage() {
           </div>
           <div className="md:col-span-7 flex flex-col gap-6">
             <p className="text-[15px] font-normal leading-[1.85] text-foreground/80">
-              Studio Pensieve was founded in 2020 by two architects who have known each other far longer
-              than they have practised together. Childhood friends before becoming colleagues, Sanjan Hoode
-              and Shashank Shetty studied architecture at separate universities, carrying a shared conviction
-              that one day they would build something together. That something became Studio Pensieve.
+              Studio Pensieve was founded in 2020 by two architects whose relationship long predates their
+              practice. Childhood friends before becoming colleagues, Sanjan Hoode and Shashank Shetty
+              studied architecture at separate universities, bound by a shared conviction that they would
+              one day build something together. Studio Pensieve is the realisation of that intent.
             </p>
             <p className="text-[15px] font-normal leading-[1.85] text-foreground/80">
-              Based in Bengaluru, the studio is a small, focused practice working across residential,
-              commercial, hospitality, and interior projects across the country. In five years, the studio
-              has completed over 25 projects, each shaped by a consistent belief: good design makes everyday
-              life easier, more meaningful, and more humane, while also creating beauty that inspires
-              aspiration. It has long been treated as a luxury. At Studio Pensieve, the intent is to make
-              it less so.
+              Based in Bengaluru, the studio is a focused practice working across residential, commercial,
+              hospitality, and interior projects nationwide. In five years, it has completed over 25
+              projects, each shaped by a consistent belief: design serves two deeply human purposes. It
+              solves problems, and it elevates experience.
+            </p>
+            <p className="text-[15px] font-normal leading-[1.85] text-foreground/80">
+              Good design makes everyday life easier and more meaningful while creating beauty that
+              inspires aspiration. It has long been treated as a luxury; at Studio Pensieve, the intent
+              is to make it less so.
             </p>
           </div>
         </div>
@@ -56,23 +59,25 @@ export default function AboutPage() {
           </div>
           <div className="md:col-span-7 flex flex-col gap-6">
             <p className="text-[15px] font-normal leading-[1.85] text-foreground/80">
-              Every project begins with a conversation — and then another. Before a single line is drawn,
-              we invest time in understanding the people we are designing for: how they move through a day,
-              what they value, what they resist, and what they have always quietly imagined. The early
-              process is unhurried and genuinely curious. This allows the design to feel accurate rather
-              than imposed.
+              Every project begins with a conversation, and then another. Before a single line is drawn,
+              we invest time in understanding you: how you move through a day, what you value, what you
+              resist, and what you have always quietly imagined.
             </p>
             <p className="text-[15px] font-normal leading-[1.85] text-foreground/80">
-              Once that understanding is established, the site takes over. Context, climate, orientation,
-              and constraints become active participants in the design. Our role is to find where the
-              client&apos;s needs and the site&apos;s character intersect, and to build something that
-              honours both.
+              This early phase is deliberate and attentive, allowing the design to emerge with clarity
+              rather than being imposed. Once that understanding is established, the site takes over.
+              Context, climate, orientation, and constraints become active participants in the process.
+              Our role is to locate the intersection between your needs and the site&apos;s character,
+              and to build in a way that honours both.
             </p>
             <p className="text-[15px] font-normal leading-[1.85] text-foreground/80">
-              We work best with clients who are either clear about what they want or open enough to
-              discover it with us. When the process is understood and respected, the collaboration becomes
-              stronger, and the work benefits from it. We are often described as patient and accommodating.
-              We take that as both a compliment and a responsibility.
+              At its best, the process is a shared one, shaped by conversation, openness, and a growing
+              sense of direction. Whether you arrive with a clear vision or just an instinct for what
+              feels right, we work with you to give it form.
+            </p>
+            <p className="text-[15px] font-normal leading-[1.85] text-foreground/80">
+              Along the way, you&apos;ll find us patient and accommodating. We see that not just as a
+              way of working, but as a responsibility we carry into every project.
             </p>
           </div>
         </div>
@@ -103,13 +108,13 @@ export default function AboutPage() {
                   name: "Sanjan Hoode",
                   role: "Co-founder & Principal Architect",
                   qualification: "B.Arch, RV School of Architecture",
-                  bio: "He was drawn to architecture for its rare ability to translate ideas into environments that shape how people live and connect. At the studio, he leads design while also overseeing business and operations, ensuring the work remains both thoughtful and functional.",
+                  bio: "He was drawn to the discipline for its ability to translate ideas into environments that shape how people live and connect. At the studio, he leads design while also overseeing business and operations, ensuring the work remains both considered and grounded in function.",
                 },
                 {
                   name: "Shashank Shetty",
                   role: "Co-founder & Principal Architect",
                   qualification: "B.Arch, BMS School of Architecture",
-                  bio: "His approach lies at the intersection of rigour and imagination, where problem-solving becomes a creative process. At the studio, he leads design direction and the team, shaping both the work and the culture of the practice.",
+                  bio: "His approach sits at the intersection of rigour and imagination, where problem-solving becomes a creative act. At the studio, he leads design direction and the team, shaping both the work and the culture of the practice.",
                 },
               ].map(({ name, role, qualification, bio }) => (
                 <div key={name} className="flex flex-col gap-4">
@@ -126,8 +131,8 @@ export default function AboutPage() {
             <div>
               <p className="text-[15px] font-normal leading-[1.85] text-foreground/75 max-w-2xl">
                 Though their journeys into architecture were distinct, their design sensibilities have
-                grown closely aligned. Their approaches may differ, but the work speaks in one voice —
-                considered, contextual, and human.
+                grown closely aligned over time. Their approaches may differ, but the work speaks in
+                one voice: considered, contextual, and quietly intentional.
               </p>
             </div>
           </div>
@@ -138,16 +143,17 @@ export default function AboutPage() {
         {/* ── What we are looking for ───────────────────────── */}
         <div className="mx-auto max-w-6xl px-8 md:px-16 py-24 md:py-36 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
           <div className="md:col-span-3">
-            <p className="text-[11px] font-semibold tracking-[0.22em] uppercase text-foreground/70">What We Look For</p>
+            <p className="text-[11px] font-semibold tracking-[0.22em] uppercase text-foreground/70">What We Are Looking For</p>
           </div>
           <div className="md:col-span-7 flex flex-col gap-6">
             <p className="text-[15px] font-normal leading-[1.85] text-foreground/80">
-              We are thoughtful about the projects we take on so we can do justice to the work. We work
-              best with clients who care about their spaces and engage with the process.
+              We&apos;re thoughtful about the projects we take on so we can give each one the attention
+              it deserves. The work is strongest when there is a genuine investment in the space and an
+              openness to the process.
             </p>
             <p className="text-[15px] font-normal leading-[1.85] text-foreground/80">
-              For us, quality is not defined by finishes or budgets alone, but by the care in the
-              process — from the first conversation to the final site visit.
+              For us, quality is not defined by finishes or budgets alone, but by the care carried
+              through every stage, from the first conversation to the final site visit.
             </p>
             <div className="pt-4">
               <a

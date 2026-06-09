@@ -35,7 +35,7 @@ export type Project = {
   cover?: string;
   hero?: string;
   blur?: string;
-  floorPlan?: string;
+  floorPlan?: string | string[];
   description?: string[];     // paragraphs
   credits?: ProjectCredit[];
   rooms?: ProjectRoom[];
@@ -90,15 +90,19 @@ function imgVilla1(filename: string): string {
   return `/Projects/Villa%201/${encodeURIComponent(filename)}`;
 }
 
+function imgEstate(filename: string): string {
+  return `/Projects/Estate%20Retreat/${encodeURIComponent(filename)}`;
+}
+
 export const projects: Project[] = [
   {
     slug: "emb-pristine",
     index: "01",
-    title: "EMB Pristine",
-    category: "Interiors",
-    location: "Indiranagar, Bangalore",
+    title: "Vana",
+    category: "Renovation + Interiors",
+    location: "Bengaluru",
     year: "2024",
-    size: "3,200 sq ft",
+    size: "2,100 sq ft",
     aspect: "landscape",
     bg: "bg-stone-200",
     color: "#e7e5e4",
@@ -115,11 +119,8 @@ export const projects: Project[] = [
 
     credits: [
       { label: "Lead Architects",  value: "Shashank Shetty\nSanjan Hoode" },
-      { label: "Category",         value: "Residential" },
       { label: "Junior Architect", value: "Sahana Prabhu" },
-      { label: "Status",           value: "Completed" },
       { label: "Photographer",     value: "Roshan Pallath" },
-      { label: "Date Completed",   value: "2024" },
     ],
 
     rooms: [
@@ -157,11 +158,11 @@ export const projects: Project[] = [
   {
     slug: "kishore-residence",
     index: "02",
-    title: "Kishore Residence",
+    title: "Lime & Light Residence",
     category: "Interiors",
-    location: "—",
-    year: "—",
-    size: "—",
+    location: "Bengaluru",
+    year: "2025",
+    size: "1,700 sq ft",
     aspect: "portrait",
     bg: "bg-orange-50",
     color: "#fff7ed",
@@ -169,6 +170,7 @@ export const projects: Project[] = [
     cover: imgKishore("1.jpg"),
     hero:  imgKishore("1.jpg"),
     blur:  B["public/Projects/Kishore Residence/1.jpg"],
+    floorPlan: "/Plans/kishore.jpg",
 
     description: [
       "This residence is conceived as a calm, materially rich home where spaces unfold with quiet continuity. Guided by a Japandi sensibility and subtle Indian nuances, the design balances restraint with warmth, letting material, light, and proportion shape the experience.",
@@ -178,9 +180,7 @@ export const projects: Project[] = [
 
     credits: [
       { label: "Lead Architects",  value: "Shashank Shetty\nSanjan Hoode" },
-      { label: "Category",         value: "Residential" },
-      { label: "Junior Architect", value: "Sahana Prabhu" },
-      { label: "Status",           value: "Completed" },
+      { label: "Junior Architect", value: "Sahana Prabhu\nLakshmi Nair" },
       { label: "Photographer",     value: "Roshan Pallath" },
     ],
 
@@ -245,9 +245,9 @@ export const projects: Project[] = [
     index: "04",
     title: "Tap Tales",
     category: "Interiors",
-    location: "—",
-    year: "—",
-    size: "—",
+    location: "Bengaluru",
+    year: "2024",
+    size: "2,000 sq ft",
     aspect: "landscape",
     bg: "bg-amber-50",
     color: "#fffbeb",
@@ -255,6 +255,7 @@ export const projects: Project[] = [
     cover: imgTapTales("1.jpg"),
     hero:  imgTapTales("1.jpg"),
     blur:  B["public/Projects/Tap Tales/1.jpg"],
+    floorPlan: "/Plans/tap-tales.jpg",
 
     description: [
       "Tap Tales articulates a refined interplay between industrial honesty and crafted warmth, where material precision shapes the spatial identity. The interior composition layers exposed concrete textures, oxidised metal finishes, and corrugated steel railings to create a tactile, structurally expressive environment. Warm timber surfaces and muted upholstery temper the palette's rawness, while a calibrated lighting strategy — from suspended geometric pendants to concealed linear profiles — defines depth, hierarchy, and texture. Each element, from surface treatment to furniture detailing, reinforces a cohesive architectural language grounded in proportion, balance, and understated sophistication.",
@@ -263,10 +264,7 @@ export const projects: Project[] = [
 
     credits: [
       { label: "Lead Architects",  value: "Shashank Shetty\nSanjan Hoode" },
-      { label: "Category",         value: "Commercial" },
-      { label: "Junior Architect", value: "Sahana Prabhu" },
-      { label: "Status",           value: "Completed" },
-      { label: "Photographer",     value: "Roshan Pallath" },
+      { label: "Junior Architect", value: "Lakshmi Nair" },
     ],
 
     images: [
@@ -283,11 +281,11 @@ export const projects: Project[] = [
   {
     slug: "vibranium-ventures",
     index: "05",
-    title: "Vibranium Ventures",
+    title: "Vibranium Office",
     category: "Interiors",
-    location: "—",
-    year: "—",
-    size: "—",
+    location: "Bengaluru",
+    year: "2025",
+    size: "1,850 sq ft",
     aspect: "landscape",
     bg: "bg-zinc-300",
     color: "#d4d4d8",
@@ -295,6 +293,7 @@ export const projects: Project[] = [
     cover: imgVibranium("1.jpg"),
     hero:  imgVibranium("1.jpg"),
     blur:  B["public/Projects/Vibranium/1.jpg"],
+    floorPlan: "/Plans/vibranium.jpg",
 
     description: [
       "Vibranium Ventures' office embodies a refined architectural narrative where spatial fluidity, material depth, and controlled lighting converge to create a sophisticated work environment. The layout is organised around a seamless circulation spine defined by curved walls and transparent partitions, allowing light to flow naturally across zones. A tactile palette of wood, glass, and textured wall treatments establishes warmth and balance, while elements like the green glass-block partition and fluted panelling introduce rhythm and contrast. The interplay of opacity and translucency ensures spatial hierarchy without rigid separation, reinforcing an open yet structured plan that encourages collaboration and focus alike.",
@@ -303,10 +302,7 @@ export const projects: Project[] = [
 
     credits: [
       { label: "Lead Architects",  value: "Shashank Shetty\nSanjan Hoode" },
-      { label: "Category",         value: "Commercial" },
-      { label: "Junior Architect", value: "Sahana Prabhu" },
-      { label: "Status",           value: "Completed" },
-      { label: "Photographer",     value: "Roshan Pallath" },
+      { label: "Junior Architect", value: "Lakshmi Nair" },
     ],
 
     images: [
@@ -322,11 +318,11 @@ export const projects: Project[] = [
   {
     slug: "chanpatna",
     index: "06",
-    title: "Channapatna Farmhouse",
+    title: "Verandah House",
     category: "Architecture",
-    location: "Channapatna",
-    year: "—",
-    size: "2,400 sq ft",
+    location: "Channapattana",
+    year: "2024",
+    size: "2,900 sq ft",
     aspect: "landscape",
     bg: "bg-green-50",
     color: "#f0fdf4",
@@ -334,6 +330,7 @@ export const projects: Project[] = [
     cover: imgChanpatna("1.jpg"),
     hero:  imgChanpatna("1.jpg"),
     blur:  B["public/Projects/Chanpatna/1.jpg"],
+    floorPlan: ["/Plans/chanpatna-gf.jpg", "/Plans/chanpatna-ff.jpg"],
 
     description: [
       "Located in Channapatna, this 2,400 sq.ft. farmhouse is conceived as a quiet retreat within a working rural landscape. The house takes on a linear form, aligning with the site to maintain continuous visual engagement with the surrounding fields.",
@@ -342,9 +339,7 @@ export const projects: Project[] = [
     ],
 
     credits: [
-      { label: "Lead Architects",  value: "Shashank Shetty\nSanjan Hoode" },
-      { label: "Category",         value: "Architecture" },
-      { label: "Status",           value: "Completed" },
+      { label: "Lead Architects", value: "Shashank Shetty\nSanjan Hoode" },
     ],
 
     images: [
@@ -359,11 +354,11 @@ export const projects: Project[] = [
   {
     slug: "karjat",
     index: "07",
-    title: "Karjat",
+    title: "Twin Roof Farmhouse",
     category: "Architecture",
-    location: "—",
-    year: "—",
-    size: "—",
+    location: "Karjat",
+    year: "2026",
+    size: "1,600 sq ft",
     aspect: "landscape",
     bg: "bg-stone-100",
     color: "#f5f5f4",
@@ -371,6 +366,11 @@ export const projects: Project[] = [
     cover: imgKarjat("1.jpg"),
     hero:  imgKarjat("1.jpg"),
     blur:  B["public/Projects/Karjat/1.jpg"],
+    floorPlan: "/Plans/karjat.jpg",
+
+    credits: [
+      { label: "Lead Architects", value: "Shashank Shetty\nSanjan Hoode\nSharanya Shivashankar" },
+    ],
 
     images: [
       { src: imgKarjat("2.jpg"), orientation: "portrait"  },
@@ -382,11 +382,11 @@ export const projects: Project[] = [
   {
     slug: "rajankunte",
     index: "08",
-    title: "Rajankunte",
-    category: "Architecture",
-    location: "—",
-    year: "—",
-    size: "—",
+    title: "Adapted House",
+    category: "Adaptive Reuse + Architecture",
+    location: "Rajankunte",
+    year: "2025",
+    size: "3,800 sq ft",
     aspect: "landscape",
     bg: "bg-yellow-50",
     color: "#fefce8",
@@ -394,6 +394,11 @@ export const projects: Project[] = [
     cover: imgRajankunte("1.jpg"),
     hero:  imgRajankunte("1.jpg"),
     blur:  B["public/Projects/Rajankunte/1.jpg"],
+    floorPlan: ["/Plans/rajankunte-gf.jpg", "/Plans/rajankunte-ff.jpg"],
+
+    credits: [
+      { label: "Lead Architects", value: "Shashank Shetty\nSanjan Hoode" },
+    ],
 
     images: [
       { src: imgRajankunte("2.jpg"), orientation: "portrait"  },
@@ -407,11 +412,11 @@ export const projects: Project[] = [
   {
     slug: "rmk",
     index: "09",
-    title: "RmK",
-    category: "Architecture",
-    location: "—",
-    year: "—",
-    size: "—",
+    title: "RMK Antheia",
+    category: "Planning",
+    location: "Bengaluru",
+    year: "2023",
+    size: "11 Acres",
     aspect: "landscape",
     bg: "bg-neutral-200",
     color: "#e5e5e5",
@@ -419,6 +424,11 @@ export const projects: Project[] = [
     cover: imgRmK("1.jpg"),
     hero:  imgRmK("1.jpg"),
     blur:  B["public/Projects/RmK/1.jpg"],
+    floorPlan: "/Plans/rmk.jpg",
+
+    credits: [
+      { label: "Lead Architects", value: "Shashank Shetty\nSanjan Hoode" },
+    ],
 
     images: [
       { src: imgRmK("2.jpg"), orientation: "landscape" },
@@ -433,11 +443,11 @@ export const projects: Project[] = [
   {
     slug: "godrej",
     index: "10",
-    title: "Godrej United",
+    title: "Olive House",
     category: "Interiors",
-    location: "Whitefield, Bengaluru",
-    year: "—",
-    size: "1,500 sq ft",
+    location: "Bengaluru",
+    year: "2025",
+    size: "1,600 sq ft",
     aspect: "portrait",
     bg: "bg-teal-50",
     color: "#f0fdfa",
@@ -445,6 +455,7 @@ export const projects: Project[] = [
     cover: imgGodrej("1.jpg"),
     hero:  imgGodrej("1.jpg"),
     blur:  B["public/Projects/Godrej/1.jpg"],
+    floorPlan: "/Plans/godrej.jpg",
 
     description: [
       "This project began with clients who brought a clear point of view: a young family with an appetite for colour, warmth, and spaces that reflect who they are. With one half of the couple a trained architect, the brief was precise and the conversation direct, allowing the design to move quickly and commit confidently.",
@@ -453,11 +464,9 @@ export const projects: Project[] = [
     ],
 
     credits: [
-      { label: "Lead Designer",    value: "Shashank Shetty" },
-      { label: "Category",         value: "Residential" },
-      { label: "Junior Designer",  value: "Lakshmi S Nair" },
-      { label: "Status",           value: "Completed" },
-      { label: "Photographer",     value: "Roshan Paliath" },
+      { label: "Lead Architects",  value: "Shashank Shetty\nSanjan Hoode" },
+      { label: "Junior Designer",  value: "Lakshmi Nair" },
+      { label: "Photographer",     value: "Roshan Pallath" },
     ],
 
     images: [
@@ -476,11 +485,11 @@ export const projects: Project[] = [
   {
     slug: "rajiv-residence",
     index: "11",
-    title: "Rajiv Residence",
+    title: "Zion House",
     category: "Interiors",
-    location: "Zion Hill, Bengaluru",
-    year: "—",
-    size: "—",
+    location: "Kolar",
+    year: "2024",
+    size: "3,500 sq ft",
     aspect: "portrait",
     bg: "bg-rose-50",
     color: "#fff1f2",
@@ -488,6 +497,7 @@ export const projects: Project[] = [
     cover: imgRajiv("1.jpg"),
     hero:  imgRajiv("1.jpg"),
     blur:  B["public/Projects/Rajiv/1.jpg"],
+    floorPlan: ["/Plans/rajiv-gf.jpg", "/Plans/rajiv-ff.jpg"],
 
     description: [
       "Set in the quiet landscape of Zion Hill, this weekend home is designed as a place to slow down.",
@@ -498,9 +508,8 @@ export const projects: Project[] = [
 
     credits: [
       { label: "Lead Architects",  value: "Shashank Shetty\nSanjan Hoode" },
-      { label: "Category",         value: "Residential" },
       { label: "Junior Architect", value: "Sahana Prabhu" },
-      { label: "Status",           value: "Completed" },
+      { label: "Photographer",     value: "Roshan Pallath" },
     ],
 
     images: [
@@ -518,10 +527,10 @@ export const projects: Project[] = [
     slug: "villa-1",
     index: "12",
     title: "Villa 1",
-    category: "Architecture",
-    location: "Bangalore",
-    year: "—",
-    size: "—",
+    category: "Interiors",
+    location: "Bengaluru",
+    year: "2023",
+    size: "2,900 sq ft",
     aspect: "portrait",
     bg: "bg-orange-50",
     color: "#fff7ed",
@@ -529,6 +538,7 @@ export const projects: Project[] = [
     cover: imgVilla1("1.jpg"),
     hero:  imgVilla1("1.jpg"),
     blur:  B["public/Projects/Villa 1/1.jpg"],
+    floorPlan: ["/Plans/villa-1-gf.jpg", "/Plans/villa-1-ff.jpg"],
 
     description: [
       "Set within Bangalore's urban context, this home is conceived as a calm, contemporary space. A minimal approach guides the design, with clean lines, open planning, and a restrained use of colour.",
@@ -538,9 +548,8 @@ export const projects: Project[] = [
 
     credits: [
       { label: "Lead Architects",  value: "Shashank Shetty\nSanjan Hoode" },
-      { label: "Category",         value: "Architecture" },
       { label: "Junior Architect", value: "Sahana Prabhu" },
-      { label: "Status",           value: "Completed" },
+      { label: "Photographer",     value: "Nayan Soni" },
     ],
 
     images: [
@@ -560,6 +569,49 @@ export const projects: Project[] = [
       { src: imgVilla1("15.jpg"), orientation: "portrait", pairedCaption: ["The bedroom is defined by a neutral palette of white and warm wood, creating a calm and inviting base. Soft creams and subtle greens add lightness without overpowering the space. The headboard wall introduces a playful note through a patterned wallpaper, bringing character while maintaining the room's overall restraint."] },
       { src: imgVilla1("16.jpg"), orientation: "portrait" },
       { src: imgVilla1("17.jpg"), orientation: "portrait" },
+    ],
+  },
+  {
+    slug: "estate-retreat",
+    index: "13",
+    title: "Estate Retreat",
+    category: "Architecture",
+    location: "Thirthahalli",
+    year: "2025",
+    size: "5,300 sq ft",
+    aspect: "landscape",
+    bg: "bg-green-50",
+    color: "#f0fdf4",
+
+    cover: imgEstate("1.jpg"),
+    hero:  imgEstate("1.jpg"),
+    blur:  B["public/Projects/Estate Retreat/1.jpg"],
+
+    description: [
+      "Set within a working plantation estate in Tirthahalli, this house was designed for a family moving into a new phase of living. The original vernacular home had served for decades; what was needed now was a more open, contemporary environment that remained connected to the land.",
+      "A new site was chosen at the highest point of the estate, where the terrain opens to expansive views across the plantation and a distant lake. This vantage became the primary design driver.",
+      "The house is a linear form oriented entirely toward the view. A continuous deck runs its full length, anchored by an infinity pool that extends visually toward the lake. At one point, the deck is pulled inward to form a courtyard, puncturing the mass and drawing light and air deep into the plan. This single move connects the living and dining zones to the landscape in an unbroken sequence.",
+      "The staircase, enclosed in glass, frames the deck and pool as one ascends, making vertical movement spatial rather than utilitarian. Above, the courtyard becomes a double-height void maintaining continuity between floors. The first floor organises around a family lounge, from which one reaches the master suite with its private deck, or a covered terrace overlooking the courtyard below.",
+      "The pooja room sits as the house's counterpoint: a double-height, inward volume where slit openings filter light into stillness. The guest bedroom, at the rear with its own external entry, operates independently as an outhouse when needed.",
+      "The project shifts from the inward character of the original home to an architecture that frames and amplifies the plantation landscape while remaining grounded within it.",
+    ],
+
+    credits: [
+      { label: "Lead Architects",  value: "Shashank Shetty\nSanjan Hoode" },
+      { label: "Junior Architect", value: "Sahana Prabhu\nLakshmi Nair" },
+    ],
+
+    images: [
+      { src: imgEstate("1.jpg"),  orientation: "landscape", caption: "The approach reveals the split-level section: a basement garage tucked into the slope, the main living level rising above. The single-pitch roof cuts a clean diagonal against the tree canopy, establishing the house's dominant gesture from the street." },
+      { src: imgEstate("2.jpg"),  orientation: "landscape", caption: "From above, the spatial logic becomes legible: deck, pool, courtyard tree, and stone-clad double-height volume arranged in a tight, considered composition against the plantation below." },
+      { src: imgEstate("3.jpg"),  orientation: "landscape", caption: "The living room is arranged around cane-backed chairs and a spare selection of objects, opening directly onto the garden through full-height timber doors. Light enters from two sides, keeping the room calm and unhurried despite its direct connection to the outdoors." },
+      { src: imgEstate("4.jpg"),  orientation: "portrait",  caption: "A console table and botanical artwork compose the focal point seen on entering from the living room. The vestibule marks the transition into the dining area ahead, with the guest room tucked quietly to the left." },
+      { src: imgEstate("5.jpg"),  orientation: "landscape", caption: "Kitchen and dining sit in direct dialogue, separated by an island counter faced in patterned encaustic tile. Plantation-facing windows keep the kitchen part of the landscape rather than a room apart." },
+      { src: imgEstate("6.jpg"),  orientation: "landscape", caption: "A solid timber dining table anchors the ground floor, opening directly onto the courtyard step-out beyond. From there, the view extends outward across the plantation, layering interior, threshold, and landscape in a single unbroken sequence." },
+      { src: imgEstate("7.jpg"),  orientation: "portrait",  caption: "The pooja room is set back in its own niche straight ahead, a bronze Ganesha marking the threshold." },
+      { src: imgEstate("8.jpg"),  orientation: "portrait",  caption: "The double-height family room holds the plantation canopy in a large picture window. A sculptural pendant floats within the void above; louvred doors to the left open the space directly onto the deck." },
+      { src: imgEstate("9.jpg"),  orientation: "portrait",  caption: "The master bedroom turns inward from the house's general openness. A four-poster bed, cane-fronted wardrobe, and lime-textured walls compose a settled, unhurried room." },
+      { src: imgEstate("10.jpg"), orientation: "landscape", caption: "The full elevation places the house within its setting. White rendered walls step with the slope, the glass staircase and upper balcony read as transparent layers, and the plantation closes in on both sides." },
     ],
   },
 ];

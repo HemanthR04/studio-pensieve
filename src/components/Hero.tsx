@@ -9,16 +9,24 @@ import blurUrls from "@/data/blurDataUrls.json";
 
 const IMAGES = [
   {
-    src:  "/Hero/WhatsApp Image 2026-03-31 at 17.35.07.jpeg",
-    blur: blurUrls["public/Hero/WhatsApp Image 2026-03-31 at 17.35.07.jpeg"],
+    src:  "/LANDING PHOTOS/1.jpg",
+    blur: blurUrls["public/LANDING PHOTOS/1.jpg"],
   },
   {
-    src:  "/Hero/WhatsApp Image 2026-03-31 at 17.36.28.jpeg",
-    blur: blurUrls["public/Hero/WhatsApp Image 2026-03-31 at 17.36.28.jpeg"],
+    src:  "/LANDING PHOTOS/2.jpg",
+    blur: blurUrls["public/LANDING PHOTOS/2.jpg"],
   },
   {
-    src:  "/Hero/WhatsApp Image 2026-03-31 at 17.36.29.jpeg",
-    blur: blurUrls["public/Hero/WhatsApp Image 2026-03-31 at 17.36.29.jpeg"],
+    src:  "/LANDING PHOTOS/3.jpg",
+    blur: blurUrls["public/LANDING PHOTOS/3.jpg"],
+  },
+  {
+    src:  "/LANDING PHOTOS/4.jpg",
+    blur: blurUrls["public/LANDING PHOTOS/4.jpg"],
+  },
+  {
+    src:  "/LANDING PHOTOS/5.jpg",
+    blur: blurUrls["public/LANDING PHOTOS/5.jpg"],
   },
 ];
 

@@ -7,10 +7,12 @@ import { projects } from "@/data/projects";
 import type { Project } from "@/data/projects";
 import { usePageTransition } from "@/components/TransitionProvider";
 
-const ALL_CATEGORIES = [
-  "All",
-  ...Array.from(new Set(projects.map(p => p.category).filter(c => c !== "—"))),
-];
+function normalizeCategory(cat: string): string {
+  if (cat.toLowerCase().includes("architecture")) return "Architecture";
+  return "Interiors";
+}
+
+const ALL_CATEGORIES = ["All", "Interiors", "Architecture"];
 
 function landscapeSrc(project: Project): string | undefined {
   return (
@@ -41,7 +43,7 @@ export default function ProjectsPageClient() {
 
   const filtered = activeCategory === "All"
     ? projects
-    : projects.filter(p => p.category === activeCategory);
+    : projects.filter(p => normalizeCategory(p.category) === activeCategory);
 
   // Staggered entry animation — re-runs on filter change
   useEffect(() => {
@@ -115,7 +117,7 @@ export default function ProjectsPageClient() {
             const hover    = hoverSrc(project);
             const isHovered = hoveredSlug === project.slug;
             const meta = [
-              project.category !== "—" ? project.category : null,
+              project.category !== "—" ? normalizeCategory(project.category) : null,
               project.year     !== "—" ? project.year     : null,
             ].filter(Boolean).join(" · ");
 
