@@ -103,7 +103,7 @@ export default function MenuProvider({ children }: { children: React.ReactNode }
       <button
         onClick={openMenu}
         aria-label="Open menu"
-        className={`fixed top-1/2 -translate-y-1/2 right-7 z-[120] text-[11px] font-black tracking-[0.22em] uppercase text-white mix-blend-difference transition-opacity duration-300 ${open || !scrolled ? "opacity-0 pointer-events-none" : "opacity-100"}`}
+        className={`hidden md:block fixed top-1/2 -translate-y-1/2 right-7 z-[120] text-[11px] font-black tracking-[0.22em] uppercase text-white mix-blend-difference transition-opacity duration-300 ${open || !scrolled ? "opacity-0 pointer-events-none" : "opacity-100"}`}
       >
         Menu
       </button>
