@@ -124,14 +124,14 @@ export default function Portfolio({ limit }: { limit?: number }) {
             <div
               data-project-image
               className="relative overflow-hidden"
-              style={{ height: "clamp(240px, 65vh, 700px)", aspectRatio: "3/2" }}
+              style={{ height: "clamp(200px, min(52vw, 65vh), 700px)", aspectRatio: "3/2" }}
             >
               {landscapeSrc(project) ? (
                 <Image
                   src={landscapeSrc(project)!}
                   alt={project.title}
                   fill
-                  sizes="(max-width: 768px) 80vw, 45vw"
+                  sizes="(max-width: 768px) 80vw, 65vw"
                   className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
                   priority={i === 0}
                   placeholder={project.blur ? "blur" : "empty"}
