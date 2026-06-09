@@ -42,11 +42,11 @@ export default function ContactPage() {
             </p>
             <div className="pt-4">
               <a
-                href="mailto:studio@pensieve.in"
+                href="mailto:admin@studiopensieve.com"
                 className="text-[11px] tracking-[0.25em] uppercase hover:opacity-40 transition-opacity inline-flex items-center gap-4"
               >
                 <span className="h-px w-8 bg-foreground inline-block" />
-                studio@pensieve.in
+                admin@studiopensieve.com
               </a>
             </div>
           </div>
@@ -60,7 +60,11 @@ export default function ContactPage() {
               },
               {
                 label: "New Project Enquiries",
-                lines: ["studio@pensieve.in"],
+                lines: ["admin@studiopensieve.com"],
+              },
+              {
+                label: "Phone",
+                lines: ["+91 90087 17518"],
               },
               {
                 label: "Working Hours",
@@ -83,21 +87,16 @@ export default function ContactPage() {
               <p className="text-[10px] tracking-[0.2em] uppercase text-foreground/40 mb-3">Social</p>
               <div className="flex gap-6">
                 <a
-                  href="https://instagram.com"
+                  href="https://instagram.com/studiopensieve"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm font-light text-foreground/70 hover:text-foreground transition-colors"
                 >
                   Instagram
                 </a>
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm font-light text-foreground/70 hover:text-foreground transition-colors"
-                >
+                <span className="text-sm font-light text-foreground/30 cursor-default">
                   LinkedIn
-                </a>
+                </span>
               </div>
             </div>
           </div>

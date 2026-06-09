@@ -39,10 +39,10 @@ export default function Footer() {
                 We are thoughtful about the projects we take on so we can do
                 justice to the work.{" "}
                 <a
-                  href="mailto:studio@pensieve.in"
+                  href="mailto:admin@studiopensieve.com"
                   className="underline underline-offset-2 hover:text-stone-100 transition-colors"
                 >
-                  studio@pensieve.in
+                  admin@studiopensieve.com
                 </a>
               </p>
             </div>
@@ -97,22 +97,17 @@ export default function Footer() {
               >
                 Instagram
               </a>
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[11px] font-semibold tracking-[0.18em] uppercase hover:opacity-40 transition-opacity"
-              >
+              <span className="text-[11px] font-semibold tracking-[0.18em] uppercase opacity-30 cursor-default">
                 LinkedIn
-              </a>
+              </span>
             </div>
 
             {/* Email */}
             <a
-              href="mailto:studio@pensieve.in"
+              href="mailto:admin@studiopensieve.com"
               className="text-[11px] font-semibold tracking-[0.18em] uppercase hover:opacity-40 transition-opacity"
             >
-              studio@pensieve.in
+              admin@studiopensieve.com
             </a>
           </div>
         </div>

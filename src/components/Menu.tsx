@@ -174,14 +174,6 @@ export default function MenuProvider({ children }: { children: React.ReactNode }
           <div className="flex items-end justify-between px-8 md:px-14 pb-10 md:pb-12 shrink-0">
             <div className="flex flex-col gap-1">
               <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[11px] font-black tracking-[0.22em] uppercase text-white hover:opacity-40 transition-opacity"
-              >
-                LinkedIn
-              </a>
-              <a
                 href="https://instagram.com/studiopensieve"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -189,6 +181,9 @@ export default function MenuProvider({ children }: { children: React.ReactNode }
               >
                 Instagram
               </a>
+              <span className="text-[11px] font-black tracking-[0.22em] uppercase text-white/30 cursor-default">
+                LinkedIn
+              </span>
             </div>
             <p className="text-[11px] text-white/35 tracking-wide" suppressHydrationWarning>
               All rights reserved © {new Date().getFullYear()} Studio Pensieve

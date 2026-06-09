@@ -157,7 +157,7 @@ export default function AboutPage() {
             </p>
             <div className="pt-4">
               <a
-                href="mailto:studio@pensieve.in"
+                href="mailto:admin@studiopensieve.com"
                 className="text-[11px] tracking-[0.25em] uppercase hover:opacity-40 transition-opacity inline-flex items-center gap-4"
               >
                 <span className="h-px w-8 bg-foreground inline-block" />
