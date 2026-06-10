@@ -200,10 +200,10 @@ export const projects: Project[] = [
   {
     slug: "uber-residence",
     index: "03",
-    title: "Uber Residence",
+    title: "Mana",
     category: "Interiors",
-    location: "Bangalore",
-    year: "—",
+    location: "Bengaluru",
+    year: "2023",
     size: "850 sq ft",
     aspect: "portrait",
     bg: "bg-slate-200",
@@ -222,10 +222,8 @@ export const projects: Project[] = [
 
     credits: [
       { label: "Lead Architects",  value: "Shashank Shetty\nSanjan Hoode" },
-      { label: "Category",         value: "Residential" },
       { label: "Junior Architect", value: "Sahana Prabhu" },
-      { label: "Status",           value: "Completed" },
-      { label: "Photographer",     value: "Roshan Pallath" },
+      { label: "Photographer",     value: "Nayan Soni" },
     ],
 
     images: [
@@ -413,7 +411,7 @@ export const projects: Project[] = [
     slug: "rmk",
     index: "09",
     title: "RMK Antheia",
-    category: "Planning",
+    category: "Architecture",
     location: "Bengaluru",
     year: "2023",
     size: "11 Acres",
