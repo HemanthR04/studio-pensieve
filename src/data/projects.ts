@@ -405,7 +405,7 @@ export const projects: Project[] = [
     index: "09",
     title: "RMK Antheia",
     category: "Architecture",
-    location: "Bengaluru",
+    location: "Karnataka",
     year: "2023",
     size: "11 Acres",
     aspect: "landscape",
@@ -415,6 +415,13 @@ export const projects: Project[] = [
     cover: imgRmK("1.jpg"),
     hero:  imgRmK("1.jpg"),
     blur:  B["public/Projects/RmK/1.jpg"],
+
+    description: [
+      "RMK Antheia is an 11-acre landscape-led residential masterplan rooted in the site's ecology and history. At its heart, an existing stone retaining water tank is re-adapted into a central open-air theatre and community space. Carefully introduced punctures through the original walls preserve the memory of the site while creating visual and physical connections to the new development.",
+      "The masterplan is woven around existing mango trees, with shaded streets, pedestrian pathways, water edges, and social spaces encouraging a slower, nature-oriented living experience.",
+      "The entrance gateway establishes the project's identity through exposed concrete forms and a corten steel canopy with geometric cut-outs that filter light and shadow across the arrival space. This geometric language subtly extends into adjoining concrete walls, creating a cohesive architectural expression.",
+      "Using a restrained palette of exposed concrete, natural stone, weathered metal, and tropical planting, the project draws from contemporary tropical architecture principles to create a climate-responsive residential environment deeply connected to its landscape and history.",
+    ],
 
     credits: [
       { label: "Lead Architects", value: "Shashank Shetty\nSanjan Hoode" },
