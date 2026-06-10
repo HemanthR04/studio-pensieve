@@ -35,7 +35,6 @@ export type Project = {
   cover?: string;
   hero?: string;
   blur?: string;
-  floorPlan?: string | string[];
   description?: string[];     // paragraphs
   credits?: ProjectCredit[];
   rooms?: ProjectRoom[];
@@ -170,7 +169,6 @@ export const projects: Project[] = [
     cover: imgKishore("1.jpg"),
     hero:  imgKishore("1.jpg"),
     blur:  B["public/Projects/Kishore Residence/1.jpg"],
-    floorPlan: "/Plans/kishore.jpg",
 
     description: [
       "This residence is conceived as a calm, materially rich home where spaces unfold with quiet continuity. Guided by a Japandi sensibility and subtle Indian nuances, the design balances restraint with warmth, letting material, light, and proportion shape the experience.",
@@ -253,7 +251,6 @@ export const projects: Project[] = [
     cover: imgTapTales("1.jpg"),
     hero:  imgTapTales("1.jpg"),
     blur:  B["public/Projects/Tap Tales/1.jpg"],
-    floorPlan: "/Plans/tap-tales.jpg",
 
     description: [
       "Tap Tales articulates a refined interplay between industrial honesty and crafted warmth, where material precision shapes the spatial identity. The interior composition layers exposed concrete textures, oxidised metal finishes, and corrugated steel railings to create a tactile, structurally expressive environment. Warm timber surfaces and muted upholstery temper the palette's rawness, while a calibrated lighting strategy — from suspended geometric pendants to concealed linear profiles — defines depth, hierarchy, and texture. Each element, from surface treatment to furniture detailing, reinforces a cohesive architectural language grounded in proportion, balance, and understated sophistication.",
@@ -291,7 +288,6 @@ export const projects: Project[] = [
     cover: imgVibranium("1.jpg"),
     hero:  imgVibranium("1.jpg"),
     blur:  B["public/Projects/Vibranium/1.jpg"],
-    floorPlan: "/Plans/vibranium.jpg",
 
     description: [
       "Vibranium Ventures' office embodies a refined architectural narrative where spatial fluidity, material depth, and controlled lighting converge to create a sophisticated work environment. The layout is organised around a seamless circulation spine defined by curved walls and transparent partitions, allowing light to flow naturally across zones. A tactile palette of wood, glass, and textured wall treatments establishes warmth and balance, while elements like the green glass-block partition and fluted panelling introduce rhythm and contrast. The interplay of opacity and translucency ensures spatial hierarchy without rigid separation, reinforcing an open yet structured plan that encourages collaboration and focus alike.",
@@ -328,7 +324,6 @@ export const projects: Project[] = [
     cover: imgChanpatna("1.jpg"),
     hero:  imgChanpatna("1.jpg"),
     blur:  B["public/Projects/Chanpatna/1.jpg"],
-    floorPlan: ["/Plans/chanpatna-gf.jpg", "/Plans/chanpatna-ff.jpg"],
 
     description: [
       "Located in Channapatna, this 2,400 sq.ft. farmhouse is conceived as a quiet retreat within a working rural landscape. The house takes on a linear form, aligning with the site to maintain continuous visual engagement with the surrounding fields.",
@@ -364,7 +359,6 @@ export const projects: Project[] = [
     cover: imgKarjat("1.jpg"),
     hero:  imgKarjat("1.jpg"),
     blur:  B["public/Projects/Karjat/1.jpg"],
-    floorPlan: "/Plans/karjat.jpg",
 
     credits: [
       { label: "Lead Architects", value: "Shashank Shetty\nSanjan Hoode\nSharanya Shivashankar" },
@@ -392,7 +386,6 @@ export const projects: Project[] = [
     cover: imgRajankunte("1.jpg"),
     hero:  imgRajankunte("1.jpg"),
     blur:  B["public/Projects/Rajankunte/1.jpg"],
-    floorPlan: ["/Plans/rajankunte-gf.jpg", "/Plans/rajankunte-ff.jpg"],
 
     credits: [
       { label: "Lead Architects", value: "Shashank Shetty\nSanjan Hoode" },
@@ -422,7 +415,6 @@ export const projects: Project[] = [
     cover: imgRmK("1.jpg"),
     hero:  imgRmK("1.jpg"),
     blur:  B["public/Projects/RmK/1.jpg"],
-    floorPlan: "/Plans/rmk.jpg",
 
     credits: [
       { label: "Lead Architects", value: "Shashank Shetty\nSanjan Hoode" },
@@ -453,7 +445,6 @@ export const projects: Project[] = [
     cover: imgGodrej("1.jpg"),
     hero:  imgGodrej("1.jpg"),
     blur:  B["public/Projects/Godrej/1.jpg"],
-    floorPlan: "/Plans/godrej.jpg",
 
     description: [
       "This project began with clients who brought a clear point of view: a young family with an appetite for colour, warmth, and spaces that reflect who they are. With one half of the couple a trained architect, the brief was precise and the conversation direct, allowing the design to move quickly and commit confidently.",
@@ -495,7 +486,6 @@ export const projects: Project[] = [
     cover: imgRajiv("1.jpg"),
     hero:  imgRajiv("1.jpg"),
     blur:  B["public/Projects/Rajiv/1.jpg"],
-    floorPlan: ["/Plans/rajiv-gf.jpg", "/Plans/rajiv-ff.jpg"],
 
     description: [
       "Set in the quiet landscape of Zion Hill, this weekend home is designed as a place to slow down.",
@@ -536,7 +526,6 @@ export const projects: Project[] = [
     cover: imgVilla1("1.jpg"),
     hero:  imgVilla1("1.jpg"),
     blur:  B["public/Projects/Villa 1/1.jpg"],
-    floorPlan: ["/Plans/villa-1-gf.jpg", "/Plans/villa-1-ff.jpg"],
 
     description: [
       "Set within Bangalore's urban context, this home is conceived as a calm, contemporary space. A minimal approach guides the design, with clean lines, open planning, and a restrained use of colour.",

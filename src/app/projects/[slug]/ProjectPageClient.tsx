@@ -362,12 +362,12 @@ export default function ProjectPageClient({ project }: { project: Project }) {
           )}
       </RevealBlock>
 
-      {/* ── Details: description + credits  |  floor plan + rooms ── */}
+      {/* ── Details: description + credits ── */}
       <RevealBlock className="px-8 md:px-14 pt-20 pb-20 md:pt-28 md:pb-28 border-b border-foreground/[0.07]">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-16 md:gap-20">
 
-          {/* Left col — description paragraphs + credits */}
-          <div className="md:col-span-7 flex flex-col gap-10">
+          {/* Description paragraphs + credits */}
+          <div className="md:col-span-8 flex flex-col gap-10">
             {desc.map((para, i) => (
               <p key={i} className="text-[15px] font-normal leading-[1.85] text-foreground/70">
                 {para}
@@ -382,40 +382,6 @@ export default function ProjectPageClient({ project }: { project: Project }) {
                     {value.split("\n").map((line, i) => (
                       <p key={i} className="text-sm font-medium leading-snug">{line}</p>
                     ))}
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-
-          {/* Right col — floor plan + rooms */}
-          <div className="md:col-span-5 flex flex-col gap-8">
-            {project.floorPlan ? (
-              <div className={`flex gap-3 ${Array.isArray(project.floorPlan) && project.floorPlan.length > 1 ? "flex-row" : "flex-col"}`}>
-                {(Array.isArray(project.floorPlan) ? project.floorPlan : [project.floorPlan]).map((src, i) => (
-                  <div key={src} className="relative flex-1 aspect-[4/3]">
-                    <Image
-                      src={src}
-                      alt={`Floor plan${Array.isArray(project.floorPlan) && project.floorPlan.length > 1 ? ` ${i + 1}` : ""}`}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 40vw"
-                      className="object-contain"
-                    />
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <div className="relative w-full aspect-[4/3] bg-stone-50 flex items-center justify-center">
-                <span className="text-[10px] tracking-[0.2em] uppercase text-foreground/30">Floor Plan</span>
-              </div>
-            )}
-
-            {project.rooms && (
-              <div className="grid grid-cols-2 gap-x-8 gap-y-1.5">
-                {project.rooms.map(({ number, name }) => (
-                  <div key={number} className="flex items-baseline gap-3 py-2 border-b border-foreground/[0.06]">
-                    <span className="text-[10px] text-foreground/30 shrink-0">{String(number).padStart(2, "0")}</span>
-                    <span className="text-sm text-foreground/65">{name}</span>
                   </div>
                 ))}
               </div>
