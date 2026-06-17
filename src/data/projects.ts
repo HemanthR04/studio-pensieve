@@ -155,6 +155,73 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: "karjat",
+    index: "07",
+    title: "Twin Roof Farmhouse",
+    category: "Architecture",
+    location: "Karjat",
+    year: "2026",
+    size: "1,600 sq ft",
+    aspect: "landscape",
+    bg: "bg-stone-100",
+    color: "#f5f5f4",
+
+    cover: imgKarjat("1.jpg"),
+    hero:  imgKarjat("1.jpg"),
+    blur:  B["public/Projects/Karjat/1.jpg"],
+
+    credits: [
+      { label: "Lead Architects", value: "Shashank Shetty\nSanjan Hoode\nSharanya Shivashankar" },
+    ],
+
+    images: [
+      { src: imgKarjat("2.jpg"), orientation: "portrait"  },
+      { src: imgKarjat("3.jpg"), orientation: "landscape" },
+      { src: imgKarjat("4.jpg"), orientation: "landscape" },
+      { src: imgKarjat("5.jpg"), orientation: "portrait"  },
+    ],
+  },
+  {
+    slug: "rajiv-residence",
+    index: "11",
+    title: "Zion House",
+    category: "Interiors",
+    location: "Kolar",
+    year: "2024",
+    size: "3,500 sq ft",
+    aspect: "portrait",
+    bg: "bg-rose-50",
+    color: "#fff1f2",
+
+    cover: imgRajiv("1.jpg"),
+    hero:  imgRajiv("1.jpg"),
+    blur:  B["public/Projects/Rajiv/1.jpg"],
+
+    description: [
+      "Set in the quiet landscape of Zion Hill, this weekend home is designed as a place to slow down.",
+      "The planning keeps spaces open and connected, allowing the living, dining, and kitchen to flow into each other. A consistent palette of warm wood, textured walls, stone, and muted greens and blues draws from the surroundings and keeps the home grounded.",
+      "Custom furniture and built-ins bring clarity without overcomplicating the space. As the house moves into private areas, the mood becomes softer and more relaxed.",
+      "The focus is simple: create a home that feels calm, easy, and removed from the pace of the city.",
+    ],
+
+    credits: [
+      { label: "Lead Architects",  value: "Shashank Shetty\nSanjan Hoode" },
+      { label: "Junior Architect", value: "Sahana Prabhu" },
+      { label: "Photographer",     value: "Roshan Pallath" },
+    ],
+
+    images: [
+      { src: imgRajiv("2.jpg"), orientation: "portrait",  caption: "The dining table is conceived as a sculptural piece, with a solid base supporting a stone top. Its weight and materiality ground the space, balancing the softness of light, fabric, and surrounding elements." },
+      { src: imgRajiv("3.jpg"), orientation: "landscape", caption: "A relaxed living space shaped by soft curves and quiet materiality. The furniture takes cues from the rolling topography of the golf course beyond, translating it into gentle forms, muted tones, and an easy, unhurried atmosphere." },
+      { src: imgRajiv("4.jpg"), orientation: "portrait",  pairedCaption: ["The kitchen is defined by muted green cabinetry and textured tiles, framed by fluted glass partitions that keep the space open yet contained."] },
+      { src: imgRajiv("5.jpg"), orientation: "portrait"  },
+      { src: imgRajiv("6.jpg"), orientation: "portrait"  },
+      { src: imgRajiv("7.jpg"), orientation: "portrait"  },
+      { src: imgRajiv("8.jpg"), orientation: "portrait",  pairedCaption: ["Layered in warm neutrals and natural textures, the bedroom is designed for ease. Upholstered surfaces, soft drapery, and integrated storage keep the space calm and uncluttered."] },
+      { src: imgRajiv("9.jpg"), orientation: "portrait"  },
+    ],
+  },
+  {
     slug: "rajankunte",
     index: "08",
     title: "Adapted House",
@@ -181,84 +248,6 @@ export const projects: Project[] = [
       { src: imgRajankunte("5.jpg"), orientation: "landscape" },
       { src: imgRajankunte("6.jpg"), orientation: "landscape" },
       { src: imgRajankunte("7.jpg"), orientation: "landscape" },
-    ],
-  },
-  {
-    slug: "rmk",
-    index: "09",
-    title: "RMK Antheia",
-    category: "Architecture",
-    location: "Karnataka",
-    year: "2023",
-    size: "11 Acres",
-    aspect: "landscape",
-    bg: "bg-neutral-200",
-    color: "#e5e5e5",
-
-    cover: imgRmK("4.jpg"),
-    hero:  imgRmK("1.jpg"),
-    blur:  B["public/Projects/RmK/1.jpg"],
-
-    description: [
-      "RMK Antheia is an 11-acre landscape-led residential masterplan rooted in the site's ecology and history. At its heart, an existing stone retaining water tank is re-adapted into a central open-air theatre and community space. Carefully introduced punctures through the original walls preserve the memory of the site while creating visual and physical connections to the new development.",
-      "The masterplan is woven around existing mango trees, with shaded streets, pedestrian pathways, water edges, and social spaces encouraging a slower, nature-oriented living experience.",
-      "The entrance gateway establishes the project's identity through exposed concrete forms and a corten steel canopy with geometric cut-outs that filter light and shadow across the arrival space. This geometric language subtly extends into adjoining concrete walls, creating a cohesive architectural expression.",
-      "Using a restrained palette of exposed concrete, natural stone, weathered metal, and tropical planting, the project draws from contemporary tropical architecture principles to create a climate-responsive residential environment deeply connected to its landscape and history.",
-    ],
-
-    credits: [
-      { label: "Lead Architects", value: "Shashank Shetty\nSanjan Hoode" },
-    ],
-
-    images: [
-      { src: imgRmK("2.jpg"), orientation: "landscape" },
-      { src: imgRmK("4.jpg"), orientation: "landscape" },
-      { src: imgRmK("5.jpg"), orientation: "landscape" },
-      { src: imgRmK("6.jpg"), orientation: "landscape" },
-      { src: imgRmK("7.jpg"), orientation: "landscape" },
-      { src: imgRmK("8.jpg"), orientation: "landscape" },
-      { src: imgRmK("9.jpg"), orientation: "landscape" },
-    ],
-  },
-  {
-    slug: "kishore-residence",
-    index: "02",
-    title: "Lime & Light Residence",
-    category: "Interiors",
-    location: "Bengaluru",
-    year: "2025",
-    size: "1,700 sq ft",
-    aspect: "portrait",
-    bg: "bg-orange-50",
-    color: "#fff7ed",
-
-    cover: imgKishore("1.jpg"),
-    hero:  imgKishore("1.jpg"),
-    blur:  B["public/Projects/Kishore Residence/1.jpg"],
-
-    description: [
-      "This residence is conceived as a calm, materially rich home where spaces unfold with quiet continuity. Guided by a Japandi sensibility and subtle Indian nuances, the design balances restraint with warmth, letting material, light, and proportion shape the experience.",
-      "Lime-washed surfaces, natural wood, and a soft palette of neutrals and muted pastels create a tactile, understated base. Character emerges through consistency of tone, detail, and craft rather than overt gestures.",
-      "The planning remains open and fluid. Spaces connect through shifts in material, light, and geometry instead of walls, resulting in a home that feels cohesive, expansive, and quietly intentional.",
-    ],
-
-    credits: [
-      { label: "Lead Architects",  value: "Shashank Shetty\nSanjan Hoode" },
-      { label: "Junior Architect", value: "Sahana Prabhu\nLakshmi Nair" },
-      { label: "Photographer",     value: "Roshan Pallath" },
-    ],
-
-    images: [
-      { src: imgKishore("2.jpg"),       orientation: "portrait", layout: "quad", pairedCaption: ["The living space is defined by a soft, earthy palette, with olive greens and warm beiges set against textured lime-washed walls. Low, linear furniture keeps the room open while retaining a sense of intimacy.", "Custom pieces are carefully proportioned to feel light yet grounded. Black accents add contrast, while indoor planting softens the composition.", "A vertical wood panel anchors the seating area, defining the space without disrupting flow. Designed as a movable element, it introduces a subtle sense of drama."] },
-      { src: imgKishore("3.jpg"),       orientation: "portrait" },
-      { src: imgKishore("4.jpg"),       orientation: "portrait" },
-      { src: imgKishore("5 gif.1.jpg"), orientation: "portrait" },
-      { src: imgKishore("6.jpg"),       orientation: "portrait", caption: "The dining area continues the home's earthy material language. A solid wood table is paired with black-framed armchairs upholstered in natural linen, their squared geometry echoing the graphic lattice screen that divides the dining and passage zones. Antique-finish ceramic vessels and taper candles complete the tableau.", captionAlign: "center" },
-      { src: imgKishore("7.jpg"),       orientation: "portrait", layout: "trio", pairedCaption: ["The bedrooms continue a restrained language, shifting toward softer textures and more personal expression.", "Material transitions from wood to fabric to wall finish remain subtle and cohesive. Cane inserts, pastel wardrobes, and upholstered elements add variation without disrupting the calm.", "Compact study niches and integrated storage maintain clarity, ensuring utility does not clutter the space."] },
-      { src: imgKishore("8.jpg"),       orientation: "portrait" },
-      { src: imgKishore("9.jpg"),       orientation: "portrait" },
-      { src: imgKishore("10.jpg"),      orientation: "portrait" },
-      { src: imgKishore("11.jpg"),      orientation: "portrait" },
     ],
   },
   {
@@ -296,47 +285,6 @@ export const projects: Project[] = [
       { src: imgTapTales("Copy of 15.jpg"),    orientation: "landscape" },
       { src: imgTapTales("Copy of 16.jpg"),    orientation: "landscape" },
       { src: imgTapTales("Copy of 18.jpg"),    orientation: "landscape" },
-    ],
-  },
-  {
-    slug: "uber-residence",
-    index: "03",
-    title: "Mana",
-    category: "Interiors",
-    location: "Bengaluru",
-    year: "2023",
-    size: "850 sq ft",
-    aspect: "portrait",
-    bg: "bg-slate-200",
-    color: "#e2e8f0",
-
-    cover: imgUber("1.jpg"),
-    hero:  imgUber("1.jpg"),
-    blur:  B["public/Projects/Uber Residence/1.jpg"],
-
-    description: [
-      "This project began with a clear brief: to make an existing apartment safer and more comfortable for a retired couple, without allowing it to feel institutional. The response is a home shaped by quiet precision, where ease of use is embedded into every decision — from material choices underfoot to the calibration of everyday heights and reach.",
-      "A restrained palette of warm whites, soft creams, and muted taupe forms the base, layered with sage green furniture and teak woodwork to bring depth and familiarity. Brass hardware and natural materials lend a sense of warmth and permanence, reinforcing an unhurried, lived-in quality.",
-      "This approach extends into the more private spaces, where the master bedroom is conceived as a calm, intuitive environment — prioritising ease of movement, clear access, and a sense of restful enclosure without excess.",
-      "Rather than relying on overt gestures, the design focuses on subtle interventions that support daily life, balancing accessibility with comfort and practicality with a sense of home.",
-    ],
-
-    credits: [
-      { label: "Lead Architects",  value: "Shashank Shetty\nSanjan Hoode" },
-      { label: "Junior Architect", value: "Sahana Prabhu" },
-      { label: "Photographer",     value: "Nayan Soni" },
-    ],
-
-    images: [
-      { src: imgUber("4.jpg"),  orientation: "portrait", pairedCaption: ["The apartment is finished in a warm white, neutral palette that keeps spaces open and well-lit. A muted taupe half-wall adds depth without compromising volume.", "Fluted woodwork runs throughout, unifying wardrobes, TV backdrops, wall cladding, and built-in cabinetry. The vertical texture adds depth while maintaining a clean, tailored expression, with rounded edges reinforcing the focus on safety."] },
-      { src: imgUber("5.jpg"),  orientation: "portrait" },
-      { src: imgUber("2.jpg"),  orientation: "portrait", pairedCaption: ["Woodwork boasts textured grooves and rounded edges for safety. Sage green furniture complements the neutrals, creating a subtle connection to the lush greenery outdoor. Strategically placed teak grab bars blend seamlessly, aiding navigation."] },
-      { src: imgUber("3.jpg"),  orientation: "portrait" },
-      { src: imgUber("6.jpg"),  orientation: "portrait", caption: "The dining zone is anchored by a monolithic foyer element that transitions into a crockery unit at the rear. A recessed seat with vertical teak slats, a curved canopy, and integrated drawers below is primarily part of the foyer, while also forming an engaging backdrop to the dining space. A sculptural brass chandelier above the dining table introduces a refined warmth to the lighting scheme.", captionAlign: "bottom" },
-      { src: imgUber("7.jpg"),  orientation: "portrait", caption: "The kitchen was redesigned with ergonomics at its core. Lower counter heights reduce reach and strain during extended use. A built-in counter with a high stool offers a comfortable perch for food prep—small in gesture, significant in impact. Warm almond-finish cabinetry lines the perimeter, paired with matte black stone counters. Open steel shelving replaces overhead cupboards, keeping essentials within easy reach. A cool grey micro-cement splashback completes the palette." },
-      { src: imgUber("10.jpg"), orientation: "portrait" },
-      { src: imgUber("11.jpg"), orientation: "portrait" },
-      { src: imgUber("9.jpg"),  orientation: "portrait" },
     ],
   },
   {
@@ -411,114 +359,6 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "karjat",
-    index: "07",
-    title: "Twin Roof Farmhouse",
-    category: "Architecture",
-    location: "Karjat",
-    year: "2026",
-    size: "1,600 sq ft",
-    aspect: "landscape",
-    bg: "bg-stone-100",
-    color: "#f5f5f4",
-
-    cover: imgKarjat("1.jpg"),
-    hero:  imgKarjat("1.jpg"),
-    blur:  B["public/Projects/Karjat/1.jpg"],
-
-    credits: [
-      { label: "Lead Architects", value: "Shashank Shetty\nSanjan Hoode\nSharanya Shivashankar" },
-    ],
-
-    images: [
-      { src: imgKarjat("2.jpg"), orientation: "portrait"  },
-      { src: imgKarjat("3.jpg"), orientation: "landscape" },
-      { src: imgKarjat("4.jpg"), orientation: "landscape" },
-      { src: imgKarjat("5.jpg"), orientation: "portrait"  },
-    ],
-  },
-  {
-    slug: "godrej",
-    index: "10",
-    title: "Olive House",
-    category: "Interiors",
-    location: "Bengaluru",
-    year: "2025",
-    size: "1,600 sq ft",
-    aspect: "portrait",
-    bg: "bg-teal-50",
-    color: "#f0fdfa",
-
-    cover: imgGodrej("1.jpg"),
-    hero:  imgGodrej("1.jpg"),
-    blur:  B["public/Projects/Godrej/1.jpg"],
-
-    description: [
-      "This project began with clients who brought a clear point of view: a young family with an appetite for colour, warmth, and spaces that reflect who they are. With one half of the couple a trained architect, the brief was precise and the conversation direct, allowing the design to move quickly and commit confidently.",
-      "The response is a home built around contrast and cohesion. A palette of deep olive green, mustard yellow, rust orange, and warm teak runs through every room, shifting in character from space to space while remaining unmistakably part of the same whole. Mid-century furniture forms and clean-lined joinery provide the structural logic, while colour and personal objects provide the life.",
-      "Teak woodwork appears throughout as both a material and a motif, in slatted cabinet fronts, fluted wall panels, and a reimagined kitchen partition, giving the apartment continuity without uniformity. The result is a home that feels genuinely inhabited, shaped by the people who live in it rather than assembled around them.",
-    ],
-
-    credits: [
-      { label: "Lead Architects",  value: "Shashank Shetty\nSanjan Hoode" },
-      { label: "Junior Designer",  value: "Lakshmi Nair" },
-      { label: "Photographer",     value: "Roshan Pallath" },
-    ],
-
-    images: [
-      { src: imgGodrej("2.jpg"),  orientation: "portrait", pairedCaption: ["A teak table with a dark stone top anchors the space against a white wall, with rust-orange chairs adding warmth.", "A teak sideboard runs along the adjacent wall below an oversized print, with slim sconces providing light. The dining–kitchen partition is reworked as a collapsible teak-framed panel, allowing the spaces to open up and connect when needed."] },
-      { src: imgGodrej("3.jpg"),  orientation: "portrait" },
-      { src: imgGodrej("4.jpg"),  orientation: "portrait", layout: "trio", pairedCaption: ["Anchored by a deep olive panelled wall with a fluted teak rail, the space is held by a mustard sofa. A leather armchair and black-stone coffee table complete the seating, with a twin-globe pendant above. Opposite, a floating TV unit and suspended puja cabinet in teak and olive keep the wall composed, while poufs tuck below to keep the layout open."] },
-      { src: imgGodrej("5.jpg"),  orientation: "portrait" },
-      { src: imgGodrej("6.jpg"),  orientation: "portrait" },
-      { src: imgGodrej("7.jpg"),  orientation: "portrait", layout: "trio", pairedCaption: ["A custom olive green bunk anchors the room, with a teak ladder and patterned wallpaper adding a light, playful layer. A framed chalkboard panel allows the space to evolve over time.", "A full-width teak desk with white overhead storage forms the study, with a subtle yellow edge tying back to the home's palette. The wardrobe in off-white and teal with brass knobs stays simple and composed."] },
-      { src: imgGodrej("8.jpg"),  orientation: "portrait" },
-      { src: imgGodrej("9.jpg"),  orientation: "portrait" },
-      { src: imgGodrej("10.jpg"), orientation: "portrait", pairedCaption: ["A continuous teak fluted panel organises the bed wall, integrating the headboard, with a compact brass sconce for light.", "Opposite, a floating study runs along the wall. A split palette with a teak ledge allows for light display. Materials and colours stay consistent with the home, in a quieter tone."] },
-      { src: imgGodrej("11.jpg"), orientation: "portrait" },
-    ],
-  },
-  {
-    slug: "rajiv-residence",
-    index: "11",
-    title: "Zion House",
-    category: "Interiors",
-    location: "Kolar",
-    year: "2024",
-    size: "3,500 sq ft",
-    aspect: "portrait",
-    bg: "bg-rose-50",
-    color: "#fff1f2",
-
-    cover: imgRajiv("1.jpg"),
-    hero:  imgRajiv("1.jpg"),
-    blur:  B["public/Projects/Rajiv/1.jpg"],
-
-    description: [
-      "Set in the quiet landscape of Zion Hill, this weekend home is designed as a place to slow down.",
-      "The planning keeps spaces open and connected, allowing the living, dining, and kitchen to flow into each other. A consistent palette of warm wood, textured walls, stone, and muted greens and blues draws from the surroundings and keeps the home grounded.",
-      "Custom furniture and built-ins bring clarity without overcomplicating the space. As the house moves into private areas, the mood becomes softer and more relaxed.",
-      "The focus is simple: create a home that feels calm, easy, and removed from the pace of the city.",
-    ],
-
-    credits: [
-      { label: "Lead Architects",  value: "Shashank Shetty\nSanjan Hoode" },
-      { label: "Junior Architect", value: "Sahana Prabhu" },
-      { label: "Photographer",     value: "Roshan Pallath" },
-    ],
-
-    images: [
-      { src: imgRajiv("2.jpg"), orientation: "portrait",  caption: "The dining table is conceived as a sculptural piece, with a solid base supporting a stone top. Its weight and materiality ground the space, balancing the softness of light, fabric, and surrounding elements." },
-      { src: imgRajiv("3.jpg"), orientation: "landscape", caption: "A relaxed living space shaped by soft curves and quiet materiality. The furniture takes cues from the rolling topography of the golf course beyond, translating it into gentle forms, muted tones, and an easy, unhurried atmosphere." },
-      { src: imgRajiv("4.jpg"), orientation: "portrait",  pairedCaption: ["The kitchen is defined by muted green cabinetry and textured tiles, framed by fluted glass partitions that keep the space open yet contained."] },
-      { src: imgRajiv("5.jpg"), orientation: "portrait"  },
-      { src: imgRajiv("6.jpg"), orientation: "portrait"  },
-      { src: imgRajiv("7.jpg"), orientation: "portrait"  },
-      { src: imgRajiv("8.jpg"), orientation: "portrait",  pairedCaption: ["Layered in warm neutrals and natural textures, the bedroom is designed for ease. Upholstered surfaces, soft drapery, and integrated storage keep the space calm and uncluttered."] },
-      { src: imgRajiv("9.jpg"), orientation: "portrait"  },
-    ],
-  },
-  {
     slug: "villa-1",
     index: "12",
     title: "Villa 1",
@@ -566,6 +406,43 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: "rmk",
+    index: "09",
+    title: "RMK Antheia",
+    category: "Architecture",
+    location: "Karnataka",
+    year: "2023",
+    size: "11 Acres",
+    aspect: "landscape",
+    bg: "bg-neutral-200",
+    color: "#e5e5e5",
+
+    cover: imgRmK("4.jpg"),
+    hero:  imgRmK("1.jpg"),
+    blur:  B["public/Projects/RmK/1.jpg"],
+
+    description: [
+      "RMK Antheia is an 11-acre landscape-led residential masterplan rooted in the site's ecology and history. At its heart, an existing stone retaining water tank is re-adapted into a central open-air theatre and community space. Carefully introduced punctures through the original walls preserve the memory of the site while creating visual and physical connections to the new development.",
+      "The masterplan is woven around existing mango trees, with shaded streets, pedestrian pathways, water edges, and social spaces encouraging a slower, nature-oriented living experience.",
+      "The entrance gateway establishes the project's identity through exposed concrete forms and a corten steel canopy with geometric cut-outs that filter light and shadow across the arrival space. This geometric language subtly extends into adjoining concrete walls, creating a cohesive architectural expression.",
+      "Using a restrained palette of exposed concrete, natural stone, weathered metal, and tropical planting, the project draws from contemporary tropical architecture principles to create a climate-responsive residential environment deeply connected to its landscape and history.",
+    ],
+
+    credits: [
+      { label: "Lead Architects", value: "Shashank Shetty\nSanjan Hoode" },
+    ],
+
+    images: [
+      { src: imgRmK("2.jpg"), orientation: "landscape" },
+      { src: imgRmK("4.jpg"), orientation: "landscape" },
+      { src: imgRmK("5.jpg"), orientation: "landscape" },
+      { src: imgRmK("6.jpg"), orientation: "landscape" },
+      { src: imgRmK("7.jpg"), orientation: "landscape" },
+      { src: imgRmK("8.jpg"), orientation: "landscape" },
+      { src: imgRmK("9.jpg"), orientation: "landscape" },
+    ],
+  },
+  {
     slug: "estate-retreat",
     index: "13",
     title: "Estate Retreat",
@@ -606,6 +483,129 @@ export const projects: Project[] = [
       { src: imgEstate("8.jpg"),  orientation: "portrait",  caption: "The double-height family room holds the plantation canopy in a large picture window. A sculptural pendant floats within the void above; louvred doors to the left open the space directly onto the deck." },
       { src: imgEstate("9.jpg"),  orientation: "portrait",  caption: "The master bedroom turns inward from the house's general openness. A four-poster bed, cane-fronted wardrobe, and lime-textured walls compose a settled, unhurried room." },
       { src: imgEstate("10.jpg"), orientation: "landscape", caption: "The full elevation places the house within its setting. White rendered walls step with the slope, the glass staircase and upper balcony read as transparent layers, and the plantation closes in on both sides." },
+    ],
+  },
+  {
+    slug: "godrej",
+    index: "10",
+    title: "Olive House",
+    category: "Interiors",
+    location: "Bengaluru",
+    year: "2025",
+    size: "1,600 sq ft",
+    aspect: "portrait",
+    bg: "bg-teal-50",
+    color: "#f0fdfa",
+
+    cover: imgGodrej("1.jpg"),
+    hero:  imgGodrej("1.jpg"),
+    blur:  B["public/Projects/Godrej/1.jpg"],
+
+    description: [
+      "This project began with clients who brought a clear point of view: a young family with an appetite for colour, warmth, and spaces that reflect who they are. With one half of the couple a trained architect, the brief was precise and the conversation direct, allowing the design to move quickly and commit confidently.",
+      "The response is a home built around contrast and cohesion. A palette of deep olive green, mustard yellow, rust orange, and warm teak runs through every room, shifting in character from space to space while remaining unmistakably part of the same whole. Mid-century furniture forms and clean-lined joinery provide the structural logic, while colour and personal objects provide the life.",
+      "Teak woodwork appears throughout as both a material and a motif, in slatted cabinet fronts, fluted wall panels, and a reimagined kitchen partition, giving the apartment continuity without uniformity. The result is a home that feels genuinely inhabited, shaped by the people who live in it rather than assembled around them.",
+    ],
+
+    credits: [
+      { label: "Lead Architects",  value: "Shashank Shetty\nSanjan Hoode" },
+      { label: "Junior Designer",  value: "Lakshmi Nair" },
+      { label: "Photographer",     value: "Roshan Pallath" },
+    ],
+
+    images: [
+      { src: imgGodrej("2.jpg"),  orientation: "portrait", pairedCaption: ["A teak table with a dark stone top anchors the space against a white wall, with rust-orange chairs adding warmth.", "A teak sideboard runs along the adjacent wall below an oversized print, with slim sconces providing light. The dining–kitchen partition is reworked as a collapsible teak-framed panel, allowing the spaces to open up and connect when needed."] },
+      { src: imgGodrej("3.jpg"),  orientation: "portrait" },
+      { src: imgGodrej("4.jpg"),  orientation: "portrait", layout: "trio", pairedCaption: ["Anchored by a deep olive panelled wall with a fluted teak rail, the space is held by a mustard sofa. A leather armchair and black-stone coffee table complete the seating, with a twin-globe pendant above. Opposite, a floating TV unit and suspended puja cabinet in teak and olive keep the wall composed, while poufs tuck below to keep the layout open."] },
+      { src: imgGodrej("5.jpg"),  orientation: "portrait" },
+      { src: imgGodrej("6.jpg"),  orientation: "portrait" },
+      { src: imgGodrej("7.jpg"),  orientation: "portrait", layout: "trio", pairedCaption: ["A custom olive green bunk anchors the room, with a teak ladder and patterned wallpaper adding a light, playful layer. A framed chalkboard panel allows the space to evolve over time.", "A full-width teak desk with white overhead storage forms the study, with a subtle yellow edge tying back to the home's palette. The wardrobe in off-white and teal with brass knobs stays simple and composed."] },
+      { src: imgGodrej("8.jpg"),  orientation: "portrait" },
+      { src: imgGodrej("9.jpg"),  orientation: "portrait" },
+      { src: imgGodrej("10.jpg"), orientation: "portrait", pairedCaption: ["A continuous teak fluted panel organises the bed wall, integrating the headboard, with a compact brass sconce for light.", "Opposite, a floating study runs along the wall. A split palette with a teak ledge allows for light display. Materials and colours stay consistent with the home, in a quieter tone."] },
+      { src: imgGodrej("11.jpg"), orientation: "portrait" },
+    ],
+  },
+  {
+    slug: "uber-residence",
+    index: "03",
+    title: "Mana",
+    category: "Interiors",
+    location: "Bengaluru",
+    year: "2023",
+    size: "850 sq ft",
+    aspect: "portrait",
+    bg: "bg-slate-200",
+    color: "#e2e8f0",
+
+    cover: imgUber("1.jpg"),
+    hero:  imgUber("1.jpg"),
+    blur:  B["public/Projects/Uber Residence/1.jpg"],
+
+    description: [
+      "This project began with a clear brief: to make an existing apartment safer and more comfortable for a retired couple, without allowing it to feel institutional. The response is a home shaped by quiet precision, where ease of use is embedded into every decision — from material choices underfoot to the calibration of everyday heights and reach.",
+      "A restrained palette of warm whites, soft creams, and muted taupe forms the base, layered with sage green furniture and teak woodwork to bring depth and familiarity. Brass hardware and natural materials lend a sense of warmth and permanence, reinforcing an unhurried, lived-in quality.",
+      "This approach extends into the more private spaces, where the master bedroom is conceived as a calm, intuitive environment — prioritising ease of movement, clear access, and a sense of restful enclosure without excess.",
+      "Rather than relying on overt gestures, the design focuses on subtle interventions that support daily life, balancing accessibility with comfort and practicality with a sense of home.",
+    ],
+
+    credits: [
+      { label: "Lead Architects",  value: "Shashank Shetty\nSanjan Hoode" },
+      { label: "Junior Architect", value: "Sahana Prabhu" },
+      { label: "Photographer",     value: "Nayan Soni" },
+    ],
+
+    images: [
+      { src: imgUber("4.jpg"),  orientation: "portrait", pairedCaption: ["The apartment is finished in a warm white, neutral palette that keeps spaces open and well-lit. A muted taupe half-wall adds depth without compromising volume.", "Fluted woodwork runs throughout, unifying wardrobes, TV backdrops, wall cladding, and built-in cabinetry. The vertical texture adds depth while maintaining a clean, tailored expression, with rounded edges reinforcing the focus on safety."] },
+      { src: imgUber("5.jpg"),  orientation: "portrait" },
+      { src: imgUber("2.jpg"),  orientation: "portrait", pairedCaption: ["Woodwork boasts textured grooves and rounded edges for safety. Sage green furniture complements the neutrals, creating a subtle connection to the lush greenery outdoor. Strategically placed teak grab bars blend seamlessly, aiding navigation."] },
+      { src: imgUber("3.jpg"),  orientation: "portrait" },
+      { src: imgUber("6.jpg"),  orientation: "portrait", caption: "The dining zone is anchored by a monolithic foyer element that transitions into a crockery unit at the rear. A recessed seat with vertical teak slats, a curved canopy, and integrated drawers below is primarily part of the foyer, while also forming an engaging backdrop to the dining space. A sculptural brass chandelier above the dining table introduces a refined warmth to the lighting scheme.", captionAlign: "bottom" },
+      { src: imgUber("7.jpg"),  orientation: "portrait", caption: "The kitchen was redesigned with ergonomics at its core. Lower counter heights reduce reach and strain during extended use. A built-in counter with a high stool offers a comfortable perch for food prep—small in gesture, significant in impact. Warm almond-finish cabinetry lines the perimeter, paired with matte black stone counters. Open steel shelving replaces overhead cupboards, keeping essentials within easy reach. A cool grey micro-cement splashback completes the palette." },
+      { src: imgUber("10.jpg"), orientation: "portrait" },
+      { src: imgUber("11.jpg"), orientation: "portrait" },
+      { src: imgUber("9.jpg"),  orientation: "portrait" },
+    ],
+  },
+  {
+    slug: "kishore-residence",
+    index: "02",
+    title: "Lime & Light Residence",
+    category: "Interiors",
+    location: "Bengaluru",
+    year: "2025",
+    size: "1,700 sq ft",
+    aspect: "portrait",
+    bg: "bg-orange-50",
+    color: "#fff7ed",
+
+    cover: imgKishore("1.jpg"),
+    hero:  imgKishore("1.jpg"),
+    blur:  B["public/Projects/Kishore Residence/1.jpg"],
+
+    description: [
+      "This residence is conceived as a calm, materially rich home where spaces unfold with quiet continuity. Guided by a Japandi sensibility and subtle Indian nuances, the design balances restraint with warmth, letting material, light, and proportion shape the experience.",
+      "Lime-washed surfaces, natural wood, and a soft palette of neutrals and muted pastels create a tactile, understated base. Character emerges through consistency of tone, detail, and craft rather than overt gestures.",
+      "The planning remains open and fluid. Spaces connect through shifts in material, light, and geometry instead of walls, resulting in a home that feels cohesive, expansive, and quietly intentional.",
+    ],
+
+    credits: [
+      { label: "Lead Architects",  value: "Shashank Shetty\nSanjan Hoode" },
+      { label: "Junior Architect", value: "Sahana Prabhu\nLakshmi Nair" },
+      { label: "Photographer",     value: "Roshan Pallath" },
+    ],
+
+    images: [
+      { src: imgKishore("2.jpg"),       orientation: "portrait", layout: "quad", pairedCaption: ["The living space is defined by a soft, earthy palette, with olive greens and warm beiges set against textured lime-washed walls. Low, linear furniture keeps the room open while retaining a sense of intimacy.", "Custom pieces are carefully proportioned to feel light yet grounded. Black accents add contrast, while indoor planting softens the composition.", "A vertical wood panel anchors the seating area, defining the space without disrupting flow. Designed as a movable element, it introduces a subtle sense of drama."] },
+      { src: imgKishore("3.jpg"),       orientation: "portrait" },
+      { src: imgKishore("4.jpg"),       orientation: "portrait" },
+      { src: imgKishore("5 gif.1.jpg"), orientation: "portrait" },
+      { src: imgKishore("6.jpg"),       orientation: "portrait", caption: "The dining area continues the home's earthy material language. A solid wood table is paired with black-framed armchairs upholstered in natural linen, their squared geometry echoing the graphic lattice screen that divides the dining and passage zones. Antique-finish ceramic vessels and taper candles complete the tableau.", captionAlign: "center" },
+      { src: imgKishore("7.jpg"),       orientation: "portrait", layout: "trio", pairedCaption: ["The bedrooms continue a restrained language, shifting toward softer textures and more personal expression.", "Material transitions from wood to fabric to wall finish remain subtle and cohesive. Cane inserts, pastel wardrobes, and upholstered elements add variation without disrupting the calm.", "Compact study niches and integrated storage maintain clarity, ensuring utility does not clutter the space."] },
+      { src: imgKishore("8.jpg"),       orientation: "portrait" },
+      { src: imgKishore("9.jpg"),       orientation: "portrait" },
+      { src: imgKishore("10.jpg"),      orientation: "portrait" },
+      { src: imgKishore("11.jpg"),      orientation: "portrait" },
     ],
   },
 ];

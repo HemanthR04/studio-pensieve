@@ -12,7 +12,7 @@ function normalizeCategory(cat: string): string {
   return "Interiors";
 }
 
-const ALL_CATEGORIES = ["All", "Interiors", "Architecture"];
+const ALL_CATEGORIES = ["All", "Architecture", "Interiors"];
 
 function landscapeSrc(project: Project): string | undefined {
   return (

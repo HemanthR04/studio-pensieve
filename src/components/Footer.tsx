@@ -24,8 +24,8 @@ export default function Footer() {
                 Our Studio
               </p>
               <p className="text-sm font-normal leading-[1.75] text-stone-400">
-                A small, focused practice founded in 2020 by Sanjan Hoode and
-                Shashank Shetty. Based in Bengaluru, working across India.
+                A focused practice founded in 2020 by Sanjan Hoode and
+                Shashank Shetty. Working nationwide.
               </p>
             </div>
 
