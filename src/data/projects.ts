@@ -106,7 +106,7 @@ export const projects: Project[] = [
     bg: "bg-stone-200",
     color: "#e7e5e4",
 
-    cover: img(" 1 Foyer.jpg"),
+    cover: img("8 Living room.jpg"),
     hero:  img(" 1 Foyer.jpg"),
     blur:  B["public/Projects/Emb Pristine / 1 Foyer.jpg"],
 
@@ -155,6 +155,72 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: "rajankunte",
+    index: "08",
+    title: "Adapted House",
+    category: "Adaptive Reuse + Architecture",
+    location: "Rajankunte",
+    year: "2025",
+    size: "3,800 sq ft",
+    aspect: "landscape",
+    bg: "bg-yellow-50",
+    color: "#fefce8",
+
+    cover: imgRajankunte("3.jpg"),
+    hero:  imgRajankunte("1.jpg"),
+    blur:  B["public/Projects/Rajankunte/1.jpg"],
+
+    credits: [
+      { label: "Lead Architects", value: "Shashank Shetty\nSanjan Hoode" },
+    ],
+
+    images: [
+      { src: imgRajankunte("2.jpg"), orientation: "portrait"  },
+      { src: imgRajankunte("3.jpg"), orientation: "landscape" },
+      { src: imgRajankunte("4.jpg"), orientation: "landscape" },
+      { src: imgRajankunte("5.jpg"), orientation: "landscape" },
+      { src: imgRajankunte("6.jpg"), orientation: "landscape" },
+      { src: imgRajankunte("7.jpg"), orientation: "landscape" },
+    ],
+  },
+  {
+    slug: "rmk",
+    index: "09",
+    title: "RMK Antheia",
+    category: "Architecture",
+    location: "Karnataka",
+    year: "2023",
+    size: "11 Acres",
+    aspect: "landscape",
+    bg: "bg-neutral-200",
+    color: "#e5e5e5",
+
+    cover: imgRmK("4.jpg"),
+    hero:  imgRmK("1.jpg"),
+    blur:  B["public/Projects/RmK/1.jpg"],
+
+    description: [
+      "RMK Antheia is an 11-acre landscape-led residential masterplan rooted in the site's ecology and history. At its heart, an existing stone retaining water tank is re-adapted into a central open-air theatre and community space. Carefully introduced punctures through the original walls preserve the memory of the site while creating visual and physical connections to the new development.",
+      "The masterplan is woven around existing mango trees, with shaded streets, pedestrian pathways, water edges, and social spaces encouraging a slower, nature-oriented living experience.",
+      "The entrance gateway establishes the project's identity through exposed concrete forms and a corten steel canopy with geometric cut-outs that filter light and shadow across the arrival space. This geometric language subtly extends into adjoining concrete walls, creating a cohesive architectural expression.",
+      "Using a restrained palette of exposed concrete, natural stone, weathered metal, and tropical planting, the project draws from contemporary tropical architecture principles to create a climate-responsive residential environment deeply connected to its landscape and history.",
+    ],
+
+    credits: [
+      { label: "Lead Architects", value: "Shashank Shetty\nSanjan Hoode" },
+    ],
+
+    images: [
+      { src: imgRmK("2.jpg"), orientation: "landscape" },
+      { src: imgRmK("4.jpg"), orientation: "landscape" },
+      { src: imgRmK("5.jpg"), orientation: "landscape" },
+      { src: imgRmK("6.jpg"), orientation: "landscape" },
+      { src: imgRmK("7.jpg"), orientation: "landscape" },
+      { src: imgRmK("8.jpg"), orientation: "landscape" },
+      { src: imgRmK("9.jpg"), orientation: "landscape" },
+    ],
+  },
+  {
     slug: "kishore-residence",
     index: "02",
     title: "Lime & Light Residence",
@@ -196,6 +262,43 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: "tap-tales",
+    index: "04",
+    title: "Tap Tales",
+    category: "Interiors",
+    location: "Bengaluru",
+    year: "2024",
+    size: "2,000 sq ft",
+    aspect: "landscape",
+    bg: "bg-amber-50",
+    color: "#fffbeb",
+
+    cover: imgTapTales("2.jpg"),
+    hero:  imgTapTales("1.jpg"),
+    blur:  B["public/Projects/Tap Tales/1.jpg"],
+
+    description: [
+      "Tap Tales articulates a refined interplay between industrial honesty and crafted warmth, where material precision shapes the spatial identity. The interior composition layers exposed concrete textures, oxidised metal finishes, and corrugated steel railings to create a tactile, structurally expressive environment. Warm timber surfaces and muted upholstery temper the palette's rawness, while a calibrated lighting strategy — from suspended geometric pendants to concealed linear profiles — defines depth, hierarchy, and texture. Each element, from surface treatment to furniture detailing, reinforces a cohesive architectural language grounded in proportion, balance, and understated sophistication.",
+      "Across multiple levels, the design maintains continuity through perforated metal screens, corrugated inserts, and an earthy tonal base, punctuated by moments of deliberate contrast. A graphic mural wall on the upper floor introduces vibrancy and movement, creating a visual anchor within the spatial sequence. The integration of greenery and diffused illumination softens the industrial framework, enriching the spatial experience while preserving its structural clarity. Tap Tales reflects a contemporary architectural ethos — one that celebrates material integrity, atmospheric control, and the precision of crafted detail.",
+    ],
+
+    credits: [
+      { label: "Lead Architects",  value: "Shashank Shetty\nSanjan Hoode" },
+      { label: "Junior Architect", value: "Lakshmi Nair" },
+    ],
+
+    images: [
+      { src: imgTapTales("2.jpg"),             orientation: "landscape" },
+      { src: imgTapTales("3.jpg"),             orientation: "landscape" },
+      { src: imgTapTales("Copy of 10.jpg"),    orientation: "landscape" },
+      { src: imgTapTales("Copy of 11.jpg"),    orientation: "landscape" },
+      { src: imgTapTales("Copy of 14.jpg"),    orientation: "landscape" },
+      { src: imgTapTales("Copy of 15.jpg"),    orientation: "landscape" },
+      { src: imgTapTales("Copy of 16.jpg"),    orientation: "landscape" },
+      { src: imgTapTales("Copy of 18.jpg"),    orientation: "landscape" },
+    ],
+  },
+  {
     slug: "uber-residence",
     index: "03",
     title: "Mana",
@@ -234,43 +337,6 @@ export const projects: Project[] = [
       { src: imgUber("10.jpg"), orientation: "portrait" },
       { src: imgUber("11.jpg"), orientation: "portrait" },
       { src: imgUber("9.jpg"),  orientation: "portrait" },
-    ],
-  },
-  {
-    slug: "tap-tales",
-    index: "04",
-    title: "Tap Tales",
-    category: "Interiors",
-    location: "Bengaluru",
-    year: "2024",
-    size: "2,000 sq ft",
-    aspect: "landscape",
-    bg: "bg-amber-50",
-    color: "#fffbeb",
-
-    cover: imgTapTales("1.jpg"),
-    hero:  imgTapTales("1.jpg"),
-    blur:  B["public/Projects/Tap Tales/1.jpg"],
-
-    description: [
-      "Tap Tales articulates a refined interplay between industrial honesty and crafted warmth, where material precision shapes the spatial identity. The interior composition layers exposed concrete textures, oxidised metal finishes, and corrugated steel railings to create a tactile, structurally expressive environment. Warm timber surfaces and muted upholstery temper the palette's rawness, while a calibrated lighting strategy — from suspended geometric pendants to concealed linear profiles — defines depth, hierarchy, and texture. Each element, from surface treatment to furniture detailing, reinforces a cohesive architectural language grounded in proportion, balance, and understated sophistication.",
-      "Across multiple levels, the design maintains continuity through perforated metal screens, corrugated inserts, and an earthy tonal base, punctuated by moments of deliberate contrast. A graphic mural wall on the upper floor introduces vibrancy and movement, creating a visual anchor within the spatial sequence. The integration of greenery and diffused illumination softens the industrial framework, enriching the spatial experience while preserving its structural clarity. Tap Tales reflects a contemporary architectural ethos — one that celebrates material integrity, atmospheric control, and the precision of crafted detail.",
-    ],
-
-    credits: [
-      { label: "Lead Architects",  value: "Shashank Shetty\nSanjan Hoode" },
-      { label: "Junior Architect", value: "Lakshmi Nair" },
-    ],
-
-    images: [
-      { src: imgTapTales("2.jpg"),             orientation: "landscape" },
-      { src: imgTapTales("3.jpg"),             orientation: "landscape" },
-      { src: imgTapTales("Copy of 10.jpg"),    orientation: "landscape" },
-      { src: imgTapTales("Copy of 11.jpg"),    orientation: "landscape" },
-      { src: imgTapTales("Copy of 14.jpg"),    orientation: "landscape" },
-      { src: imgTapTales("Copy of 15.jpg"),    orientation: "landscape" },
-      { src: imgTapTales("Copy of 16.jpg"),    orientation: "landscape" },
-      { src: imgTapTales("Copy of 18.jpg"),    orientation: "landscape" },
     ],
   },
   {
@@ -369,72 +435,6 @@ export const projects: Project[] = [
       { src: imgKarjat("3.jpg"), orientation: "landscape" },
       { src: imgKarjat("4.jpg"), orientation: "landscape" },
       { src: imgKarjat("5.jpg"), orientation: "portrait"  },
-    ],
-  },
-  {
-    slug: "rajankunte",
-    index: "08",
-    title: "Adapted House",
-    category: "Adaptive Reuse + Architecture",
-    location: "Rajankunte",
-    year: "2025",
-    size: "3,800 sq ft",
-    aspect: "landscape",
-    bg: "bg-yellow-50",
-    color: "#fefce8",
-
-    cover: imgRajankunte("1.jpg"),
-    hero:  imgRajankunte("1.jpg"),
-    blur:  B["public/Projects/Rajankunte/1.jpg"],
-
-    credits: [
-      { label: "Lead Architects", value: "Shashank Shetty\nSanjan Hoode" },
-    ],
-
-    images: [
-      { src: imgRajankunte("2.jpg"), orientation: "portrait"  },
-      { src: imgRajankunte("3.jpg"), orientation: "landscape" },
-      { src: imgRajankunte("4.jpg"), orientation: "landscape" },
-      { src: imgRajankunte("5.jpg"), orientation: "landscape" },
-      { src: imgRajankunte("6.jpg"), orientation: "landscape" },
-      { src: imgRajankunte("7.jpg"), orientation: "landscape" },
-    ],
-  },
-  {
-    slug: "rmk",
-    index: "09",
-    title: "RMK Antheia",
-    category: "Architecture",
-    location: "Karnataka",
-    year: "2023",
-    size: "11 Acres",
-    aspect: "landscape",
-    bg: "bg-neutral-200",
-    color: "#e5e5e5",
-
-    cover: imgRmK("1.jpg"),
-    hero:  imgRmK("1.jpg"),
-    blur:  B["public/Projects/RmK/1.jpg"],
-
-    description: [
-      "RMK Antheia is an 11-acre landscape-led residential masterplan rooted in the site's ecology and history. At its heart, an existing stone retaining water tank is re-adapted into a central open-air theatre and community space. Carefully introduced punctures through the original walls preserve the memory of the site while creating visual and physical connections to the new development.",
-      "The masterplan is woven around existing mango trees, with shaded streets, pedestrian pathways, water edges, and social spaces encouraging a slower, nature-oriented living experience.",
-      "The entrance gateway establishes the project's identity through exposed concrete forms and a corten steel canopy with geometric cut-outs that filter light and shadow across the arrival space. This geometric language subtly extends into adjoining concrete walls, creating a cohesive architectural expression.",
-      "Using a restrained palette of exposed concrete, natural stone, weathered metal, and tropical planting, the project draws from contemporary tropical architecture principles to create a climate-responsive residential environment deeply connected to its landscape and history.",
-    ],
-
-    credits: [
-      { label: "Lead Architects", value: "Shashank Shetty\nSanjan Hoode" },
-    ],
-
-    images: [
-      { src: imgRmK("2.jpg"), orientation: "landscape" },
-      { src: imgRmK("4.jpg"), orientation: "landscape" },
-      { src: imgRmK("5.jpg"), orientation: "landscape" },
-      { src: imgRmK("6.jpg"), orientation: "landscape" },
-      { src: imgRmK("7.jpg"), orientation: "landscape" },
-      { src: imgRmK("8.jpg"), orientation: "landscape" },
-      { src: imgRmK("9.jpg"), orientation: "landscape" },
     ],
   },
   {

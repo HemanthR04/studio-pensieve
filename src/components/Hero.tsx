@@ -9,20 +9,20 @@ import blurUrls from "@/data/blurDataUrls.json";
 
 const IMAGES = [
   {
-    src:  "/LANDING PHOTOS/1.jpg",
-    blur: blurUrls["public/LANDING PHOTOS/1.jpg"],
+    src:  "/LANDING PHOTOS/1.png",
+    blur: undefined,
   },
   {
-    src:  "/LANDING PHOTOS/2.jpg",
-    blur: blurUrls["public/LANDING PHOTOS/2.jpg"],
+    src:  "/LANDING PHOTOS/4.jpg",
+    blur: blurUrls["public/LANDING PHOTOS/4.jpg"],
   },
   {
     src:  "/LANDING PHOTOS/3.jpg",
     blur: blurUrls["public/LANDING PHOTOS/3.jpg"],
   },
   {
-    src:  "/LANDING PHOTOS/4.jpg",
-    blur: blurUrls["public/LANDING PHOTOS/4.jpg"],
+    src:  "/LANDING PHOTOS/2.jpg",
+    blur: blurUrls["public/LANDING PHOTOS/2.jpg"],
   },
   {
     src:  "/LANDING PHOTOS/5.jpg",
@@ -30,7 +30,7 @@ const IMAGES = [
   },
 ];
 
-const INTERVAL = 8000; // ms per slide
+const INTERVAL = 5000; // ms per slide
 
 export default function Hero() {
   const navRef      = useRef<HTMLElement>(null);
@@ -74,15 +74,6 @@ export default function Hero() {
     }
   }, [scrolled]);
 
-  // Entry animation — nav is intentionally excluded; loading screen already covers it
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
-      tl.from(".hero-statement",  { opacity: 0, y: 24, duration: 0.9 })
-        .from(".hero-scroll-hint", { opacity: 0, duration: 0.6 }, "-=0.2");
-    }, heroRef);
-    return () => ctx.revert();
-  }, []);
 
   return (
     <>
@@ -143,8 +134,7 @@ export default function Hero() {
                 priority={i === 0}
                 className="object-cover"
                 sizes="100vw"
-                placeholder="blur"
-                blurDataURL={blur}
+                {...(blur ? { placeholder: "blur", blurDataURL: blur } : {})}
               />
             </div>
           );
@@ -161,13 +151,6 @@ export default function Hero() {
           <div />
 
           <div className="flex flex-col gap-8">
-            <p className="hero-statement text-[11px] tracking-[0.25em] uppercase text-white/50 mb-4">
-              Interior Design · Bengaluru · Est. 2020
-            </p>
-            <h1 className="hero-statement font-display text-3xl md:text-4xl lg:text-[2.8rem] font-medium leading-[1.25] text-white max-w-2xl">
-              We craft considered interiors.
-            </h1>
-
             {/* Slide progress indicators */}
             <div className="flex items-center gap-2">
               {IMAGES.map((_img, i) => (

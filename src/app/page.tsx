@@ -50,7 +50,7 @@ export default function Home() {
         {/* ── View all CTA ───────────────────────────────── */}
         <div className="px-8 md:px-16 py-14 border-t border-foreground/10">
           <div className="mx-auto max-w-7xl flex items-center justify-between">
-            <p className="text-[11px] tracking-[0.2em] uppercase text-foreground/30">
+            <p className="text-[11px] tracking-[0.2em] uppercase text-foreground/70">
               Showing 5 of {projects.length} projects
             </p>
             <Link
@@ -94,7 +94,7 @@ export default function Home() {
               </Link>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-foreground/10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-foreground/10">
               {SERVICES.map(({ index, title, desc }) => (
                 <div key={title} className="bg-[#faf9f7] p-8 md:p-10 flex flex-col gap-5">
                   <span className="text-[11px] tracking-[0.2em] text-foreground/30">{index}</span>
