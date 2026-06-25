@@ -34,6 +34,7 @@ export type Project = {
   color: string;
   cover?: string;
   hero?: string;
+  heroPosition?: string;       // CSS object-position for the hero banner image
   blur?: string;
   description?: string[];     // paragraphs
   credits?: ProjectCredit[];
@@ -119,7 +120,7 @@ export const projects: Project[] = [
     credits: [
       { label: "Lead Architects",  value: "Shashank Shetty\nSanjan Hoode" },
       { label: "Junior Architect", value: "Sahana Prabhu" },
-      { label: "Photographer",     value: "Roshan Pallath" },
+      { label: "Photographer",     value: "Roshan Paliath" },
     ],
 
     rooms: [
@@ -168,10 +169,17 @@ export const projects: Project[] = [
 
     cover: imgKarjat("1.jpg"),
     hero:  imgKarjat("1.jpg"),
+    heroPosition: "center 85%",
     blur:  B["public/Projects/Karjat/1.jpg"],
 
+    description: [
+      "Set against the hills of Karjat, this 1,600 sq.ft. farmhouse takes its name from the pair of pitched, Mangalore-tiled roofs that shelter the home and its long verandah beneath a single sloping gesture.",
+      "A plunge pool anchors the garden, framed by the surrounding hills and the existing trees the design works carefully around. Slender steel-and-glass columns line the verandah, keeping the threshold between inside and out light and unobtrusive.",
+      "Above one wing, a compact rooftop deck opens onto views of the hills beyond. Finished in lime-washed render, timber, and terracotta tile, the house is conceived as an easy, unhurried weekend retreat, grounded firmly in its rural setting.",
+    ],
+
     credits: [
-      { label: "Lead Architects", value: "Shashank Shetty\nSanjan Hoode\nSharanya Shivashankar" },
+      { label: "Lead Architects", value: "Shashank Shetty\nSanjan Hoode" },
     ],
 
     images: [
@@ -198,7 +206,7 @@ export const projects: Project[] = [
     blur:  B["public/Projects/Rajiv/1.jpg"],
 
     description: [
-      "Set in the quiet landscape of Zion Hill, this weekend home is designed as a place to slow down.",
+      "Set in the quiet landscape of Zion Hills, this weekend home is designed as a place to slow down.",
       "The planning keeps spaces open and connected, allowing the living, dining, and kitchen to flow into each other. A consistent palette of warm wood, textured walls, stone, and muted greens and blues draws from the surroundings and keeps the home grounded.",
       "Custom furniture and built-ins bring clarity without overcomplicating the space. As the house moves into private areas, the mood becomes softer and more relaxed.",
       "The focus is simple: create a home that feels calm, easy, and removed from the pace of the city.",
@@ -207,7 +215,7 @@ export const projects: Project[] = [
     credits: [
       { label: "Lead Architects",  value: "Shashank Shetty\nSanjan Hoode" },
       { label: "Junior Architect", value: "Sahana Prabhu" },
-      { label: "Photographer",     value: "Roshan Pallath" },
+      { label: "Photographer",     value: "Roshan Paliath" },
     ],
 
     images: [
@@ -235,7 +243,14 @@ export const projects: Project[] = [
 
     cover: imgRajankunte("3.jpg"),
     hero:  imgRajankunte("1.jpg"),
+    heroPosition: "center 85%",
     blur:  B["public/Projects/Rajankunte/1.jpg"],
+
+    description: [
+      "Set on a quiet plot in Rajankunte, this 3,800 sq.ft. home reworks an existing structure into a larger, more contemporary residence — retaining its original brick shell and extending it with new volumes in board-formed concrete and timber.",
+      "Steep, gabled roofs echo the language of the original house, reinterpreted at a larger scale across two storeys. Deep balconies wrap the brick facade, softened over time by trailing creepers, while a folded concrete portico marks the entry and anchors the composition.",
+      "Set back amid mature trees and open lawns, the house balances old and new, holding onto the character of what existed while opening it up to light, air, and the surrounding landscape.",
+    ],
 
     credits: [
       { label: "Lead Architects", value: "Shashank Shetty\nSanjan Hoode" },
@@ -429,7 +444,7 @@ export const projects: Project[] = [
     ],
 
     credits: [
-      { label: "Lead Architects", value: "Shashank Shetty\nSanjan Hoode" },
+      { label: "Lead Architects", value: "Shashank Shetty\nSanjan Hoode\nSharanya Shivashankar" },
     ],
 
     images: [
@@ -510,7 +525,7 @@ export const projects: Project[] = [
     credits: [
       { label: "Lead Architects",  value: "Shashank Shetty\nSanjan Hoode" },
       { label: "Junior Designer",  value: "Lakshmi Nair" },
-      { label: "Photographer",     value: "Roshan Pallath" },
+      { label: "Photographer",     value: "Roshan Paliath" },
     ],
 
     images: [
@@ -592,7 +607,7 @@ export const projects: Project[] = [
     credits: [
       { label: "Lead Architects",  value: "Shashank Shetty\nSanjan Hoode" },
       { label: "Junior Architect", value: "Sahana Prabhu\nLakshmi Nair" },
-      { label: "Photographer",     value: "Roshan Pallath" },
+      { label: "Photographer",     value: "Roshan Paliath" },
     ],
 
     images: [

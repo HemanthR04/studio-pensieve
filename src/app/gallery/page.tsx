@@ -255,7 +255,7 @@ export default function GalleryPage() {
             </div>
             <div className="md:col-span-7 flex flex-col gap-6">
               <p className="text-[15px] font-normal leading-[1.85] text-foreground/80">
-                A curated selection of images from completed projects. Photography by Roshan Pallath.
+                A curated selection of images from completed projects. Photography by Roshan Paliath.
               </p>
             </div>
           </div>

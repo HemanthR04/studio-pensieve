@@ -305,8 +305,9 @@ export default function ProjectPageClient({ project }: { project: Project }) {
     project.images?.find(img => img.orientation === "landscape")?.src ??
     project.hero;
 
-  const desc   = project.description ?? [];
-  const blocks = buildBlocks(project.images ?? []);
+  const desc          = project.description ?? [];
+  const galleryImages = (project.images ?? []).filter(img => img.src !== heroSrc);
+  const blocks        = buildBlocks(galleryImages);
 
 
   return (
@@ -324,6 +325,7 @@ export default function ProjectPageClient({ project }: { project: Project }) {
               sizes="100vw"
               priority
               className="object-cover"
+              style={project.heroPosition ? { objectPosition: project.heroPosition } : undefined}
               placeholder={project.blur ? "blur" : "empty"}
               blurDataURL={project.blur}
             />
