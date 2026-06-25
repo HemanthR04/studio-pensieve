@@ -123,6 +123,10 @@ function RevealBlock({
   );
 }
 
+function itemAlt(item: ProjectImage, title: string, fallback: string): string {
+  return item.caption ?? item.pairedCaption?.[0] ?? `${title} — ${fallback}`;
+}
+
 function GalleryImage({
   src,
   alt,
@@ -165,7 +169,7 @@ function GallerySection({
             <RevealBlock key={key}>
               <GalleryImage
                 src={item.src}
-                alt={`${title} — ${key + 1}`}
+                alt={itemAlt(item, title, `view ${key + 1}`)}
                 sizes="(max-width: 768px) calc(100vw - 4rem), calc(100vw - 7rem)"
                 aspect="3/2"
               />
@@ -185,7 +189,7 @@ function GallerySection({
                 <RevealBlock>
                   <GalleryImage
                     src={item.src}
-                    alt={`${title} — ${key + 1}`}
+                    alt={itemAlt(item, title, `view ${key + 1}`)}
                     sizes="(max-width: 768px) 100vw, calc(50vw - 4rem)"
                     aspect="2/3"
                   />
@@ -201,7 +205,7 @@ function GallerySection({
               <RevealBlock>
                 <GalleryImage
                   src={item.src}
-                  alt={`${title} — ${key + 1}`}
+                  alt={itemAlt(item, title, `view ${key + 1}`)}
                   sizes="(max-width: 768px) 100vw, calc(50vw - 4rem)"
                   aspect="2/3"
                 />
@@ -220,7 +224,7 @@ function GallerySection({
                   <RevealBlock key={col} delay={col * 0.05}>
                     <GalleryImage
                       src={img.src}
-                      alt={`${title} — ${key + 1}.${col + 1}`}
+                      alt={col === 0 ? itemAlt(img, title, `view ${key + 1}`) : `${title} — view ${key + 1}.${col + 1}`}
                       sizes="(max-width: 768px) 50vw, 25vw"
                       aspect="2/3"
                     />
@@ -246,7 +250,7 @@ function GallerySection({
                   <RevealBlock key={col} delay={col * 0.05}>
                     <GalleryImage
                       src={img.src}
-                      alt={`${title} — ${key + 1}.${col + 1}`}
+                      alt={col === 0 ? itemAlt(img, title, `view ${key + 1}`) : `${title} — view ${key + 1}.${col + 1}`}
                       sizes="(max-width: 768px) 33vw, 20vw"
                       aspect="2/3"
                     />
@@ -272,7 +276,7 @@ function GallerySection({
                 <RevealBlock key={col} delay={col * 0.1}>
                   <GalleryImage
                     src={img.src}
-                    alt={`${title} — ${key + 1}.${col + 1}`}
+                    alt={col === 0 ? itemAlt(img, title, `view ${key + 1}`) : `${title} — view ${key + 1}.${col + 1}`}
                     sizes="(max-width: 768px) 50vw, calc(50vw - 4rem)"
                     aspect="2/3"
                   />
