@@ -16,11 +16,6 @@ export type ProjectCredit = {
   value: string; // supports newlines with \n
 };
 
-export type ProjectRoom = {
-  number: number;
-  name: string;
-};
-
 export type Project = {
   slug: string;
   index: string;
@@ -38,7 +33,6 @@ export type Project = {
   blur?: string;
   description?: string[];     // paragraphs
   credits?: ProjectCredit[];
-  rooms?: ProjectRoom[];
   images?: ProjectImage[];
 };
 
@@ -121,15 +115,6 @@ export const projects: Project[] = [
       { label: "Lead Architects",  value: "Shashank Shetty\nSanjan Hoode" },
       { label: "Junior Architect", value: "Sahana Prabhu" },
       { label: "Photographer",     value: "Roshan Paliath" },
-    ],
-
-    rooms: [
-      { number: 1, name: "Living Space" },
-      { number: 2, name: "Bedroom" },
-      { number: 3, name: "Kitchen Space" },
-      { number: 4, name: "Guest Room" },
-      { number: 5, name: "Family Room" },
-      { number: 6, name: "Balcony" },
     ],
 
     images: [
