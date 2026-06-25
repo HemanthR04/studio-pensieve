@@ -37,9 +37,10 @@ export default function MenuProvider({ children }: { children: React.ReactNode }
   const pathname    = usePathname();
   const [open, setOpen]       = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const overlayRef  = useRef<HTMLDivElement>(null);
-  const linksRef    = useRef<HTMLDivElement>(null);
-  const isAnimating = useRef(false);
+  const overlayRef   = useRef<HTMLDivElement>(null);
+  const linksRef     = useRef<HTMLDivElement>(null);
+  const isAnimating  = useRef(false);
+  const preFocusRef  = useRef<Element | null>(null);
 
   // Register initial position with GSAP so it can animate from it
   useEffect(() => {
@@ -61,6 +62,7 @@ export default function MenuProvider({ children }: { children: React.ReactNode }
 
   const openMenu = useCallback(() => {
     if (isAnimating.current || open) return;
+    preFocusRef.current = document.activeElement;
     isAnimating.current = true;
     setOpen(true);
 
@@ -68,7 +70,10 @@ export default function MenuProvider({ children }: { children: React.ReactNode }
       yPercent: 0,
       duration: 0.75,
       ease: "power4.inOut",
-      onComplete: () => { isAnimating.current = false; },
+      onComplete: () => {
+        isAnimating.current = false;
+        overlayRef.current?.querySelector<HTMLElement>("button[aria-label='Close menu']")?.focus();
+      },
     });
 
     const items = linksRef.current?.querySelectorAll(".menu-link");
@@ -91,9 +96,36 @@ export default function MenuProvider({ children }: { children: React.ReactNode }
       onComplete: () => {
         setOpen(false);
         isAnimating.current = false;
+        (preFocusRef.current as HTMLElement | null)?.focus();
       },
     });
   }, [open]);
+
+  // Escape to close + focus trap — placed after closeMenu is declared
+  useEffect(() => {
+    if (!open) return;
+
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") { closeMenu(); return; }
+      if (e.key !== "Tab") return;
+
+      const focusable = overlayRef.current?.querySelectorAll<HTMLElement>(
+        'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+      );
+      if (!focusable || focusable.length === 0) return;
+      const first = focusable[0];
+      const last  = focusable[focusable.length - 1];
+
+      if (e.shiftKey) {
+        if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+      } else {
+        if (document.activeElement === last)  { e.preventDefault(); first.focus(); }
+      }
+    };
+
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [open, closeMenu]);
 
   return (
     <MenuContext.Provider value={{ openMenu }}>
@@ -111,6 +143,10 @@ export default function MenuProvider({ children }: { children: React.ReactNode }
       {/* ── Fullscreen overlay ───────────────────────────────────── */}
       <div
         ref={overlayRef}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Navigation menu"
+        aria-hidden={!open}
         className="fixed inset-0 z-[150] bg-[#111] flex"
         style={{ pointerEvents: open ? "auto" : "none" }}
       >
