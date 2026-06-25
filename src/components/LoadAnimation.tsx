@@ -3,14 +3,18 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
+type Phase = "enter" | "hold" | "fade" | "done";
+
+function getInitialPhase(): Phase {
+  if (typeof window !== "undefined" && sessionStorage.getItem("sp_visited")) return "done";
+  return "enter";
+}
+
 export default function LoadAnimation() {
-  const [phase, setPhase] = useState<"enter" | "hold" | "fade" | "done">("enter");
+  const [phase, setPhase] = useState<Phase>(getInitialPhase);
 
   useEffect(() => {
-    if (sessionStorage.getItem("sp_visited")) {
-      setPhase("done");
-      return;
-    }
+    if (phase !== "enter") return;
     const t1 = setTimeout(() => setPhase("hold"), 550);
     const t2 = setTimeout(() => setPhase("fade"), 2000);
     const t3 = setTimeout(() => {
@@ -18,7 +22,7 @@ export default function LoadAnimation() {
       sessionStorage.setItem("sp_visited", "1");
     }, 2800);
     return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); };
-  }, []);
+  }, [phase]);
 
   if (phase === "done") return null;
 

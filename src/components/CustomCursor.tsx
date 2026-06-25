@@ -1,14 +1,11 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
+import useIsTouchDevice from "@/hooks/useIsTouchDevice";
 
 export default function CustomCursor() {
   const ref = useRef<HTMLDivElement>(null);
-  const [show, setShow] = useState(false);
-
-  useEffect(() => {
-    setShow(!window.matchMedia("(pointer: coarse)").matches);
-  }, []);
+  const show = !useIsTouchDevice();
 
   useEffect(() => {
     if (!show) return;
@@ -47,7 +44,7 @@ export default function CustomCursor() {
       window.removeEventListener("mousemove", onMove);
       window.removeEventListener("mouseover", onOver);
     };
-  }, []);
+  }, [show]);
 
   if (!show) return null;
 

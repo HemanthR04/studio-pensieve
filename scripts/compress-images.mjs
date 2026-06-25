@@ -10,7 +10,7 @@
 
 import sharp from "sharp";
 import { readdir, stat, readFile, writeFile, unlink } from "fs/promises";
-import { join, extname, basename, dirname } from "path";
+import { join, extname, basename } from "path";
 
 const ROOT          = new URL("..", import.meta.url).pathname;
 const PROJECTS_DIR  = join(ROOT, "public/Projects");

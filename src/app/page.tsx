@@ -114,7 +114,7 @@ export default function Home() {
                 Start a Project
               </p>
               <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-medium leading-[1.2] max-w-2xl">
-                Have a space in mind? Let's talk.
+                Have a space in mind? Let&apos;s talk.
               </h2>
             </div>
             <div className="md:col-span-4 flex items-end">

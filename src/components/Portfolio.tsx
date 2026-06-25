@@ -1,10 +1,11 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
 import { projects } from "@/data/projects";
 import type { Project } from "@/data/projects";
 import { usePageTransition } from "@/components/TransitionProvider";
+import useIsTouchDevice from "@/hooks/useIsTouchDevice";
 
 function landscapeSrc(project: Project): string | undefined {
   return (
@@ -18,13 +19,9 @@ export default function Portfolio({ limit }: { limit?: number }) {
   const trackRef = useRef<HTMLDivElement>(null);
   const drag = useRef({ active: false, startX: 0, scrollLeft: 0, moved: false });
   const [hoveredSlug, setHoveredSlug] = useState<string | null>(null);
-  const [isTouch, setIsTouch] = useState(false);
+  const isTouch = useIsTouchDevice();
   const pillRef = useRef<HTMLDivElement>(null);
   const visible = limit ? projects.slice(0, limit) : projects;
-
-  useEffect(() => {
-    setIsTouch(window.matchMedia("(pointer: coarse)").matches);
-  }, []);
 
   function onMouseDown(e: React.MouseEvent) {
     const el = trackRef.current;

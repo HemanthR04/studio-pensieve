@@ -6,6 +6,7 @@ import gsap from "gsap";
 import { projects } from "@/data/projects";
 import type { Project } from "@/data/projects";
 import { usePageTransition } from "@/components/TransitionProvider";
+import useIsTouchDevice from "@/hooks/useIsTouchDevice";
 
 function normalizeCategory(cat: string): string {
   if (cat.toLowerCase().includes("architecture")) return "Architecture";
@@ -33,13 +34,9 @@ export default function ProjectsPageClient() {
   const { navigate } = usePageTransition();
   const [hoveredSlug, setHoveredSlug]     = useState<string | null>(null);
   const [activeCategory, setActiveCategory] = useState("All");
-  const [isTouch, setIsTouch] = useState(false);
+  const isTouch = useIsTouchDevice();
   const pillRef = useRef<HTMLDivElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    setIsTouch(window.matchMedia("(pointer: coarse)").matches);
-  }, []);
 
   const filtered = activeCategory === "All"
     ? projects

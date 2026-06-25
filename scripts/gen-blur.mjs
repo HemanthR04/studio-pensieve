@@ -5,7 +5,7 @@
  */
 
 import sharp from "sharp";
-import { readFile, writeFile } from "fs/promises";
+import { writeFile } from "fs/promises";
 import { join } from "path";
 import { existsSync } from "fs";
 
