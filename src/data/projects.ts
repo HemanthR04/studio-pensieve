@@ -385,9 +385,9 @@ export const projects: Project[] = [
     bg: "bg-orange-50",
     color: "#fff7ed",
 
-    cover: imgVilla1("1.jpg"),
-    hero:  imgVilla1("1.jpg"),
-    blur:  B["public/Projects/Villa 1/1.jpg"],
+    cover: imgVilla1("2.jpg"),
+    hero:  imgVilla1("2.jpg"),
+    blur:  B["public/Projects/Villa 1/2.jpg"],
 
     description: [
       "Set within Bangalore's urban context, this home is conceived as a calm, contemporary space. A minimal approach guides the design, with clean lines, open planning, and a restrained use of colour.",
@@ -402,8 +402,7 @@ export const projects: Project[] = [
     ],
 
     images: [
-      { src: imgVilla1("2.jpg"),  orientation: "portrait", layout: "quad", pairedCaption: ["The living and dining areas are designed to feel warm, comfortable, and easy to use. Furniture balances softness with function, creating spaces that are both practical and inviting."] },
-      { src: imgVilla1("3.jpg"),  orientation: "portrait" },
+      { src: imgVilla1("3.jpg"),  orientation: "portrait", layout: "trio", pairedCaption: ["The living and dining areas are designed to feel warm, comfortable, and easy to use. Furniture balances softness with function, creating spaces that are both practical and inviting."] },
       { src: imgVilla1("4.jpg"),  orientation: "portrait" },
       { src: imgVilla1("5.jpg"),  orientation: "portrait" },
       { src: imgVilla1("6.jpg"),  orientation: "portrait", caption: "Tucked beneath the staircase, the bar area makes efficient use of space while maintaining the home's overall language. Compact yet well-defined, it blends function with a sense of quiet detail, turning an otherwise residual corner into a purposeful feature." },

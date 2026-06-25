@@ -33,7 +33,7 @@ const TARGETS = [
   "public/Projects/RmK/1.jpg",
   "public/Projects/Godrej/1.jpg",
   "public/Projects/Rajiv/1.jpg",
-  "public/Projects/Villa 1/1.jpg",
+  "public/Projects/Villa 1/2.jpg",
   // Team photo
   "public/Team/Team.jpeg",
 ];
