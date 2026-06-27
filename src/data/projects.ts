@@ -342,11 +342,11 @@ export const projects: Project[] = [
   {
     slug: "vibranium-ventures",
     index: "05",
-    title: "Vibranium Office",
+    title: "Vibranium Ventures Office",
     category: "Interiors",
     location: "Bengaluru",
     year: "2025",
-    size: "1,850 sq ft",
+    size: "2,000 sq ft",
     aspect: "landscape",
     bg: "bg-zinc-300",
     color: "#d4d4d8",
@@ -356,8 +356,8 @@ export const projects: Project[] = [
     blur:  B["public/Projects/Vibranium Office/1.jpg"],
 
     description: [
-      "Vibranium Ventures office embodies a refined architectural narrative where spatial fluidity, material depth, and controlled lighting converge to create a sophisticated work environment. The layout is organised around a seamless circulation spine defined by curved walls and transparent partitions, allowing light to flow naturally across zones. A tactile palette of wood, glass, and textured wall treatments establishes warmth and balance, while elements like the green glass-block partition and fluted panelling introduce rhythm and contrast. The interplay of opacity and translucency ensures spatial hierarchy without rigid separation, reinforcing an open yet structured plan that encourages collaboration and focus alike.",
-      "Material articulation is central to the design language. The use of deep-toned fluted walls, brushed brass detailing, and sculptural furniture lends a sense of permanence and precision, while organic rugs, layered lighting, and natural finishes soften the geometry. Every junction — from the curved glazing to the recessed coves — is resolved with clarity, highlighting the craftsmanship and coherence in detailing. The overall experience is one of modern restraint: an office that translates Vibranium Ventures' contemporary identity into a spatial expression of elegance, efficiency, and quiet confidence.",
+      "Vibranium Ventures' 2,000 sq.ft. office is organised around a fluid circulation spine of curved walls and transparent partitions, allowing zones to remain visually connected while retaining individual character. The plan sequences workstations, private cabins, meeting spaces, and the client lounge from arrival inward, encouraging movement without sacrificing structure.",
+      "A tactile palette of wood, glass, brushed brass, and textured finishes establishes warmth throughout. The green glass-block partition and deep-toned fluted paneling introduce rhythm and contrast, while organic rugs, layered lighting, and curated artwork temper the geometry. Every junction, from curved glazing to recessed ceiling coves, is resolved with precision. The result is an office that does not announce itself loudly but rewards attention at every scale.",
     ],
 
     credits: [
@@ -366,13 +366,13 @@ export const projects: Project[] = [
     ],
 
     images: [
-      { src: imgVibranium("2.jpg"), orientation: "landscape" },
-      { src: imgVibranium("3.jpg"), orientation: "portrait"  },
-      { src: imgVibranium("4.jpg"), orientation: "landscape" },
-      { src: imgVibranium("5.jpg"), orientation: "landscape" },
-      { src: imgVibranium("6.jpg"), orientation: "landscape" },
-      { src: imgVibranium("7.jpg"), orientation: "landscape" },
-      { src: imgVibranium("8.jpg"), orientation: "landscape" },
+      { src: imgVibranium("8.jpg"), orientation: "landscape", caption: "Reception leads with a travertine desk, fluted wall paneling, and the brand mark set large above. A frosted glass door to one side offers a partial view into the interior, building anticipation without giving it away." },
+      { src: imgVibranium("4.jpg"), orientation: "landscape", caption: "The open workstation zone sits between the green glass-block partition and the curved fluted wall, creating a corridor of contrasting textures. Acoustic-panelled desks hold the middle ground, focused and unhurried." },
+      { src: imgVibranium("5.jpg"), orientation: "landscape", caption: "Brass-framed glass panels alternate with solid partitions along the private cabin block, letting light pass through without dissolving boundaries. The curved deep-blue fluted wall anchors the corridor, its ribbed surface absorbing light differently at every angle." },
+      { src: imgVibranium("6.jpg"), orientation: "landscape", caption: "The director's cabin places the brand at its literal centre: the Vibranium Ventures identity set into a marble feature wall, lit from above by a brass sculptural pendant. The white marble desk extends forward as both a work surface and a client-facing meeting table." },
+      { src: imgVibranium("7.jpg"), orientation: "landscape", caption: "A lounge corner within the cabin offers a quieter register: two cream armchairs, a large abstract work, and a dark shelving unit behind. Intended for informal conversation, the space signals that meetings here are not transactional." },
+      { src: imgVibranium("2.jpg"), orientation: "landscape", caption: "An informal meeting table occupies the threshold between the open floor and the glass-block partition, defined by an organic rug and a vivid red artwork above. It is the only moment of strong colour in the scheme, marking the zone as distinct within the sequence." },
+      { src: imgVibranium("3.jpg"), orientation: "portrait",  caption: "From behind the fluted wall, the lounge reveals its full depth: arched ceiling coves, a sculptural chandelier, and a wall of lit niches displaying awards. The curved partition in the foreground frames the room as a destination rather than a through-space." },
     ],
   },
   {
