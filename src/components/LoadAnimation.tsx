@@ -11,6 +11,7 @@ export default function LoadAnimation() {
   useEffect(() => {
     // Skip animation on subsequent visits within the same session
     if (sessionStorage.getItem("sp_visited")) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- intentional skip of intro animation on repeat visits
       setPhase("done");
       return;
     }
