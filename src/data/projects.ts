@@ -191,9 +191,9 @@ export const projects: Project[] = [
     bg: "bg-neutral-200",
     color: "#e5e5e5",
 
-    cover: imgRmK("4.jpg"),
-    hero:  imgRmK("1.jpg"),
-    blur:  B["public/Projects/RMK Antheia/1.jpg"],
+    cover: imgRmK("4.png"),
+    hero:  imgRmK("1.png"),
+    blur:  B["public/Projects/RMK Antheia/1.png"],
 
     description: [
       "RMK Antheia is an 11-acre landscape-led residential masterplan rooted in the site's ecology and history. At its heart, an existing stone retaining water tank is re-adapted into a central open-air theatre and community space. Carefully introduced punctures through the original walls preserve the memory of the site while creating visual and physical connections to the new development.",
@@ -207,13 +207,13 @@ export const projects: Project[] = [
     ],
 
     images: [
-      { src: imgRmK("2.jpg"), orientation: "landscape" },
-      { src: imgRmK("4.jpg"), orientation: "landscape" },
-      { src: imgRmK("5.jpg"), orientation: "landscape" },
-      { src: imgRmK("6.jpg"), orientation: "landscape" },
-      { src: imgRmK("7.jpg"), orientation: "landscape" },
-      { src: imgRmK("8.jpg"), orientation: "landscape" },
-      { src: imgRmK("9.jpg"), orientation: "landscape" },
+      { src: imgRmK("2.png"), orientation: "landscape" },
+      { src: imgRmK("3.png"), orientation: "landscape" },
+      { src: imgRmK("4.png"), orientation: "landscape" },
+      { src: imgRmK("5.png"), orientation: "landscape" },
+      { src: imgRmK("6.png"), orientation: "landscape" },
+      { src: imgRmK("7.png"), orientation: "landscape" },
+      { src: imgRmK("8.png"), orientation: "landscape" },
     ],
   },
   // ── 4. Lime & Light Residence ───────────────────────────────────────────
