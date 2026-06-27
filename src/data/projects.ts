@@ -37,15 +37,15 @@ export type Project = {
 };
 
 function img(filename: string): string {
-  return `/Projects/Emb%20Pristine%20/${encodeURIComponent(filename)}`;
+  return `/Projects/Vana/${encodeURIComponent(filename)}`;
 }
 
 function imgKishore(filename: string): string {
-  return `/Projects/Kishore%20Residence/${encodeURIComponent(filename)}`;
+  return `/Projects/Lime%20%26%20Light%20Residence/${encodeURIComponent(filename)}`;
 }
 
 function imgUber(filename: string): string {
-  return `/Projects/Uber%20Residence/${encodeURIComponent(filename)}`;
+  return `/Projects/Mana/${encodeURIComponent(filename)}`;
 }
 
 function imgTapTales(filename: string): string {
@@ -53,31 +53,31 @@ function imgTapTales(filename: string): string {
 }
 
 function imgVibranium(filename: string): string {
-  return `/Projects/Vibranium/${encodeURIComponent(filename)}`;
+  return `/Projects/Vibranium%20Office/${encodeURIComponent(filename)}`;
 }
 
 function imgChanpatna(filename: string): string {
-  return `/Projects/Chanpatna/${encodeURIComponent(filename)}`;
+  return `/Projects/Verandah%20House/${encodeURIComponent(filename)}`;
 }
 
 function imgKarjat(filename: string): string {
-  return `/Projects/Karjat/${encodeURIComponent(filename)}`;
+  return `/Projects/Twin%20Roof%20Farmhouse/${encodeURIComponent(filename)}`;
 }
 
 function imgRajankunte(filename: string): string {
-  return `/Projects/Rajankunte/${encodeURIComponent(filename)}`;
+  return `/Projects/Adapted%20House/${encodeURIComponent(filename)}`;
 }
 
 function imgRmK(filename: string): string {
-  return `/Projects/RmK/${encodeURIComponent(filename)}`;
+  return `/Projects/RMK%20Antheia/${encodeURIComponent(filename)}`;
 }
 
 function imgGodrej(filename: string): string {
-  return `/Projects/Godrej/${encodeURIComponent(filename)}`;
+  return `/Projects/Olive%20House/${encodeURIComponent(filename)}`;
 }
 
 function imgRajiv(filename: string): string {
-  return `/Projects/Rajiv/${encodeURIComponent(filename)}`;
+  return `/Projects/Zion%20House/${encodeURIComponent(filename)}`;
 }
 
 function imgVilla1(filename: string): string {
@@ -89,6 +89,7 @@ function imgEstate(filename: string): string {
 }
 
 export const projects: Project[] = [
+  // ── 1. Vana ─────────────────────────────────────────────────────────────
   {
     slug: "emb-pristine",
     index: "01",
@@ -103,7 +104,7 @@ export const projects: Project[] = [
 
     cover: img("8 Living room.jpg"),
     hero:  img(" 1 Foyer.jpg"),
-    blur:  B["public/Projects/Emb Pristine / 1 Foyer.jpg"],
+    blur:  B["public/Projects/Vana/ 1 Foyer.jpg"],
 
     description: [
       "This pre-owned 3BHK apartment, overlooking expansive forest views, was reimagined as a calm, contemporary home rooted in an Indian-modern sensibility. The design prioritises simplicity, function, and a strong connection to its surroundings.",
@@ -140,80 +141,7 @@ export const projects: Project[] = [
       { src: img("21 Master bedroom.jpeg"),    orientation: "landscape" },
     ],
   },
-  {
-    slug: "karjat",
-    index: "07",
-    title: "Twin Roof Farmhouse",
-    category: "Architecture",
-    location: "Karjat",
-    year: "2026",
-    size: "1,600 sq ft",
-    aspect: "landscape",
-    bg: "bg-stone-100",
-    color: "#f5f5f4",
-
-    cover: imgKarjat("1.jpg"),
-    hero:  imgKarjat("1.jpg"),
-    heroPosition: "center 85%",
-    blur:  B["public/Projects/Karjat/1.jpg"],
-
-    description: [
-      "Set against the hills of Karjat, this 1,600 sq.ft. farmhouse takes its name from the pair of pitched, Mangalore-tiled roofs that shelter the home and its long verandah beneath a single sloping gesture.",
-      "A plunge pool anchors the garden, framed by the surrounding hills and the existing trees the design works carefully around. Slender steel-and-glass columns line the verandah, keeping the threshold between inside and out light and unobtrusive.",
-      "Above one wing, a compact rooftop deck opens onto views of the hills beyond. Finished in lime-washed render, timber, and terracotta tile, the house is conceived as an easy, unhurried weekend retreat, grounded firmly in its rural setting.",
-    ],
-
-    credits: [
-      { label: "Lead Architects", value: "Shashank Shetty\nSanjan Hoode" },
-    ],
-
-    images: [
-      { src: imgKarjat("2.jpg"), orientation: "portrait"  },
-      { src: imgKarjat("3.jpg"), orientation: "landscape" },
-      { src: imgKarjat("4.jpg"), orientation: "landscape" },
-      { src: imgKarjat("5.jpg"), orientation: "portrait"  },
-    ],
-  },
-  {
-    slug: "rajiv-residence",
-    index: "11",
-    title: "Zion House",
-    category: "Interiors",
-    location: "Kolar",
-    year: "2024",
-    size: "3,500 sq ft",
-    aspect: "portrait",
-    bg: "bg-rose-50",
-    color: "#fff1f2",
-
-    cover: imgRajiv("1.jpg"),
-    hero:  imgRajiv("1.jpg"),
-    blur:  B["public/Projects/Rajiv/1.jpg"],
-
-    description: [
-      "Set in the quiet landscape of Zion Hills, this weekend home is designed as a place to slow down.",
-      "The planning keeps spaces open and connected, allowing the living, dining, and kitchen to flow into each other. A consistent palette of warm wood, textured walls, stone, and muted greens and blues draws from the surroundings and keeps the home grounded.",
-      "Custom furniture and built-ins bring clarity without overcomplicating the space. As the house moves into private areas, the mood becomes softer and more relaxed.",
-      "The focus is simple: create a home that feels calm, easy, and removed from the pace of the city.",
-    ],
-
-    credits: [
-      { label: "Lead Architects",  value: "Shashank Shetty\nSanjan Hoode" },
-      { label: "Junior Architect", value: "Sahana Prabhu" },
-      { label: "Photographer",     value: "Roshan Paliath" },
-    ],
-
-    images: [
-      { src: imgRajiv("2.jpg"), orientation: "portrait",  caption: "The dining table is conceived as a sculptural piece, with a solid base supporting a stone top. Its weight and materiality ground the space, balancing the softness of light, fabric, and surrounding elements." },
-      { src: imgRajiv("3.jpg"), orientation: "landscape", caption: "A relaxed living space shaped by soft curves and quiet materiality. The furniture takes cues from the rolling topography of the golf course beyond, translating it into gentle forms, muted tones, and an easy, unhurried atmosphere." },
-      { src: imgRajiv("4.jpg"), orientation: "portrait",  pairedCaption: ["The kitchen is defined by muted green cabinetry and textured tiles, framed by fluted glass partitions that keep the space open yet contained."] },
-      { src: imgRajiv("5.jpg"), orientation: "portrait"  },
-      { src: imgRajiv("6.jpg"), orientation: "portrait"  },
-      { src: imgRajiv("7.jpg"), orientation: "portrait"  },
-      { src: imgRajiv("8.jpg"), orientation: "portrait",  pairedCaption: ["Layered in warm neutrals and natural textures, the bedroom is designed for ease. Upholstered surfaces, soft drapery, and integrated storage keep the space calm and uncluttered."] },
-      { src: imgRajiv("9.jpg"), orientation: "portrait"  },
-    ],
-  },
+  // ── 2. Adapted House ────────────────────────────────────────────────────
   {
     slug: "rajankunte",
     index: "08",
@@ -229,7 +157,7 @@ export const projects: Project[] = [
     cover: imgRajankunte("3.jpg"),
     hero:  imgRajankunte("1.jpg"),
     heroPosition: "center 85%",
-    blur:  B["public/Projects/Rajankunte/1.jpg"],
+    blur:  B["public/Projects/Adapted House/1.jpg"],
 
     description: [
       "Set on a quiet plot in Rajankunte, this 3,800 sq.ft. home reworks an existing structure into a larger, more contemporary residence — retaining its original brick shell and extending it with new volumes in board-formed concrete and timber.",
@@ -250,6 +178,87 @@ export const projects: Project[] = [
       { src: imgRajankunte("7.jpg"), orientation: "landscape" },
     ],
   },
+  // ── 3. RMK Antheia ──────────────────────────────────────────────────────
+  {
+    slug: "rmk",
+    index: "09",
+    title: "RMK Antheia",
+    category: "Architecture",
+    location: "Karnataka",
+    year: "2023",
+    size: "11 Acres",
+    aspect: "landscape",
+    bg: "bg-neutral-200",
+    color: "#e5e5e5",
+
+    cover: imgRmK("4.jpg"),
+    hero:  imgRmK("1.jpg"),
+    blur:  B["public/Projects/RMK Antheia/1.jpg"],
+
+    description: [
+      "RMK Antheia is an 11-acre landscape-led residential masterplan rooted in the site's ecology and history. At its heart, an existing stone retaining water tank is re-adapted into a central open-air theatre and community space. Carefully introduced punctures through the original walls preserve the memory of the site while creating visual and physical connections to the new development.",
+      "The masterplan is woven around existing mango trees, with shaded streets, pedestrian pathways, water edges, and social spaces encouraging a slower, nature-oriented living experience.",
+      "The entrance gateway establishes the project's identity through exposed concrete forms and a corten steel canopy with geometric cut-outs that filter light and shadow across the arrival space. This geometric language subtly extends into adjoining concrete walls, creating a cohesive architectural expression.",
+      "Using a restrained palette of exposed concrete, natural stone, weathered metal, and tropical planting, the project draws from contemporary tropical architecture principles to create a climate-responsive residential environment deeply connected to its landscape and history.",
+    ],
+
+    credits: [
+      { label: "Lead Architects", value: "Shashank Shetty\nSanjan Hoode\nSharanya Shivashankar" },
+    ],
+
+    images: [
+      { src: imgRmK("2.jpg"), orientation: "landscape" },
+      { src: imgRmK("4.jpg"), orientation: "landscape" },
+      { src: imgRmK("5.jpg"), orientation: "landscape" },
+      { src: imgRmK("6.jpg"), orientation: "landscape" },
+      { src: imgRmK("7.jpg"), orientation: "landscape" },
+      { src: imgRmK("8.jpg"), orientation: "landscape" },
+      { src: imgRmK("9.jpg"), orientation: "landscape" },
+    ],
+  },
+  // ── 4. Lime & Light Residence ───────────────────────────────────────────
+  {
+    slug: "kishore-residence",
+    index: "02",
+    title: "Lime & Light Residence",
+    category: "Interiors",
+    location: "Bengaluru",
+    year: "2025",
+    size: "1,700 sq ft",
+    aspect: "portrait",
+    bg: "bg-orange-50",
+    color: "#fff7ed",
+
+    cover: imgKishore("1.jpg"),
+    hero:  imgKishore("1.jpg"),
+    blur:  B["public/Projects/Lime & Light Residence/1.jpg"],
+
+    description: [
+      "This residence is conceived as a calm, materially rich home where spaces unfold with quiet continuity. Guided by a Japandi sensibility and subtle Indian nuances, the design balances restraint with warmth, letting material, light, and proportion shape the experience.",
+      "Lime-washed surfaces, natural wood, and a soft palette of neutrals and muted pastels create a tactile, understated base. Character emerges through consistency of tone, detail, and craft rather than overt gestures.",
+      "The planning remains open and fluid. Spaces connect through shifts in material, light, and geometry instead of walls, resulting in a home that feels cohesive, expansive, and quietly intentional.",
+    ],
+
+    credits: [
+      { label: "Lead Architects",  value: "Shashank Shetty\nSanjan Hoode" },
+      { label: "Junior Architect", value: "Sahana Prabhu\nLakshmi Nair" },
+      { label: "Photographer",     value: "Roshan Paliath" },
+    ],
+
+    images: [
+      { src: imgKishore("2.jpg"),       orientation: "portrait", layout: "quad", pairedCaption: ["The living space is defined by a soft, earthy palette, with olive greens and warm beiges set against textured lime-washed walls. Low, linear furniture keeps the room open while retaining a sense of intimacy.", "Custom pieces are carefully proportioned to feel light yet grounded. Black accents add contrast, while indoor planting softens the composition.", "A vertical wood panel anchors the seating area, defining the space without disrupting flow. Designed as a movable element, it introduces a subtle sense of drama."] },
+      { src: imgKishore("3.jpg"),       orientation: "portrait" },
+      { src: imgKishore("4.jpg"),       orientation: "portrait" },
+      { src: imgKishore("5 gif.1.jpg"), orientation: "portrait" },
+      { src: imgKishore("6.jpg"),       orientation: "portrait", caption: "The dining area continues the home's earthy material language. A solid wood table is paired with black-framed armchairs upholstered in natural linen, their squared geometry echoing the graphic lattice screen that divides the dining and passage zones. Antique-finish ceramic vessels and taper candles complete the tableau.", captionAlign: "center" },
+      { src: imgKishore("7.jpg"),       orientation: "portrait", layout: "trio", pairedCaption: ["The bedrooms continue a restrained language, shifting toward softer textures and more personal expression.", "Material transitions from wood to fabric to wall finish remain subtle and cohesive. Cane inserts, pastel wardrobes, and upholstered elements add variation without disrupting the calm.", "Compact study niches and integrated storage maintain clarity, ensuring utility does not clutter the space."] },
+      { src: imgKishore("8.jpg"),       orientation: "portrait" },
+      { src: imgKishore("9.jpg"),       orientation: "portrait" },
+      { src: imgKishore("10.jpg"),      orientation: "portrait" },
+      { src: imgKishore("11.jpg"),      orientation: "portrait" },
+    ],
+  },
+  // ── 5. Tap Tales ────────────────────────────────────────────────────────
   {
     slug: "tap-tales",
     index: "04",
@@ -287,6 +296,47 @@ export const projects: Project[] = [
       { src: imgTapTales("Copy of 18.jpg"),    orientation: "landscape" },
     ],
   },
+  // ── remaining projects ───────────────────────────────────────────────────
+  {
+    slug: "rajiv-residence",
+    index: "11",
+    title: "Zion House",
+    category: "Interiors",
+    location: "Kolar",
+    year: "2024",
+    size: "3,500 sq ft",
+    aspect: "portrait",
+    bg: "bg-rose-50",
+    color: "#fff1f2",
+
+    cover: imgRajiv("1.jpg"),
+    hero:  imgRajiv("1.jpg"),
+    blur:  B["public/Projects/Zion House/1.jpg"],
+
+    description: [
+      "Set in the quiet landscape of Zion Hills, this weekend home is designed as a place to slow down.",
+      "The planning keeps spaces open and connected, allowing the living, dining, and kitchen to flow into each other. A consistent palette of warm wood, textured walls, stone, and muted greens and blues draws from the surroundings and keeps the home grounded.",
+      "Custom furniture and built-ins bring clarity without overcomplicating the space. As the house moves into private areas, the mood becomes softer and more relaxed.",
+      "The focus is simple: create a home that feels calm, easy, and removed from the pace of the city.",
+    ],
+
+    credits: [
+      { label: "Lead Architects",  value: "Shashank Shetty\nSanjan Hoode" },
+      { label: "Junior Architect", value: "Sahana Prabhu" },
+      { label: "Photographer",     value: "Roshan Paliath" },
+    ],
+
+    images: [
+      { src: imgRajiv("2.jpg"), orientation: "portrait",  caption: "The dining table is conceived as a sculptural piece, with a solid base supporting a stone top. Its weight and materiality ground the space, balancing the softness of light, fabric, and surrounding elements." },
+      { src: imgRajiv("3.jpg"), orientation: "landscape", caption: "A relaxed living space shaped by soft curves and quiet materiality. The furniture takes cues from the rolling topography of the golf course beyond, translating it into gentle forms, muted tones, and an easy, unhurried atmosphere." },
+      { src: imgRajiv("4.jpg"), orientation: "portrait",  pairedCaption: ["The kitchen is defined by muted green cabinetry and textured tiles, framed by fluted glass partitions that keep the space open yet contained."] },
+      { src: imgRajiv("5.jpg"), orientation: "portrait"  },
+      { src: imgRajiv("6.jpg"), orientation: "portrait"  },
+      { src: imgRajiv("7.jpg"), orientation: "portrait"  },
+      { src: imgRajiv("8.jpg"), orientation: "portrait",  pairedCaption: ["Layered in warm neutrals and natural textures, the bedroom is designed for ease. Upholstered surfaces, soft drapery, and integrated storage keep the space calm and uncluttered."] },
+      { src: imgRajiv("9.jpg"), orientation: "portrait"  },
+    ],
+  },
   {
     slug: "vibranium-ventures",
     index: "05",
@@ -301,7 +351,7 @@ export const projects: Project[] = [
 
     cover: imgVibranium("1.jpg"),
     hero:  imgVibranium("1.jpg"),
-    blur:  B["public/Projects/Vibranium/1.jpg"],
+    blur:  B["public/Projects/Vibranium Office/1.jpg"],
 
     description: [
       "Vibranium Ventures' office embodies a refined architectural narrative where spatial fluidity, material depth, and controlled lighting converge to create a sophisticated work environment. The layout is organised around a seamless circulation spine defined by curved walls and transparent partitions, allowing light to flow naturally across zones. A tactile palette of wood, glass, and textured wall treatments establishes warmth and balance, while elements like the green glass-block partition and fluted panelling introduce rhythm and contrast. The interplay of opacity and translucency ensures spatial hierarchy without rigid separation, reinforcing an open yet structured plan that encourages collaboration and focus alike.",
@@ -337,7 +387,7 @@ export const projects: Project[] = [
 
     cover: imgChanpatna("1.jpg"),
     hero:  imgChanpatna("1.jpg"),
-    blur:  B["public/Projects/Chanpatna/1.jpg"],
+    blur:  B["public/Projects/Verandah House/1.jpg"],
 
     description: [
       "Located in Channapatna, this 2,400 sq.ft. farmhouse is conceived as a quiet retreat within a working rural landscape. The house takes on a linear form, aligning with the site to maintain continuous visual engagement with the surrounding fields.",
@@ -405,40 +455,37 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "rmk",
-    index: "09",
-    title: "RMK Antheia",
+    slug: "karjat",
+    index: "07",
+    title: "Twin Roof Farmhouse",
     category: "Architecture",
-    location: "Karnataka",
-    year: "2023",
-    size: "11 Acres",
+    location: "Karjat",
+    year: "2026",
+    size: "1,600 sq ft",
     aspect: "landscape",
-    bg: "bg-neutral-200",
-    color: "#e5e5e5",
+    bg: "bg-stone-100",
+    color: "#f5f5f4",
 
-    cover: imgRmK("4.jpg"),
-    hero:  imgRmK("1.jpg"),
-    blur:  B["public/Projects/RmK/1.jpg"],
+    cover: imgKarjat("1.jpg"),
+    hero:  imgKarjat("1.jpg"),
+    heroPosition: "center 85%",
+    blur:  B["public/Projects/Twin Roof Farmhouse/1.jpg"],
 
     description: [
-      "RMK Antheia is an 11-acre landscape-led residential masterplan rooted in the site's ecology and history. At its heart, an existing stone retaining water tank is re-adapted into a central open-air theatre and community space. Carefully introduced punctures through the original walls preserve the memory of the site while creating visual and physical connections to the new development.",
-      "The masterplan is woven around existing mango trees, with shaded streets, pedestrian pathways, water edges, and social spaces encouraging a slower, nature-oriented living experience.",
-      "The entrance gateway establishes the project's identity through exposed concrete forms and a corten steel canopy with geometric cut-outs that filter light and shadow across the arrival space. This geometric language subtly extends into adjoining concrete walls, creating a cohesive architectural expression.",
-      "Using a restrained palette of exposed concrete, natural stone, weathered metal, and tropical planting, the project draws from contemporary tropical architecture principles to create a climate-responsive residential environment deeply connected to its landscape and history.",
+      "Set against the hills of Karjat, this 1,600 sq.ft. farmhouse takes its name from the pair of pitched, Mangalore-tiled roofs that shelter the home and its long verandah beneath a single sloping gesture.",
+      "A plunge pool anchors the garden, framed by the surrounding hills and the existing trees the design works carefully around. Slender steel-and-glass columns line the verandah, keeping the threshold between inside and out light and unobtrusive.",
+      "Above one wing, a compact rooftop deck opens onto views of the hills beyond. Finished in lime-washed render, timber, and terracotta tile, the house is conceived as an easy, unhurried weekend retreat, grounded firmly in its rural setting.",
     ],
 
     credits: [
-      { label: "Lead Architects", value: "Shashank Shetty\nSanjan Hoode\nSharanya Shivashankar" },
+      { label: "Lead Architects", value: "Shashank Shetty\nSanjan Hoode" },
     ],
 
     images: [
-      { src: imgRmK("2.jpg"), orientation: "landscape" },
-      { src: imgRmK("4.jpg"), orientation: "landscape" },
-      { src: imgRmK("5.jpg"), orientation: "landscape" },
-      { src: imgRmK("6.jpg"), orientation: "landscape" },
-      { src: imgRmK("7.jpg"), orientation: "landscape" },
-      { src: imgRmK("8.jpg"), orientation: "landscape" },
-      { src: imgRmK("9.jpg"), orientation: "landscape" },
+      { src: imgKarjat("2.jpg"), orientation: "portrait"  },
+      { src: imgKarjat("3.jpg"), orientation: "landscape" },
+      { src: imgKarjat("4.jpg"), orientation: "landscape" },
+      { src: imgKarjat("5.jpg"), orientation: "portrait"  },
     ],
   },
   {
@@ -498,7 +545,7 @@ export const projects: Project[] = [
 
     cover: imgGodrej("1.jpg"),
     hero:  imgGodrej("1.jpg"),
-    blur:  B["public/Projects/Godrej/1.jpg"],
+    blur:  B["public/Projects/Olive House/1.jpg"],
 
     description: [
       "This project began with clients who brought a clear point of view: a young family with an appetite for colour, warmth, and spaces that reflect who they are. With one half of the couple a trained architect, the brief was precise and the conversation direct, allowing the design to move quickly and commit confidently.",
@@ -539,7 +586,7 @@ export const projects: Project[] = [
 
     cover: imgUber("1.jpg"),
     hero:  imgUber("1.jpg"),
-    blur:  B["public/Projects/Uber Residence/1.jpg"],
+    blur:  B["public/Projects/Mana/1.jpg"],
 
     description: [
       "This project began with a clear brief: to make an existing apartment safer and more comfortable for a retired couple, without allowing it to feel institutional. The response is a home shaped by quiet precision, where ease of use is embedded into every decision — from material choices underfoot to the calibration of everyday heights and reach.",
@@ -564,47 +611,6 @@ export const projects: Project[] = [
       { src: imgUber("10.jpg"), orientation: "portrait" },
       { src: imgUber("11.jpg"), orientation: "portrait" },
       { src: imgUber("9.jpg"),  orientation: "portrait" },
-    ],
-  },
-  {
-    slug: "kishore-residence",
-    index: "02",
-    title: "Lime & Light Residence",
-    category: "Interiors",
-    location: "Bengaluru",
-    year: "2025",
-    size: "1,700 sq ft",
-    aspect: "portrait",
-    bg: "bg-orange-50",
-    color: "#fff7ed",
-
-    cover: imgKishore("1.jpg"),
-    hero:  imgKishore("1.jpg"),
-    blur:  B["public/Projects/Kishore Residence/1.jpg"],
-
-    description: [
-      "This residence is conceived as a calm, materially rich home where spaces unfold with quiet continuity. Guided by a Japandi sensibility and subtle Indian nuances, the design balances restraint with warmth, letting material, light, and proportion shape the experience.",
-      "Lime-washed surfaces, natural wood, and a soft palette of neutrals and muted pastels create a tactile, understated base. Character emerges through consistency of tone, detail, and craft rather than overt gestures.",
-      "The planning remains open and fluid. Spaces connect through shifts in material, light, and geometry instead of walls, resulting in a home that feels cohesive, expansive, and quietly intentional.",
-    ],
-
-    credits: [
-      { label: "Lead Architects",  value: "Shashank Shetty\nSanjan Hoode" },
-      { label: "Junior Architect", value: "Sahana Prabhu\nLakshmi Nair" },
-      { label: "Photographer",     value: "Roshan Paliath" },
-    ],
-
-    images: [
-      { src: imgKishore("2.jpg"),       orientation: "portrait", layout: "quad", pairedCaption: ["The living space is defined by a soft, earthy palette, with olive greens and warm beiges set against textured lime-washed walls. Low, linear furniture keeps the room open while retaining a sense of intimacy.", "Custom pieces are carefully proportioned to feel light yet grounded. Black accents add contrast, while indoor planting softens the composition.", "A vertical wood panel anchors the seating area, defining the space without disrupting flow. Designed as a movable element, it introduces a subtle sense of drama."] },
-      { src: imgKishore("3.jpg"),       orientation: "portrait" },
-      { src: imgKishore("4.jpg"),       orientation: "portrait" },
-      { src: imgKishore("5 gif.1.jpg"), orientation: "portrait" },
-      { src: imgKishore("6.jpg"),       orientation: "portrait", caption: "The dining area continues the home's earthy material language. A solid wood table is paired with black-framed armchairs upholstered in natural linen, their squared geometry echoing the graphic lattice screen that divides the dining and passage zones. Antique-finish ceramic vessels and taper candles complete the tableau.", captionAlign: "center" },
-      { src: imgKishore("7.jpg"),       orientation: "portrait", layout: "trio", pairedCaption: ["The bedrooms continue a restrained language, shifting toward softer textures and more personal expression.", "Material transitions from wood to fabric to wall finish remain subtle and cohesive. Cane inserts, pastel wardrobes, and upholstered elements add variation without disrupting the calm.", "Compact study niches and integrated storage maintain clarity, ensuring utility does not clutter the space."] },
-      { src: imgKishore("8.jpg"),       orientation: "portrait" },
-      { src: imgKishore("9.jpg"),       orientation: "portrait" },
-      { src: imgKishore("10.jpg"),      orientation: "portrait" },
-      { src: imgKishore("11.jpg"),      orientation: "portrait" },
     ],
   },
 ];
