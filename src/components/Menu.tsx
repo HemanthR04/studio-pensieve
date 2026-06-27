@@ -25,12 +25,12 @@ const NAV_LINKS = [
   { label: "Contact",  href: "/contact" },
 ];
 
-// 4 portrait images from the Whitmore project for the image strip
+// 4 portrait images for the menu image strip
 const STRIP_IMAGES = [
-  "/Projects/Vana/%201%20Foyer.jpg",
-  "/Projects/Vana/6%20Living%20room.jpg",
-  "/Projects/Vana/17%20Master%20bedroom.jpg",
-  "/Projects/Vana/12%20Kitchen.jpg",
+  "/Menu%20Images/1.jpg",
+  "/Menu%20Images/2.jpg",
+  "/Menu%20Images/3.jpg",
+  "/Menu%20Images/4.jpg",
 ];
 
 export default function MenuProvider({ children }: { children: React.ReactNode }) {
