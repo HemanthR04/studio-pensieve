@@ -130,6 +130,7 @@ export default function Portfolio({ limit }: { limit?: number }) {
                   fill
                   sizes="(max-width: 768px) 80vw, 65vw"
                   className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+                  style={project.coverPosition ? { objectPosition: project.coverPosition } : undefined}
                   priority={i === 0}
                   placeholder={project.blur ? "blur" : "empty"}
                   blurDataURL={project.blur}

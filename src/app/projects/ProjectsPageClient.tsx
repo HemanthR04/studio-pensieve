@@ -135,6 +135,7 @@ export default function ProjectsPageClient() {
                       fill
                       sizes="(max-width: 768px) 50vw, 25vw"
                       className="object-cover"
+                      style={project.coverPosition ? { objectPosition: project.coverPosition } : undefined}
                       priority={i < 6}
                       placeholder={project.blur ? "blur" : "empty"}
                       blurDataURL={project.blur}

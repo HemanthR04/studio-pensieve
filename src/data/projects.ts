@@ -28,6 +28,7 @@ export type Project = {
   bg: string;
   color: string;
   cover?: string;
+  coverPosition?: string;      // CSS object-position for cover/grid thumbnails
   hero?: string;
   heroPosition?: string;       // CSS object-position for the hero banner image
   blur?: string;
@@ -155,6 +156,7 @@ export const projects: Project[] = [
     color: "#fefce8",
 
     cover: imgRajankunte("3.jpg"),
+    coverPosition: "center 75%",
     hero:  imgRajankunte("1.jpg"),
     heroPosition: "center 85%",
     blur:  B["public/Projects/Adapted House/1.jpg"],
