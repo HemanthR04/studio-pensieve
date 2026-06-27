@@ -8,8 +8,8 @@ export const metadata: Metadata = {
   description: "A visual archive of spaces, materials, and moments from Studio Pensieve.",
 };
 
-function img(filename: string): string {
-  return `/Projects/EMB%20Prestine/${encodeURIComponent(filename)}`;
+function img(project: string, filename: string): string {
+  return `/Projects/${encodeURIComponent(project)}/${encodeURIComponent(filename)}`;
 }
 
 type ImageItem = {
@@ -34,51 +34,51 @@ type TextItem = {
 type Item = ImageItem | TextItem;
 
 const ITEMS: Item[] = [
-  // ── Zone 1 ──────────────────────────────────────────────
+  // ── Zone 1 — Vana ─────────────────────────────────────────
   {
     kind: "text",
-    content: "The Whitmore\nResidence, 2024",
+    content: "Vana,\nBengaluru 2024",
     top: 260,
     left: "5%",
     rotate: -1.5,
   },
   {
     kind: "image",
-    src: img("RP 16 (3).jpg"),
-    alt: "Living space overview",
+    src: img("Vana", "8 Living room.jpg"),
+    alt: "Vana — living room overview",
     width: 380,
-    height: 285,
+    height: 253,
     top: 130,
     left: "22%",
   },
   {
     kind: "image",
-    src: img("Hero Image.jpg"),
-    alt: "Entrance hall",
-    width: 260,
-    height: 195,
+    src: img("Vana", "12 Kitchen.jpg"),
+    alt: "Vana — kitchen",
+    width: 195,
+    height: 292,
     top: 175,
-    left: "52%",
+    left: "55%",
     rotate: 1,
   },
   {
     kind: "image",
-    src: img("RP 12 (3).jpg"),
-    alt: "Detail",
+    src: img("Vana", "17 Master bedroom.jpg"),
+    alt: "Vana — master bedroom",
     width: 160,
-    height: 213,
+    height: 240,
     top: 100,
     left: "76%",
     rotate: -0.8,
   },
 
-  // ── Zone 2 ──────────────────────────────────────────────
+  // ── Zone 2 — Adapted House ────────────────────────────────
   {
     kind: "image",
-    src: img("RP 1 (1).jpg"),
-    alt: "Living room",
-    width: 195,
-    height: 260,
+    src: img("Adapted House", "1.jpg"),
+    alt: "Adapted House — exterior",
+    width: 260,
+    height: 195,
     top: 540,
     left: "2%",
   },
@@ -91,25 +91,25 @@ const ITEMS: Item[] = [
   },
   {
     kind: "image",
-    src: img("RP 3 (1).jpg"),
-    alt: "Bedroom",
-    width: 225,
-    height: 300,
+    src: img("Adapted House", "3.jpg"),
+    alt: "Adapted House — facade",
+    width: 300,
+    height: 225,
     top: 480,
-    left: "43%",
+    left: "44%",
     rotate: -1,
   },
   {
     kind: "image",
-    src: img("RP 8 (3).jpg"),
-    alt: "Kitchen",
-    width: 320,
-    height: 240,
-    top: 525,
-    left: "64%",
+    src: img("Adapted House", "5.jpg"),
+    alt: "Adapted House — detail",
+    width: 240,
+    height: 160,
+    top: 555,
+    left: "73%",
   },
 
-  // ── Zone 3 ──────────────────────────────────────────────
+  // ── Zone 3 — Verandah House ───────────────────────────────
   {
     kind: "text",
     content: "Light &\nMaterial",
@@ -119,53 +119,53 @@ const ITEMS: Item[] = [
   },
   {
     kind: "image",
-    src: img("RP 5 (3).jpg"),
-    alt: "Bathroom",
-    width: 200,
-    height: 267,
+    src: img("Verandah House", "2.jpg"),
+    alt: "Verandah House — courtyard",
+    width: 260,
+    height: 195,
     top: 880,
-    left: "28%",
+    left: "26%",
     rotate: 0.8,
   },
   {
     kind: "image",
-    src: img("RP 10 (3).jpg"),
-    alt: "Study",
+    src: img("Verandah House", "6.jpg"),
+    alt: "Verandah House — interior detail",
     width: 175,
     height: 233,
     top: 950,
-    left: "52%",
+    left: "55%",
   },
   {
     kind: "image",
-    src: img("RP 11 (3).jpg"),
-    alt: "Guest room",
+    src: img("Verandah House", "4.jpg"),
+    alt: "Verandah House — facade",
     width: 260,
-    height: 347,
-    top: 875,
-    left: "70%",
+    height: 195,
+    top: 880,
+    left: "73%",
     rotate: -1.2,
   },
 
-  // ── Zone 4 ──────────────────────────────────────────────
+  // ── Zone 4 — Olive House ──────────────────────────────────
   {
     kind: "image",
-    src: img("RP 2 (1).jpg"),
-    alt: "Dining area",
-    width: 215,
-    height: 287,
+    src: img("Olive House", "3.jpg"),
+    alt: "Olive House — interior",
+    width: 200,
+    height: 300,
     top: 1220,
     left: "5%",
     rotate: 1,
   },
   {
     kind: "image",
-    src: img("RP 7 (3).jpg"),
-    alt: "Balcony",
-    width: 375,
-    height: 281,
+    src: img("Olive House", "10.jpg"),
+    alt: "Olive House — living space",
+    width: 200,
+    height: 300,
     top: 1180,
-    left: "30%",
+    left: "32%",
   },
   {
     kind: "text",
@@ -176,10 +176,10 @@ const ITEMS: Item[] = [
   },
   {
     kind: "image",
-    src: img("RP 4 (1).jpg"),
-    alt: "Detail shot",
+    src: img("Olive House", "6.jpg"),
+    alt: "Olive House — detail shot",
     width: 185,
-    height: 247,
+    height: 277,
     top: 1240,
     left: "73%",
     rotate: 1.5,
