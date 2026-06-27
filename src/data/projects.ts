@@ -243,7 +243,7 @@ export const projects: Project[] = [
 
     credits: [
       { label: "Lead Architects",  value: "Shashank Shetty\nSanjan Hoode" },
-      { label: "Junior Architect", value: "Sahana Prabhu\nLakshmi Nair" },
+      { label: "Junior Architect", value: "Sahana Prabhu\nLakshmi S Nair" },
       { label: "Photographer",     value: "Roshan Paliath" },
     ],
 
@@ -284,7 +284,7 @@ export const projects: Project[] = [
 
     credits: [
       { label: "Lead Architects",  value: "Shashank Shetty\nSanjan Hoode" },
-      { label: "Junior Architect", value: "Lakshmi Nair" },
+      { label: "Junior Architect", value: "Lakshmi S Nair" },
     ],
 
     images: [
@@ -362,7 +362,7 @@ export const projects: Project[] = [
 
     credits: [
       { label: "Lead Architects",  value: "Shashank Shetty\nSanjan Hoode" },
-      { label: "Junior Architect", value: "Lakshmi Nair" },
+      { label: "Junior Architect", value: "Lakshmi S Nair" },
     ],
 
     images: [
@@ -517,7 +517,7 @@ export const projects: Project[] = [
 
     credits: [
       { label: "Lead Architects",  value: "Shashank Shetty\nSanjan Hoode" },
-      { label: "Junior Architect", value: "Sahana Prabhu\nLakshmi Nair" },
+      { label: "Junior Architect", value: "Sahana Prabhu\nLakshmi S Nair" },
     ],
 
     images: [
@@ -557,7 +557,7 @@ export const projects: Project[] = [
 
     credits: [
       { label: "Lead Architects",  value: "Shashank Shetty\nSanjan Hoode" },
-      { label: "Junior Designer",  value: "Lakshmi Nair" },
+      { label: "Junior Designer",  value: "Lakshmi S Nair" },
       { label: "Photographer",     value: "Roshan Paliath" },
     ],
 

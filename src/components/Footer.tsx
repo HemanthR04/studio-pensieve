@@ -97,9 +97,14 @@ export default function Footer() {
               >
                 Instagram
               </a>
-              <span className="text-[11px] font-semibold tracking-[0.18em] uppercase opacity-30 cursor-default">
+              <a
+                href="https://www.linkedin.com/company/studiopensieve/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[11px] font-semibold tracking-[0.18em] uppercase hover:opacity-40 transition-opacity"
+              >
                 LinkedIn
-              </span>
+              </a>
             </div>
 
             {/* Email */}
