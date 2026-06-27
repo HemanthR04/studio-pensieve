@@ -460,9 +460,9 @@ export const projects: Project[] = [
     index: "07",
     title: "Twin Roof Farmhouse",
     category: "Architecture",
-    location: "Karjat",
+    location: "Karjat, Maharashtra",
     year: "2026",
-    size: "1,600 sq ft",
+    size: "1,200 sq ft",
     aspect: "landscape",
     bg: "bg-stone-100",
     color: "#f5f5f4",
@@ -473,9 +473,10 @@ export const projects: Project[] = [
     blur:  B["public/Projects/Twin Roof Farmhouse/1.jpg"],
 
     description: [
-      "Set against the hills of Karjat, this 1,600 sq.ft. farmhouse takes its name from the pair of pitched, Mangalore-tiled roofs that shelter the home and its long verandah beneath a single sloping gesture.",
-      "A plunge pool anchors the garden, framed by the surrounding hills and the existing trees the design works carefully around. Slender steel-and-glass columns line the verandah, keeping the threshold between inside and out light and unobtrusive.",
-      "Above one wing, a compact rooftop deck opens onto views of the hills beyond. Finished in lime-washed render, timber, and terracotta tile, the house is conceived as an easy, unhurried weekend retreat, grounded firmly in its rural setting.",
+      "Located in Karjat, Maharashtra, roughly two hours from Mumbai, this 1,200 sq.ft. farmhouse is conceived as a weekend retreat within the dramatic Sahyadri landscape. Occupying the last plot at the edge of a plotted development, the house holds an unobstructed, near-360-degree panorama of the surrounding hills, with the most commanding views opening to the south.",
+      "The plan is organised as two linear volumes, each under a Mangalore-tiled roof pitched in opposing directions: one sheltering the master bedroom, the other the second bedroom, kitchen, and dining. The roof profiles respond directly to climate. The extended southern overhang shades the living areas from harsh afternoon sun while shedding the heavy monsoon rains that characterise Karjat. Between the two wings, the central living area sits beneath a flat slab whose roof extends outward as a sunset deck, an elevated terrace open to the full Sahyadri panorama.",
+      "On the north, a small courtyard is carved into the linear plan between the dining room and the second bedroom. Shaded through most of the day, it draws in diffused light, enables cross-ventilation with the southern verandah, and offers a planted, sheltered outdoor pocket away from the elements.",
+      "The south verandah connects directly to daily life. A pass-through kitchen window feeds a barbecue counter that extends into a deck, terminating at the plunge pool oriented westward toward the setting sun. During the monsoons, seasonal waterfalls emerge across the Sahyadri ridgeline, visible through the wide openings along the south façade.",
     ],
 
     credits: [
@@ -483,10 +484,10 @@ export const projects: Project[] = [
     ],
 
     images: [
-      { src: imgKarjat("2.jpg"), orientation: "portrait"  },
-      { src: imgKarjat("3.jpg"), orientation: "landscape" },
-      { src: imgKarjat("4.jpg"), orientation: "landscape" },
-      { src: imgKarjat("5.jpg"), orientation: "portrait"  },
+      { src: imgKarjat("3.jpg"), orientation: "landscape", caption: "From across the site, the house stretches quietly along its plot: low, linear, and unhurried. The hills remain the dominant presence; the building simply extends itself toward the view." },
+      { src: imgKarjat("4.jpg"), orientation: "landscape", caption: "Two opposing roof pitches and the flat-roofed living volume read clearly in the full composition, each profile serving a distinct spatial and climatic role." },
+      { src: imgKarjat("5.jpg"), orientation: "portrait",  caption: "The tiled overhang shelters the south verandah, acting as both a climatic filter and the primary living threshold — a space where interior life gradually dissolves into the open hillscape beyond." },
+      { src: imgKarjat("2.jpg"), orientation: "portrait",  caption: "The plunge pool faces west, positioned to hold the last light of the day as the sun drops behind the Sahyadri ridge. In the evenings, the water surface becomes a second sky, a still reflection of colour and hillscape that makes the pool as much about the view as about the water." },
     ],
   },
   {
