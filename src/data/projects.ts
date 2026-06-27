@@ -229,9 +229,9 @@ export const projects: Project[] = [
     bg: "bg-orange-50",
     color: "#fff7ed",
 
-    cover: imgKishore("1.jpg"),
-    hero:  imgKishore("1.jpg"),
-    blur:  B["public/Projects/Lime & Light Residence/1.jpg"],
+    cover: imgKishore("2.jpg"),
+    hero:  imgKishore("2.jpg"),
+    blur:  B["public/Projects/Lime & Light Residence/2.jpg"],
 
     description: [
       "This residence is conceived as a calm, materially rich home where spaces unfold with quiet continuity. Guided by a Japandi sensibility and subtle Indian nuances, the design balances restraint with warmth, letting material, light, and proportion shape the experience.",
@@ -543,9 +543,9 @@ export const projects: Project[] = [
     bg: "bg-teal-50",
     color: "#f0fdfa",
 
-    cover: imgGodrej("1.jpg"),
-    hero:  imgGodrej("1.jpg"),
-    blur:  B["public/Projects/Olive House/1.jpg"],
+    cover: imgGodrej("4.jpg"),
+    hero:  imgGodrej("4.jpg"),
+    blur:  B["public/Projects/Olive House/4.jpg"],
 
     description: [
       "This project began with clients who brought a clear point of view: a young family with an appetite for colour, warmth, and spaces that reflect who they are. With one half of the couple a trained architect, the brief was precise and the conversation direct, allowing the design to move quickly and commit confidently.",
