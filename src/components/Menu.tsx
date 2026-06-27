@@ -27,10 +27,10 @@ const NAV_LINKS = [
 
 // 4 portrait images from the Whitmore project for the image strip
 const STRIP_IMAGES = [
-  "/Projects/Emb%20Pristine%20/%201%20Foyer.jpg",
-  "/Projects/Emb%20Pristine%20/6%20Living%20room.jpg",
-  "/Projects/Emb%20Pristine%20/17%20Master%20bedroom.jpg",
-  "/Projects/Emb%20Pristine%20/12%20Kitchen.jpg",
+  "/Projects/Vana/%201%20Foyer.jpg",
+  "/Projects/Vana/6%20Living%20room.jpg",
+  "/Projects/Vana/17%20Master%20bedroom.jpg",
+  "/Projects/Vana/12%20Kitchen.jpg",
 ];
 
 export default function MenuProvider({ children }: { children: React.ReactNode }) {

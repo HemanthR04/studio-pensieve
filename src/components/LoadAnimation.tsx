@@ -22,7 +22,8 @@ export default function LoadAnimation() {
       sessionStorage.setItem("sp_visited", "1");
     }, 2800);
     return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); };
-  }, [phase]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []); // run once on mount — phase excluded intentionally so re-renders don't cancel pending timers
 
   if (phase === "done") return null;
 

@@ -7,25 +7,25 @@ import Link from "next/link";
 /* ─── image paths ─────────────────────────────────────────────── */
 
 function emb(f: string): string {
-  return `/Projects/Emb%20Pristine%20/${encodeURIComponent(f)}`;
+  return `/Projects/Vana/${encodeURIComponent(f)}`;
 }
 function kishore(f: string): string {
-  return `/Projects/Kishore%20Residence/${encodeURIComponent(f)}`;
+  return `/Projects/Lime%20%26%20Light%20Residence/${encodeURIComponent(f)}`;
 }
 function chanpatna(f: string): string {
-  return `/Projects/Chanpatna/${encodeURIComponent(f)}`;
+  return `/Projects/Verandah%20House/${encodeURIComponent(f)}`;
 }
 function rajankunte(f: string): string {
-  return `/Projects/Rajankunte/${encodeURIComponent(f)}`;
+  return `/Projects/Adapted%20House/${encodeURIComponent(f)}`;
 }
 function rmk(f: string): string {
-  return `/Projects/RmK/${encodeURIComponent(f)}`;
+  return `/Projects/RMK%20Antheia/${encodeURIComponent(f)}`;
 }
 function uber(f: string): string {
-  return `/Projects/Uber%20Residence/${encodeURIComponent(f)}`;
+  return `/Projects/Mana/${encodeURIComponent(f)}`;
 }
 function vibranium(f: string): string {
-  return `/Projects/Vibranium/${encodeURIComponent(f)}`;
+  return `/Projects/Vibranium%20Office/${encodeURIComponent(f)}`;
 }
 
 const SK = {
