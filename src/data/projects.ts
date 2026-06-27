@@ -584,9 +584,9 @@ export const projects: Project[] = [
     bg: "bg-slate-200",
     color: "#e2e8f0",
 
-    cover: imgUber("1.jpg"),
-    hero:  imgUber("1.jpg"),
-    blur:  B["public/Projects/Mana/1.jpg"],
+    cover: imgUber("9.jpg"),
+    hero:  imgUber("9.jpg"),
+    blur:  B["public/Projects/Mana/9.jpg"],
 
     description: [
       "This project began with a clear brief: to make an existing apartment safer and more comfortable for a retired couple, without allowing it to feel institutional. The response is a home shaped by quiet precision, where ease of use is embedded into every decision — from material choices underfoot to the calibration of everyday heights and reach.",
