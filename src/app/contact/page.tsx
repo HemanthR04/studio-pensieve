@@ -94,9 +94,14 @@ export default function ContactPage() {
                 >
                   Instagram
                 </a>
-                <span className="text-sm font-light text-foreground/30 cursor-default">
+                <a
+                  href="https://www.linkedin.com/company/studiopensieve/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-light text-foreground/70 hover:text-foreground transition-colors"
+                >
                   LinkedIn
-                </span>
+                </a>
               </div>
             </div>
           </div>
