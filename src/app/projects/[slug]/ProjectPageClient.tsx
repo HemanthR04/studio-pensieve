@@ -306,8 +306,8 @@ export default function ProjectPageClient({ project }: { project: Project }) {
   const next = idx < projects.length - 1 ? projects[idx + 1] : null;
 
   const heroSrc =
-    project.images?.find(img => img.orientation === "landscape")?.src ??
-    project.hero;
+    project.hero ??
+    project.images?.find(img => img.orientation === "landscape")?.src;
 
   const desc          = project.description ?? [];
   const galleryImages = (project.images ?? []).filter(img => img.src !== heroSrc);

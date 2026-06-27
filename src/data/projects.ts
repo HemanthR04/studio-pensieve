@@ -146,11 +146,11 @@ export const projects: Project[] = [
   {
     slug: "rajankunte",
     index: "08",
-    title: "Adapted House",
+    title: "Rajankunte Farmhouse",
     category: "Adaptive Reuse + Architecture",
     location: "Rajankunte",
     year: "2025",
-    size: "3,800 sq ft",
+    size: "3,500–4,000 sq ft",
     aspect: "landscape",
     bg: "bg-yellow-50",
     color: "#fefce8",
@@ -162,9 +162,9 @@ export const projects: Project[] = [
     blur:  B["public/Projects/Adapted House/1.jpg"],
 
     description: [
-      "Set on a quiet plot in Rajankunte, this 3,800 sq.ft. home reworks an existing structure into a larger, more contemporary residence — retaining its original brick shell and extending it with new volumes in board-formed concrete and timber.",
-      "Steep, gabled roofs echo the language of the original house, reinterpreted at a larger scale across two storeys. Deep balconies wrap the brick facade, softened over time by trailing creepers, while a folded concrete portico marks the entry and anchors the composition.",
-      "Set back amid mature trees and open lawns, the house balances old and new, holding onto the character of what existed while opening it up to light, air, and the surrounding landscape.",
+      "Located in Rajankunte, this project reimagines a modest 1,300 sq.ft. farmhouse as an expanded multi-generational home. Rather than replacing the existing structure, the design retains it as a core — absorbing it into a larger 3,500–4,000 sq.ft. system that reorganizes both space and experience.",
+      "The ground floor unfolds as a continuous sequence, where the former bedrooms are repurposed into an entry foyer and formal living, transitioning into informal living and dining areas. These spaces are shaped by a series of double-height volumes, visually connected by a floating corridor above, allowing openness and continuity to define the shared areas.",
+      "The architectural language balances strong horizontal masses with vertical insertions. Exposed brick, concrete, and sloping roofs establish a grounded, vernacular base, while deep verandas, decks, and large openings create a porous edge — anchoring the house within its landscape while maintaining a restrained, contemporary expression.",
     ],
 
     credits: [
@@ -172,12 +172,11 @@ export const projects: Project[] = [
     ],
 
     images: [
-      { src: imgRajankunte("2.jpg"), orientation: "portrait"  },
-      { src: imgRajankunte("3.jpg"), orientation: "landscape" },
-      { src: imgRajankunte("4.jpg"), orientation: "landscape" },
-      { src: imgRajankunte("5.jpg"), orientation: "landscape" },
-      { src: imgRajankunte("6.jpg"), orientation: "landscape" },
-      { src: imgRajankunte("7.jpg"), orientation: "landscape" },
+      { src: imgRajankunte("2.jpg"), orientation: "portrait",  caption: "The stairwell emerges as a sculptural vertical volume, cutting cleanly through the brick mass. Its intersection with a cantilevered slab adds depth and emphasizes the interplay of solid and void." },
+      { src: imgRajankunte("3.jpg"), orientation: "landscape", caption: "A restrained palette of exposed brick and concrete defines the exterior expression. The sloping roof and subtle projections soften the mass, balancing weight with articulation." },
+      { src: imgRajankunte("4.jpg"), orientation: "landscape", caption: "The rear opens into a deep veranda that extends the living spaces outward. This edge becomes a transitional zone where interior activity gradually dissolves into the landscape." },
+      { src: imgRajankunte("5.jpg"), orientation: "landscape", caption: "Upper-level decks connect private rooms to shared outdoor spaces. The sloping roof frames these terraces, creating sheltered volumes with a strong spatial identity." },
+      { src: imgRajankunte("6.jpg"), orientation: "landscape", caption: "Layered roof forms build a dynamic silhouette while maintaining the building's horizontal base. Balconies and integrated greenery introduce softness, tempering the raw material palette." },
     ],
   },
   // ── 3. RMK Antheia ──────────────────────────────────────────────────────
