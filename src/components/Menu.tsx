@@ -217,9 +217,14 @@ export default function MenuProvider({ children }: { children: React.ReactNode }
               >
                 Instagram
               </a>
-              <span className="text-[11px] font-black tracking-[0.22em] uppercase text-white/30 cursor-default">
+              <a
+                href="https://www.linkedin.com/company/studiopensieve/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[11px] font-black tracking-[0.22em] uppercase text-white hover:opacity-40 transition-opacity"
+              >
                 LinkedIn
-              </span>
+              </a>
             </div>
             <p className="text-[11px] text-white/35 tracking-wide" suppressHydrationWarning>
               All rights reserved © {new Date().getFullYear()} Studio Pensieve
