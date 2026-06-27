@@ -9,7 +9,7 @@ import blurUrls from "@/data/blurDataUrls.json";
 
 const IMAGES = [
   {
-    src:  "/LANDING PHOTOS/1.png",
+    src:  "/LANDING PHOTOS/1.jpg",
     blur: undefined,
   },
   {

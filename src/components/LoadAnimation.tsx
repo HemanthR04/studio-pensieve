@@ -5,16 +5,15 @@ import Image from "next/image";
 
 type Phase = "enter" | "hold" | "fade" | "done";
 
-function getInitialPhase(): Phase {
-  if (typeof window !== "undefined" && sessionStorage.getItem("sp_visited")) return "done";
-  return "enter";
-}
-
 export default function LoadAnimation() {
-  const [phase, setPhase] = useState<Phase>(getInitialPhase);
+  const [phase, setPhase] = useState<Phase>("enter");
 
   useEffect(() => {
-    if (phase !== "enter") return;
+    // Skip animation on subsequent visits within the same session
+    if (sessionStorage.getItem("sp_visited")) {
+      setPhase("done");
+      return;
+    }
     const t1 = setTimeout(() => setPhase("hold"), 550);
     const t2 = setTimeout(() => setPhase("fade"), 2000);
     const t3 = setTimeout(() => {
@@ -22,8 +21,7 @@ export default function LoadAnimation() {
       sessionStorage.setItem("sp_visited", "1");
     }, 2800);
     return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []); // run once on mount — phase excluded intentionally so re-renders don't cancel pending timers
+  }, []);
 
   if (phase === "done") return null;
 
