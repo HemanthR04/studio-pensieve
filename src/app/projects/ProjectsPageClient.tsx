@@ -17,8 +17,8 @@ const ALL_CATEGORIES = ["All", "Architecture", "Interiors"];
 
 function landscapeSrc(project: Project): string | undefined {
   return (
-    project.images?.find(img => img.orientation === "landscape")?.src ??
-    project.cover
+    project.cover ??
+    project.images?.find(img => img.orientation === "landscape")?.src
   );
 }
 
