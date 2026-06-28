@@ -145,7 +145,7 @@ export const projects: Project[] = [
   // ── 2. Adapted House ────────────────────────────────────────────────────
   {
     slug: "rajankunte",
-    index: "08",
+    index: "02",
     title: "Rajankunte Farmhouse",
     category: "Adaptive Reuse + Architecture",
     location: "Rajankunte",
@@ -182,10 +182,10 @@ export const projects: Project[] = [
   // ── 3. RMK Antheia ──────────────────────────────────────────────────────
   {
     slug: "rmk",
-    index: "09",
+    index: "03",
     title: "RMK Antheia",
     category: "Architecture",
-    location: "Karnataka",
+    location: "Bengaluru",
     year: "2023",
     size: "11 Acres",
     aspect: "landscape",
@@ -220,7 +220,7 @@ export const projects: Project[] = [
   // ── 4. Lime & Light Residence ───────────────────────────────────────────
   {
     slug: "kishore-residence",
-    index: "02",
+    index: "04",
     title: "Lime & Light Residence",
     category: "Interiors",
     location: "Bengaluru",
@@ -262,7 +262,7 @@ export const projects: Project[] = [
   // ── 5. Tap Tales ────────────────────────────────────────────────────────
   {
     slug: "tap-tales",
-    index: "04",
+    index: "05",
     title: "Tap Tales",
     category: "Interiors",
     location: "Bengaluru",
@@ -300,7 +300,7 @@ export const projects: Project[] = [
   // ── remaining projects ───────────────────────────────────────────────────
   {
     slug: "rajiv-residence",
-    index: "11",
+    index: "06",
     title: "Zion House",
     category: "Interiors",
     location: "Kolar",
@@ -340,7 +340,7 @@ export const projects: Project[] = [
   },
   {
     slug: "vibranium-ventures",
-    index: "05",
+    index: "07",
     title: "Vibranium Ventures Office",
     category: "Interiors",
     location: "Bengaluru",
@@ -376,7 +376,7 @@ export const projects: Project[] = [
   },
   {
     slug: "chanpatna",
-    index: "06",
+    index: "08",
     title: "Verandah House",
     category: "Architecture",
     location: "Channapattana",
@@ -411,7 +411,7 @@ export const projects: Project[] = [
   },
   {
     slug: "villa-1",
-    index: "12",
+    index: "09",
     title: "Villa 1",
     category: "Interiors",
     location: "Bengaluru",
@@ -457,7 +457,7 @@ export const projects: Project[] = [
   },
   {
     slug: "karjat",
-    index: "07",
+    index: "10",
     title: "Twin Roof Farmhouse",
     category: "Architecture",
     location: "Karjat, Maharashtra",
@@ -492,7 +492,7 @@ export const projects: Project[] = [
   },
   {
     slug: "estate-retreat",
-    index: "13",
+    index: "11",
     title: "Estate Retreat",
     category: "Architecture",
     location: "Thirthahalli",
@@ -535,7 +535,7 @@ export const projects: Project[] = [
   },
   {
     slug: "godrej",
-    index: "10",
+    index: "12",
     title: "Olive House",
     category: "Interiors",
     location: "Bengaluru",
@@ -576,7 +576,7 @@ export const projects: Project[] = [
   },
   {
     slug: "uber-residence",
-    index: "03",
+    index: "13",
     title: "Mana",
     category: "Interiors",
     location: "Bengaluru",
