@@ -128,7 +128,6 @@ export const projects: Project[] = [
       { src: img("7 Living room.jpg"),         orientation: "landscape", caption: "Instead of enclosing the small balcony to expand the living room, it was extended by combining it with the adjacent library and TV area. An L-shaped glass enclosure defines it from the living and dining spaces while keeping it visually connected." },
       { src: img("8 Living room.jpg"),         orientation: "landscape", caption: "The brick-clad wall from the dining area continues into the balcony, creating a strong horizontal link between spaces. A dining table runs parallel to a floating wooden unit that functions as a cutlery and bar counter, with additional ledges reinforcing the linear composition." },
       { src: img("9 Balcony + Dining.jpg"),    orientation: "landscape" },
-      { src: img("9 Balcony + Dining(1).jpg"), orientation: "landscape" },
       { src: img("10 Guest room_study.jpg"),   orientation: "portrait"  },
       { src: img("11 Living + Dining.jpg"),    orientation: "portrait"  },
       { src: img("12 Kitchen.jpg"),            orientation: "portrait",  pairedCaption: ["The membrane-finish kitchen is kept simple, with Shaker-style base shutters and wall units in white frames with ribbed glass. Black granite countertops paired with a Statuario backsplash bring the palette together."] },
