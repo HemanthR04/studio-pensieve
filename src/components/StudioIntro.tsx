@@ -17,10 +17,11 @@ export default function StudioIntro() {
           </p>
 
           <p className="text-[15px] font-normal leading-[1.85] text-foreground/70 max-w-md">
-            Founded in 2020 by Sanjan Hoode and Shashank Shetty, Studio Pensieve is a small,
-            focused practice based in Bengaluru, working across residential, commercial, and
-            hospitality projects throughout India. In five years, over 25 projects completed —
-            each shaped by care for the people who will live and work in them.
+            Studio Pensieve was founded in 2020 by two architects whose relationship long predates
+            their practice. Childhood friends before becoming colleagues, Sanjan Hoode and Shashank
+            Shetty studied architecture at separate universities, bound by a shared conviction that
+            they would one day build something together. Studio Pensieve is the realisation of that
+            intent.
           </p>
 
           <Link
