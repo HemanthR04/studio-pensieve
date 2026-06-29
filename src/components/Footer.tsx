@@ -36,7 +36,6 @@ export default function Footer() {
                 Contact Us
               </p>
               <p className="text-sm font-normal leading-[1.75] text-stone-400">
-                Interested? Get in touch.{" "}
                 <a
                   href="mailto:admin@studiopensieve.com"
                   className="underline underline-offset-2 hover:text-stone-100 transition-colors"
