@@ -147,12 +147,30 @@ export default function ServicesPage() {
           </div>
 
           <p className="text-[14px] text-foreground/50 leading-[1.8] pt-10 max-w-xl">
-            Not every project uses all stages, we tailor our involvement to what you need.{" "}
+            Not every project uses all stages, we tailor our involvement to what you need.
+          </p>
+          <p className="text-[15px] font-semibold pt-4">
             <a
               href="mailto:admin@studiopensieve.com"
               className="underline underline-offset-2 hover:opacity-60 transition-opacity"
             >
               Get in touch
+            </a>{" "}
+            via{" "}
+            <a
+              href="https://wa.me/919008717518"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 hover:opacity-60 transition-opacity"
+            >
+              WhatsApp
+            </a>{" "}
+            or{" "}
+            <a
+              href="mailto:admin@studiopensieve.com"
+              className="underline underline-offset-2 hover:opacity-60 transition-opacity"
+            >
+              email
             </a>{" "}
             and we&apos;ll talk through the right approach.
           </p>
