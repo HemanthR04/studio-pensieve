@@ -291,13 +291,13 @@ export const projects: Project[] = [
     ],
 
     images: [
-      { src: imgTapTales("2.jpg"),             orientation: "landscape" },
+      { src: imgTapTales("2.jpg"),             orientation: "landscape", caption: "The ground floor's communal table seats around 20, set beneath a cluster of banana fibre pendant lamps." },
       { src: imgTapTales("3.jpg"),             orientation: "landscape" },
-      { src: imgTapTales("Copy of 10.jpg"),    orientation: "landscape" },
+      { src: imgTapTales("Copy of 10.jpg"),    orientation: "landscape", caption: "An interactive pop art wall anchors the first floor, drawing on bold colour and popular culture." },
       { src: imgTapTales("Copy of 11.jpg"),    orientation: "landscape" },
-      { src: imgTapTales("Copy of 14.jpg"),    orientation: "landscape" },
+      { src: imgTapTales("Copy of 14.jpg"),    orientation: "landscape", caption: "Raw concrete walls and a moody, timeworn palette carry through both floors." },
       { src: imgTapTales("Copy of 15.jpg"),    orientation: "landscape" },
-      { src: imgTapTales("Copy of 16.jpg"),    orientation: "landscape" },
+      { src: imgTapTales("Copy of 16.jpg"),    orientation: "landscape", caption: "The folded-plate steel staircase wraps around the double-height corten steel screen." },
       { src: imgTapTales("Copy of 18.jpg"),    orientation: "landscape" },
     ],
   },
