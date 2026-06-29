@@ -19,7 +19,7 @@ export const useMenu = () => useContext(MenuContext);
 
 const NAV_LINKS = [
   { label: "Home",     href: "/" },
-  { label: "Projects", href: "/#portfolio" },
+  { label: "Projects", href: "/projects" },
   { label: "About",    href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Contact",  href: "/contact" },
