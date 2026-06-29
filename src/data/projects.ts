@@ -232,6 +232,7 @@ export const projects: Project[] = [
     cover: imgKishore("2.jpg"),
     coverPosition: "center 65%",
     hero:  imgKishore("2.jpg"),
+    heroPosition: "center 65%",
     blur:  B["public/Projects/Lime & Light Residence/2.jpg"],
 
     description: [
@@ -316,7 +317,7 @@ export const projects: Project[] = [
     color: "#fff1f2",
 
     cover: imgRajiv("3.jpg"),
-    hero:  imgRajiv("1.jpg"),
+    hero:  imgRajiv("3.jpg"),
     blur:  B["public/Projects/Zion House/1.jpg"],
 
     description: [
@@ -429,6 +430,7 @@ export const projects: Project[] = [
     cover: imgVilla1("2.jpg"),
     coverPosition: "center 60%",
     hero:  imgVilla1("2.jpg"),
+    heroPosition: "center 60%",
     blur:  B["public/Projects/Villa 1/2.jpg"],
 
     description: [
@@ -554,6 +556,7 @@ export const projects: Project[] = [
     cover: imgGodrej("4.jpg"),
     coverPosition: "center 60%",
     hero:  imgGodrej("4.jpg"),
+    heroPosition: "center 60%",
     blur:  B["public/Projects/Olive House/4.jpg"],
 
     description: [
@@ -596,6 +599,7 @@ export const projects: Project[] = [
     cover: imgUber("9.jpg"),
     coverPosition: "center 35%",
     hero:  imgUber("9.jpg"),
+    heroPosition: "center 35%",
     blur:  B["public/Projects/Mana/9.jpg"],
 
     description: [
