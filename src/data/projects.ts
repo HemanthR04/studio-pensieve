@@ -471,7 +471,7 @@ export const projects: Project[] = [
     bg: "bg-stone-100",
     color: "#f5f5f4",
 
-    cover: imgKarjat("1.jpg"),
+    cover: imgKarjat("4.jpg"),
     hero:  imgKarjat("1.jpg"),
     heroPosition: "center 85%",
     blur:  B["public/Projects/Twin Roof Farmhouse/1.jpg"],
