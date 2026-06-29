@@ -30,7 +30,10 @@ export type Project = {
   cover?: string;
   coverPosition?: string;      // CSS object-position for cover/grid thumbnails
   hero?: string;
-  heroPosition?: string;       // CSS object-position for the hero banner image
+  heroPosition?: string;       // CSS object-position for the hero banner image (desktop)
+  heroPositionMobile?: string; // CSS object-position for the hero banner image (<768px) — falls back to heroPosition
+  heroZoomMobile?: number;     // forced extra scale (<768px) to trim a photo's empty sky/wall — object-position's Y axis has no effect on mobile (always height-constrained)
+  heroOriginMobile?: string;   // transform-origin paired with heroZoomMobile, e.g. "center bottom"
   blur?: string;
   description?: string[];     // paragraphs
   credits?: ProjectCredit[];
@@ -158,6 +161,8 @@ export const projects: Project[] = [
     coverPosition: "center 75%",
     hero:  imgRajankunte("1.jpg"),
     heroPosition: "center 85%",
+    heroZoomMobile: 1.6,
+    heroOriginMobile: "center bottom",
     blur:  B["public/Projects/Adapted House/1.jpg"],
 
     description: [
@@ -478,6 +483,8 @@ export const projects: Project[] = [
     cover: imgKarjat("4.jpg"),
     hero:  imgKarjat("1.jpg"),
     heroPosition: "center 85%",
+    heroZoomMobile: 1.6,
+    heroOriginMobile: "center bottom",
     blur:  B["public/Projects/Twin Roof Farmhouse/1.jpg"],
 
     description: [
@@ -557,6 +564,8 @@ export const projects: Project[] = [
     coverPosition: "center 60%",
     hero:  imgGodrej("4.jpg"),
     heroPosition: "center 60%",
+    heroZoomMobile: 1.5,
+    heroOriginMobile: "center bottom",
     blur:  B["public/Projects/Olive House/4.jpg"],
 
     description: [

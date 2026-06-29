@@ -328,8 +328,13 @@ export default function ProjectPageClient({ project }: { project: Project }) {
               fill
               sizes="100vw"
               priority
-              className="object-cover"
-              style={project.heroPosition ? { objectPosition: project.heroPosition } : undefined}
+              className="object-cover hero-cover"
+              style={{
+                "--hero-pos": project.heroPosition,
+                "--hero-pos-mobile": project.heroPositionMobile,
+                "--hero-zoom-mobile": project.heroZoomMobile,
+                "--hero-origin-mobile": project.heroOriginMobile,
+              } as React.CSSProperties}
               placeholder={project.blur ? "blur" : "empty"}
               blurDataURL={project.blur}
             />

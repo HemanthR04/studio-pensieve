@@ -31,6 +31,27 @@ body {
   to   { width: 100% }
 }
 
+/* Responsive object-position for full-bleed hero images.
+   A fixed object-position can't work for both mobile (tall viewport,
+   close to a portrait source's own aspect — little cropping) and
+   desktop (wide viewport — heavy cropping), since the crop window
+   shape is the viewport's own aspect ratio, not a fixed box. */
+.hero-cover {
+  object-position: var(--hero-pos, 50% 50%);
+}
+@media (max-width: 767px) {
+  .hero-cover {
+    object-position: var(--hero-pos-mobile, var(--hero-pos, 50% 50%));
+    /* A tall mobile viewport is almost always height-constrained against
+       a landscape/portrait photo, so object-cover shows the image's full
+       height with zero vertical crop — object-position's Y axis has no
+       visible effect. --hero-zoom-mobile forces extra crop via scale so
+       a photo's empty sky/wall can actually be trimmed on mobile. */
+    transform: scale(var(--hero-zoom-mobile, 1));
+    transform-origin: var(--hero-origin-mobile, center);
+  }
+}
+
 /* Hide scrollbar sitewide — scroll still works */
 * {
   scrollbar-width: none;
