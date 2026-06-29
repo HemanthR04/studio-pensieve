@@ -596,10 +596,10 @@ export const projects: Project[] = [
     bg: "bg-slate-200",
     color: "#e2e8f0",
 
-    cover: imgUber("9.jpg"),
-    coverPosition: "center 35%",
-    hero:  imgUber("9.jpg"),
-    heroPosition: "center 35%",
+    cover: imgUber("6.jpg"),
+    coverPosition: "center 30%",
+    hero:  imgUber("6.jpg"),
+    heroPosition: "center 30%",
     blur:  B["public/Projects/Mana/9.jpg"],
 
     description: [
