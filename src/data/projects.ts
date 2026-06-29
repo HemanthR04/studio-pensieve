@@ -230,6 +230,7 @@ export const projects: Project[] = [
     color: "#fff7ed",
 
     cover: imgKishore("2.jpg"),
+    coverPosition: "center 65%",
     hero:  imgKishore("2.jpg"),
     blur:  B["public/Projects/Lime & Light Residence/2.jpg"],
 
@@ -314,7 +315,7 @@ export const projects: Project[] = [
     bg: "bg-rose-50",
     color: "#fff1f2",
 
-    cover: imgRajiv("1.jpg"),
+    cover: imgRajiv("3.jpg"),
     hero:  imgRajiv("1.jpg"),
     blur:  B["public/Projects/Zion House/1.jpg"],
 
@@ -426,6 +427,7 @@ export const projects: Project[] = [
     color: "#fff7ed",
 
     cover: imgVilla1("2.jpg"),
+    coverPosition: "center 60%",
     hero:  imgVilla1("2.jpg"),
     blur:  B["public/Projects/Villa 1/2.jpg"],
 
@@ -528,12 +530,12 @@ export const projects: Project[] = [
       { src: imgEstate("1.jpg"),  orientation: "landscape", caption: "The approach reveals the split-level section: a basement garage tucked into the slope, the main living level rising above. The single-pitch roof cuts a clean diagonal against the tree canopy, establishing the house's dominant gesture from the street." },
       { src: imgEstate("2.jpg"),  orientation: "landscape", caption: "From above, the spatial logic becomes legible: deck, pool, courtyard tree, and stone-clad double-height volume arranged in a tight, considered composition against the plantation below." },
       { src: imgEstate("3.jpg"),  orientation: "landscape", caption: "The living room is arranged around cane-backed chairs and a spare selection of objects, opening directly onto the garden through full-height timber doors. Light enters from two sides, keeping the room calm and unhurried despite its direct connection to the outdoors." },
-      { src: imgEstate("4.jpg"),  orientation: "portrait",  caption: "A console table and botanical artwork compose the focal point seen on entering from the living room. The vestibule marks the transition into the dining area ahead, with the guest room tucked quietly to the left." },
+      { src: imgEstate("4.jpg"),  orientation: "landscape", caption: "A console table and botanical artwork compose the focal point seen on entering from the living room. The vestibule marks the transition into the dining area ahead, with the guest room tucked quietly to the left." },
       { src: imgEstate("5.jpg"),  orientation: "landscape", caption: "Kitchen and dining sit in direct dialogue, separated by an island counter faced in patterned encaustic tile. Plantation-facing windows keep the kitchen part of the landscape rather than a room apart." },
       { src: imgEstate("6.jpg"),  orientation: "landscape", caption: "A solid timber dining table anchors the ground floor, opening directly onto the courtyard step-out beyond. From there, the view extends outward across the plantation, layering interior, threshold, and landscape in a single unbroken sequence." },
-      { src: imgEstate("7.jpg"),  orientation: "portrait",  caption: "The pooja room is set back in its own niche straight ahead, a bronze Ganesha marking the threshold." },
-      { src: imgEstate("8.jpg"),  orientation: "portrait",  caption: "The double-height family room holds the plantation canopy in a large picture window. A sculptural pendant floats within the void above; louvred doors to the left open the space directly onto the deck." },
-      { src: imgEstate("9.jpg"),  orientation: "portrait",  caption: "The master bedroom turns inward from the house's general openness. A four-poster bed, cane-fronted wardrobe, and lime-textured walls compose a settled, unhurried room." },
+      { src: imgEstate("7.jpg"),  orientation: "landscape", caption: "The pooja room is set back in its own niche straight ahead, a bronze Ganesha marking the threshold." },
+      { src: imgEstate("8.jpg"),  orientation: "landscape", caption: "The double-height family room holds the plantation canopy in a large picture window. A sculptural pendant floats within the void above; louvred doors to the left open the space directly onto the deck." },
+      { src: imgEstate("9.jpg"),  orientation: "landscape", caption: "The master bedroom turns inward from the house's general openness. A four-poster bed, cane-fronted wardrobe, and lime-textured walls compose a settled, unhurried room." },
       { src: imgEstate("10.jpg"), orientation: "landscape", caption: "The full elevation places the house within its setting. White rendered walls step with the slope, the glass staircase and upper balcony read as transparent layers, and the plantation closes in on both sides." },
     ],
   },
@@ -550,6 +552,7 @@ export const projects: Project[] = [
     color: "#f0fdfa",
 
     cover: imgGodrej("4.jpg"),
+    coverPosition: "center 60%",
     hero:  imgGodrej("4.jpg"),
     blur:  B["public/Projects/Olive House/4.jpg"],
 
@@ -591,6 +594,7 @@ export const projects: Project[] = [
     color: "#e2e8f0",
 
     cover: imgUber("9.jpg"),
+    coverPosition: "center 35%",
     hero:  imgUber("9.jpg"),
     blur:  B["public/Projects/Mana/9.jpg"],
 
