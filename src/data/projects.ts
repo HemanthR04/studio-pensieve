@@ -605,7 +605,7 @@ export const projects: Project[] = [
     bg: "bg-slate-200",
     color: "#e2e8f0",
 
-    cover: imgUber("6.jpg"),
+    cover: imgUber("11.jpg"),
     coverPosition: "center 30%",
     hero:  imgUber("6.jpg"),
     heroPosition: "center 30%",
