@@ -17,7 +17,7 @@ export default function ContactPage() {
         <div className="mx-auto max-w-6xl px-8 md:px-16 pt-28 pb-24 md:pt-40 md:pb-36">
           <p className="text-[11px] tracking-[0.25em] uppercase text-foreground/40 mb-8">Get in Touch</p>
           <h1 className="font-display text-2xl md:text-3xl lg:text-4xl font-medium leading-[1.2] max-w-2xl">
-            We are thoughtful about the projects we take on. Tell us about yours.
+            We&apos;re thoughtful about the projects we take on so we can give each one the attention it deserves.
           </h1>
         </div>
 
