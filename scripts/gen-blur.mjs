@@ -23,6 +23,7 @@ const TARGETS = [
   "public/LANDING PHOTOS/5.jpg",
   // Project hero/cover images
   "public/Projects/Vana/ 1 Foyer.jpg",
+  "public/Projects/Vana/8 Living room.jpg",
   "public/Projects/Adapted House/1.jpg",
   "public/Projects/RMK Antheia/1.jpg",
   "public/Projects/Lime & Light Residence/1.jpg",

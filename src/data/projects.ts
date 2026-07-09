@@ -108,8 +108,8 @@ export const projects: Project[] = [
     color: "#e7e5e4",
 
     cover: img("8 Living room.jpg"),
-    hero:  img(" 1 Foyer.jpg"),
-    blur:  B["public/Projects/Vana/ 1 Foyer.jpg"],
+    hero:  img("8 Living room.jpg"),
+    blur:  B["public/Projects/Vana/8 Living room.jpg"],
 
     description: [
       "This pre-owned 3BHK apartment, overlooking expansive forest views, was reimagined as a calm, contemporary home rooted in an Indian-modern sensibility. The design prioritises simplicity, function, and a strong connection to its surroundings.",
