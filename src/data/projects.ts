@@ -410,7 +410,6 @@ export const projects: Project[] = [
     ],
 
     images: [
-      { src: imgChanpatna("1.jpg"), orientation: "landscape", caption: "The shaded porch runs along the length of the house, acting as a climatic and spatial buffer. It creates a threshold where interior life gradually transitions into the openness of the fields." },
       { src: imgChanpatna("2.jpg"), orientation: "landscape", caption: "A low, linear form stretches along the site, allowing the surrounding farmland to remain uninterrupted and visually dominant. The staggered sloping roofs establish a strong horizontal identity while subtly breaking the massing." },
       { src: imgChanpatna("3.jpg"), orientation: "landscape", caption: "The double-height living space anchors the ground floor, bringing volume and light into the core of the house. Large openings ensure the interior remains visually porous, extending toward the landscape." },
       { src: imgChanpatna("4.jpg"), orientation: "landscape", caption: "Lime-plastered fins line the corridor, forming a sequence of arched openings. These layered thresholds filter light and create depth, mediating between movement and enclosure." },
