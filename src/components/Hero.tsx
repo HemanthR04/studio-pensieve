@@ -115,7 +115,7 @@ export default function Hero() {
       {/* ── Hero ───────────────────────────────────────────────── */}
       <section
         ref={heroRef}
-        className="relative w-full h-screen overflow-hidden"
+        className="relative w-full h-dvh overflow-hidden"
       >
         {/* Image stack — crossfade */}
         {IMAGES.map(({ src, blur }, i) => {

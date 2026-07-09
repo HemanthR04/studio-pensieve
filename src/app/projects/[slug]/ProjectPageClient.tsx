@@ -310,7 +310,7 @@ export default function ProjectPageClient({ project }: { project: Project }) {
     project.images?.find(img => img.orientation === "landscape")?.src;
 
   const desc          = project.description ?? [];
-  const galleryImages = (project.images ?? []).filter(img => img.src !== heroSrc);
+  const galleryImages = project.images ?? [];
   const blocks        = buildBlocks(galleryImages);
 
 
@@ -319,7 +319,7 @@ export default function ProjectPageClient({ project }: { project: Project }) {
       <ScrollProgress />
 
       {/* ── Hero ──────────────────────────────────────────────────── */}
-      <div className="relative h-screen w-full overflow-hidden">
+      <div className="relative h-dvh w-full overflow-hidden">
         <div className={`absolute inset-0 ${project.bg}`}>
           {heroSrc && (
             <Image
@@ -332,6 +332,7 @@ export default function ProjectPageClient({ project }: { project: Project }) {
               style={{
                 "--hero-pos": project.heroPosition,
                 "--hero-pos-mobile": project.heroPositionMobile,
+                "--hero-pos-wide": project.heroPositionWide,
                 "--hero-zoom-mobile": project.heroZoomMobile,
                 "--hero-origin-mobile": project.heroOriginMobile,
               } as React.CSSProperties}

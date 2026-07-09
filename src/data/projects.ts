@@ -30,8 +30,9 @@ export type Project = {
   cover?: string;
   coverPosition?: string;      // CSS object-position for cover/grid thumbnails
   hero?: string;
-  heroPosition?: string;       // CSS object-position for the hero banner image (desktop)
+  heroPosition?: string;       // CSS object-position for the hero banner image (desktop, 16:10)
   heroPositionMobile?: string; // CSS object-position for the hero banner image (<768px) — falls back to heroPosition
+  heroPositionWide?: string;   // CSS object-position for 16:9+ viewports (Windows laptops) — falls back to heroPosition
   heroZoomMobile?: number;     // forced extra scale (<768px) to trim a photo's empty sky/wall — object-position's Y axis has no effect on mobile (always height-constrained)
   heroOriginMobile?: string;   // transform-origin paired with heroZoomMobile, e.g. "center bottom"
   blur?: string;
@@ -123,6 +124,7 @@ export const projects: Project[] = [
     ],
 
     images: [
+      { src: img(" 1 Foyer.jpg"),              orientation: "portrait"  },
       { src: img(" 2 Foyer.jpg"),              orientation: "portrait",  caption: "The entry was reworked to create a functional foyer from an underutilised utility space. Teak-shutter storage, open shelves, and a floating bench bring clarity, utility, and ease to the transition into the home." },
       { src: img(" 3 Dining area.jpg"),        orientation: "portrait"  },
       { src: img(" 4 Dining area.jpg"),        orientation: "portrait"  },
@@ -161,6 +163,7 @@ export const projects: Project[] = [
     coverPosition: "center 75%",
     hero:  imgRajankunte("1.jpg"),
     heroPosition: "center 85%",
+    heroPositionWide: "center 65%",
     heroZoomMobile: 1.6,
     heroOriginMobile: "center bottom",
     blur:  B["public/Projects/Adapted House/1.jpg"],
@@ -176,6 +179,7 @@ export const projects: Project[] = [
     ],
 
     images: [
+      { src: imgRajankunte("1.jpg"), orientation: "landscape" },
       { src: imgRajankunte("2.jpg"), orientation: "portrait",  caption: "The stairwell emerges as a sculptural vertical volume, cutting cleanly through the brick mass. Its intersection with a cantilevered slab adds depth and emphasizes the interplay of solid and void." },
       { src: imgRajankunte("3.jpg"), orientation: "landscape", caption: "A restrained palette of exposed brick and concrete defines the exterior expression. The sloping roof and subtle projections soften the mass, balancing weight with articulation." },
       { src: imgRajankunte("4.jpg"), orientation: "landscape", caption: "The rear opens into a deep veranda that extends the living spaces outward. This edge becomes a transitional zone where interior activity gradually dissolves into the landscape." },
@@ -212,6 +216,7 @@ export const projects: Project[] = [
     ],
 
     images: [
+      { src: imgRmK("1.jpg"), orientation: "landscape" },
       { src: imgRmK("2.jpg"), orientation: "landscape" },
       { src: imgRmK("3.jpg"), orientation: "landscape" },
       { src: imgRmK("4.jpg"), orientation: "landscape" },
@@ -238,6 +243,7 @@ export const projects: Project[] = [
     coverPosition: "center 65%",
     hero:  imgKishore("2.jpg"),
     heroPosition: "center 65%",
+    heroPositionWide: "center 55%",
     blur:  B["public/Projects/Lime & Light Residence/2.jpg"],
 
     description: [
@@ -253,6 +259,7 @@ export const projects: Project[] = [
     ],
 
     images: [
+      { src: imgKishore("1.jpg"),       orientation: "portrait"  },
       { src: imgKishore("2.jpg"),       orientation: "portrait", layout: "quad", pairedCaption: ["The living space is defined by a soft, earthy palette, with olive greens and warm beiges set against textured lime-washed walls. Low, linear furniture keeps the room open while retaining a sense of intimacy.", "Custom pieces are carefully proportioned to feel light yet grounded. Black accents add contrast, while indoor planting softens the composition.", "A vertical wood panel anchors the seating area, defining the space without disrupting flow. Designed as a movable element, it introduces a subtle sense of drama."] },
       { src: imgKishore("3.jpg"),       orientation: "portrait" },
       { src: imgKishore("4.jpg"),       orientation: "portrait" },
@@ -298,6 +305,7 @@ export const projects: Project[] = [
     ],
 
     images: [
+      { src: imgTapTales("1.jpg"),             orientation: "landscape" },
       { src: imgTapTales("2.jpg"),             orientation: "landscape", caption: "The ground floor's communal table seats around 20, set beneath a cluster of banana fibre pendant lamps." },
       { src: imgTapTales("3.jpg"),             orientation: "landscape" },
       { src: imgTapTales("Copy of 10.jpg"),    orientation: "landscape", caption: "An interactive pop art wall anchors the first floor, drawing on bold colour and popular culture." },
@@ -376,6 +384,7 @@ export const projects: Project[] = [
     ],
 
     images: [
+      { src: imgVibranium("1.jpg"), orientation: "landscape" },
       { src: imgVibranium("8.jpg"), orientation: "landscape", caption: "Reception leads with a travertine desk, fluted wall paneling, and the brand mark set large above. A frosted glass door to one side offers a partial view into the interior, building anticipation without giving it away." },
       { src: imgVibranium("4.jpg"), orientation: "landscape", caption: "The open workstation zone sits between the green glass-block partition and the curved fluted wall, creating a corridor of contrasting textures. Acoustic-panelled desks hold the middle ground, focused and unhurried." },
       { src: imgVibranium("5.jpg"), orientation: "landscape", caption: "Brass-framed glass panels alternate with solid partitions along the private cabin block, letting light pass through without dissolving boundaries. The curved deep-blue fluted wall anchors the corridor, its ribbed surface absorbing light differently at every angle." },
@@ -436,6 +445,7 @@ export const projects: Project[] = [
     coverPosition: "center 60%",
     hero:  imgVilla1("2.jpg"),
     heroPosition: "center 60%",
+    heroPositionWide: "center 50%",
     blur:  B["public/Projects/Villa 1/2.jpg"],
 
     description: [
@@ -451,6 +461,8 @@ export const projects: Project[] = [
     ],
 
     images: [
+      { src: imgVilla1("1.jpg"),  orientation: "portrait" },
+      { src: imgVilla1("2.jpg"),  orientation: "portrait" },
       { src: imgVilla1("3.jpg"),  orientation: "portrait", layout: "trio", pairedCaption: ["The living and dining areas are designed to feel warm, comfortable, and easy to use. Furniture balances softness with function, creating spaces that are both practical and inviting."] },
       { src: imgVilla1("4.jpg"),  orientation: "portrait" },
       { src: imgVilla1("5.jpg"),  orientation: "portrait" },
@@ -483,6 +495,7 @@ export const projects: Project[] = [
     cover: imgKarjat("4.jpg"),
     hero:  imgKarjat("1.jpg"),
     heroPosition: "center 85%",
+    heroPositionWide: "center 65%",
     heroZoomMobile: 1.6,
     heroOriginMobile: "center bottom",
     blur:  B["public/Projects/Twin Roof Farmhouse/1.jpg"],
@@ -499,6 +512,7 @@ export const projects: Project[] = [
     ],
 
     images: [
+      { src: imgKarjat("1.jpg"), orientation: "landscape" },
       { src: imgKarjat("3.jpg"), orientation: "landscape", caption: "From across the site, the house stretches quietly along its plot: low, linear, and unhurried. The hills remain the dominant presence; the building simply extends itself toward the view." },
       { src: imgKarjat("4.jpg"), orientation: "landscape", caption: "Two opposing roof pitches and the flat-roofed living volume read clearly in the full composition, each profile serving a distinct spatial and climatic role." },
       { src: imgKarjat("5.jpg"), orientation: "portrait",  caption: "The tiled overhang shelters the south verandah, acting as both a climatic filter and the primary living threshold — a space where interior life gradually dissolves into the open hillscape beyond." },
@@ -564,6 +578,7 @@ export const projects: Project[] = [
     coverPosition: "center 60%",
     hero:  imgGodrej("4.jpg"),
     heroPosition: "center 60%",
+    heroPositionWide: "center 50%",
     heroZoomMobile: 1.5,
     heroOriginMobile: "center bottom",
     blur:  B["public/Projects/Olive House/4.jpg"],
@@ -581,6 +596,7 @@ export const projects: Project[] = [
     ],
 
     images: [
+      { src: imgGodrej("1.jpg"),  orientation: "portrait" },
       { src: imgGodrej("2.jpg"),  orientation: "portrait", pairedCaption: ["A teak table with a dark stone top anchors the space against a white wall, with rust-orange chairs adding warmth.", "A teak sideboard runs along the adjacent wall below an oversized print, with slim sconces providing light. The dining–kitchen partition is reworked as a collapsible teak-framed panel, allowing the spaces to open up and connect when needed."] },
       { src: imgGodrej("3.jpg"),  orientation: "portrait" },
       { src: imgGodrej("4.jpg"),  orientation: "portrait", layout: "trio", pairedCaption: ["Anchored by a deep olive panelled wall with a fluted teak rail, the space is held by a mustard sofa. A leather armchair and black-stone coffee table complete the seating, with a twin-globe pendant above. Opposite, a floating TV unit and suspended puja cabinet in teak and olive keep the wall composed, while poufs tuck below to keep the layout open."] },
@@ -609,6 +625,7 @@ export const projects: Project[] = [
     coverPosition: "center 30%",
     hero:  imgUber("6.jpg"),
     heroPosition: "center 30%",
+    heroPositionWide: "center 40%",
     blur:  B["public/Projects/Mana/9.jpg"],
 
     description: [
@@ -625,6 +642,7 @@ export const projects: Project[] = [
     ],
 
     images: [
+      { src: imgUber("1.jpg"),  orientation: "portrait" },
       { src: imgUber("4.jpg"),  orientation: "portrait", pairedCaption: ["The apartment is finished in a warm white, neutral palette that keeps spaces open and well-lit. A muted taupe half-wall adds depth without compromising volume.", "Fluted woodwork runs throughout, unifying wardrobes, TV backdrops, wall cladding, and built-in cabinetry. The vertical texture adds depth while maintaining a clean, tailored expression, with rounded edges reinforcing the focus on safety."] },
       { src: imgUber("5.jpg"),  orientation: "portrait" },
       { src: imgUber("2.jpg"),  orientation: "portrait", pairedCaption: ["Woodwork boasts textured grooves and rounded edges for safety. Sage green furniture complements the neutrals, creating a subtle connection to the lush greenery outdoor. Strategically placed teak grab bars blend seamlessly, aiding navigation."] },

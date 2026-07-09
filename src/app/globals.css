@@ -51,6 +51,16 @@ body {
     transform-origin: var(--hero-origin-mobile, center);
   }
 }
+/* 16:9+ displays (Windows laptops, widescreen monitors) — these viewports are
+   proportionally shorter than Mac 16:10 screens, so object-cover overflows the
+   image more vertically. Extreme heroPosition values (e.g. "center 85%") can
+   push the subject off-screen. --hero-pos-wide lets each project dial this in;
+   falls back to the standard desktop --hero-pos if unset. */
+@media (min-aspect-ratio: 16/9) {
+  .hero-cover {
+    object-position: var(--hero-pos-wide, var(--hero-pos, 50% 50%));
+  }
+}
 
 /* Hide scrollbar sitewide — scroll still works */
 * {
