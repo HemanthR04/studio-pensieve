@@ -416,17 +416,17 @@ export default function ProjectPageClient({ project }: { project: Project }) {
       {/* ── Footer nav ───────────────────────────────────────────── */}
       <div className="border-t border-foreground/10 mt-28 md:mt-44">
         <div className="grid grid-cols-3 divide-x divide-foreground/10">
-          <button onClick={() => navigate("/projects")} className="px-8 md:px-12 py-10 text-left group">
+          <button onClick={() => navigate("/projects")} className="px-4 md:px-12 py-7 md:py-10 text-left group">
             <p className="text-[10px] tracking-[0.25em] uppercase text-foreground/40 mb-2 group-hover:text-foreground/70 transition-colors">All Projects</p>
             <p className="text-[11px] tracking-[0.15em] text-foreground/30 flex items-center gap-2">
               <span className="h-px w-6 bg-foreground/30 inline-block" /> Index
             </p>
           </button>
-          <button onClick={() => prev && navigate(`/projects/${prev.slug}`)} disabled={!prev} className="px-8 md:px-12 py-10 text-left group disabled:opacity-25">
+          <button onClick={() => prev && navigate(`/projects/${prev.slug}`)} disabled={!prev} className="px-4 md:px-12 py-7 md:py-10 text-left group disabled:opacity-25">
             <p className="text-[10px] tracking-[0.25em] uppercase text-foreground/40 mb-2 group-hover:text-foreground/70 transition-colors">← Previous</p>
             <p className="font-display text-sm font-medium">{prev?.title ?? "—"}</p>
           </button>
-          <button onClick={() => next && navigate(`/projects/${next.slug}`)} disabled={!next} className="px-8 md:px-12 py-10 text-right group disabled:opacity-25 ml-auto w-full">
+          <button onClick={() => next && navigate(`/projects/${next.slug}`)} disabled={!next} className="px-4 md:px-12 py-7 md:py-10 text-right group disabled:opacity-25 ml-auto w-full">
             <p className="text-[10px] tracking-[0.25em] uppercase text-foreground/40 mb-2 group-hover:text-foreground/70 transition-colors">Next →</p>
             <p className="font-display text-sm font-medium">{next?.title ?? "—"}</p>
           </button>
