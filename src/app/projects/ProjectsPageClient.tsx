@@ -69,7 +69,7 @@ export default function ProjectsPageClient() {
     const rect     = imageEl?.getBoundingClientRect();
     const imgEl    = imageEl?.querySelector<HTMLImageElement>("img");
     const imageSrc = imgEl?.currentSrc || imgEl?.src;
-    navigate(`/projects/${project.slug}`, { rect, color: project.color, imageSrc, imagePosition: project.heroPosition });
+    navigate(`/projects/${project.slug}`, { rect, color: project.color, imageSrc, imagePosition: project.coverPosition });
   }
 
   return (

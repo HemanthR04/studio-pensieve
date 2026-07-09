@@ -110,7 +110,6 @@ export const projects: Project[] = [
 
     cover: img("8 Living room.jpg"),
     hero:  img("8 Living room.jpg"),
-    blur:  B["public/Projects/Vana/8 Living room.jpg"],
 
     description: [
       "This pre-owned 3BHK apartment, overlooking expansive forest views, was reimagined as a calm, contemporary home rooted in an Indian-modern sensibility. The design prioritises simplicity, function, and a strong connection to its surroundings.",
@@ -162,12 +161,8 @@ export const projects: Project[] = [
 
     cover: imgRajankunte("3.jpg"),
     coverPosition: "center 75%",
-    hero:  imgRajankunte("1.jpg"),
-    heroPosition: "center 85%",
-    heroPositionWide: "center 65%",
-    heroZoomMobile: 1.6,
-    heroOriginMobile: "center bottom",
-    blur:  B["public/Projects/Adapted House/1.jpg"],
+    hero:  imgRajankunte("3.jpg"),
+    heroPosition: "center 75%",
 
     description: [
       "Located in Rajankunte, this project reimagines a modest 1,300 sq.ft. farmhouse as an expanded multi-generational home. Rather than replacing the existing structure, the design retains it as a core — absorbing it into a larger 3,500–4,000 sq.ft. system that reorganizes both space and experience.",
@@ -202,8 +197,7 @@ export const projects: Project[] = [
     color: "#e5e5e5",
 
     cover: imgRmK("4.jpg"),
-    hero:  imgRmK("1.jpg"),
-    blur:  B["public/Projects/RMK Antheia/1.jpg"],
+    hero:  imgRmK("4.jpg"),
 
     description: [
       "RMK Antheia is an 11-acre landscape-led residential masterplan rooted in the site's ecology and history. At its heart, an existing stone retaining water tank is re-adapted into a central open-air theatre and community space. Carefully introduced punctures through the original walls preserve the memory of the site while creating visual and physical connections to the new development.",
@@ -245,7 +239,6 @@ export const projects: Project[] = [
     hero:  imgKishore("2.jpg"),
     heroPosition: "center 65%",
     heroPositionWide: "center 55%",
-    heroAspect: "4/3",
 
     description: [
       "This residence is conceived as a calm, materially rich home where spaces unfold with quiet continuity. Guided by a Japandi sensibility and subtle Indian nuances, the design balances restraint with warmth, letting material, light, and proportion shape the experience.",
@@ -287,8 +280,7 @@ export const projects: Project[] = [
     color: "#fffbeb",
 
     cover: imgTapTales("2.jpg"),
-    hero:  imgTapTales("1.jpg"),
-    blur:  B["public/Projects/Tap Tales/1.jpg"],
+    hero:  imgTapTales("2.jpg"),
 
     description: [
       "The two-story bar, accommodating 55 patrons per floor and an outdoor area, offers a unique cocktail experience. It aims to bridge the gap between neighbourhood bars and upscale cocktail lounges. The metal and glass facade maximises street frontage, offering a glimpse into the double-height entrance and bar seating overlooking the activity in Koramangala. The first-floor outdoor space, framed by a corten steel structure, sets the tone for the interior palette.",
@@ -332,7 +324,6 @@ export const projects: Project[] = [
 
     cover: imgRajiv("3.jpg"),
     hero:  imgRajiv("3.jpg"),
-    blur:  B["public/Projects/Zion House/1.jpg"],
 
     description: [
       "Set in the quiet landscape of Zion Hills, this weekend home is designed as a place to slow down.",
@@ -372,7 +363,6 @@ export const projects: Project[] = [
 
     cover: imgVibranium("1.jpg"),
     hero:  imgVibranium("1.jpg"),
-    blur:  B["public/Projects/Vibranium Office/1.jpg"],
 
     description: [
       "Vibranium Ventures' 2,000 sq.ft. office is organised around a fluid circulation spine of curved walls and transparent partitions, allowing zones to remain visually connected while retaining individual character. The plan sequences workstations, private cabins, meeting spaces, and the client lounge from arrival inward, encouraging movement without sacrificing structure.",
@@ -409,7 +399,6 @@ export const projects: Project[] = [
 
     cover: imgChanpatna("1.jpg"),
     hero:  imgChanpatna("1.jpg"),
-    blur:  B["public/Projects/Verandah House/1.jpg"],
 
     description: [
       "Located in Channapatna, this 2,400 sq.ft. farmhouse is conceived as a quiet retreat within a working rural landscape. The house takes on a linear form, aligning with the site to maintain continuous visual engagement with the surrounding fields.",
@@ -447,7 +436,6 @@ export const projects: Project[] = [
     hero:  imgVilla1("2.jpg"),
     heroPosition: "center 60%",
     heroPositionWide: "center 50%",
-    blur:  B["public/Projects/Villa 1/2.jpg"],
 
     description: [
       "Set within Bangalore's urban context, this home is conceived as a calm, contemporary space. A minimal approach guides the design, with clean lines, open planning, and a restrained use of colour.",
@@ -494,12 +482,7 @@ export const projects: Project[] = [
     color: "#f5f5f4",
 
     cover: imgKarjat("4.jpg"),
-    hero:  imgKarjat("1.jpg"),
-    heroPosition: "center 85%",
-    heroPositionWide: "center 65%",
-    heroZoomMobile: 1.6,
-    heroOriginMobile: "center bottom",
-    blur:  B["public/Projects/Twin Roof Farmhouse/1.jpg"],
+    hero:  imgKarjat("4.jpg"),
 
     description: [
       "Located in Karjat, Maharashtra, roughly two hours from Mumbai, this 1,200 sq.ft. farmhouse is conceived as a weekend retreat within the dramatic Sahyadri landscape. Occupying the last plot at the edge of a plotted development, the house holds an unobstructed, near-360-degree panorama of the surrounding hills, with the most commanding views opening to the south.",
@@ -534,7 +517,6 @@ export const projects: Project[] = [
 
     cover: imgEstate("1.jpg"),
     hero:  imgEstate("1.jpg"),
-    blur:  B["public/Projects/Estate Retreat/1.jpg"],
 
     description: [
       "Set within a working plantation estate in Tirthahalli, this house was designed for a family moving into a new phase of living. The original vernacular home had served for decades; what was needed now was a more open, contemporary environment that remained connected to the land.",
@@ -582,7 +564,6 @@ export const projects: Project[] = [
     heroPositionWide: "center 50%",
     heroZoomMobile: 1.5,
     heroOriginMobile: "center bottom",
-    blur:  B["public/Projects/Olive House/4.jpg"],
 
     description: [
       "This project began with clients who brought a clear point of view: a young family with an appetite for colour, warmth, and spaces that reflect who they are. With one half of the couple a trained architect, the brief was precise and the conversation direct, allowing the design to move quickly and commit confidently.",
@@ -627,7 +608,6 @@ export const projects: Project[] = [
     hero:  imgUber("6.jpg"),
     heroPosition: "center 30%",
     heroPositionWide: "center 40%",
-    blur:  B["public/Projects/Mana/9.jpg"],
 
     description: [
       "This project began with a clear brief: to make an existing apartment safer and more comfortable for a retired couple, without allowing it to feel institutional. The response is a home shaped by quiet precision, where ease of use is embedded into every decision — from material choices underfoot to the calibration of everyday heights and reach.",
