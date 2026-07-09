@@ -375,7 +375,6 @@ export const projects: Project[] = [
     ],
 
     images: [
-      { src: imgVibranium("1.jpg"), orientation: "landscape" },
       { src: imgVibranium("8.jpg"), orientation: "landscape", caption: "Reception leads with a travertine desk, fluted wall paneling, and the brand mark set large above. A frosted glass door to one side offers a partial view into the interior, building anticipation without giving it away." },
       { src: imgVibranium("4.jpg"), orientation: "landscape", caption: "The open workstation zone sits between the green glass-block partition and the curved fluted wall, creating a corridor of contrasting textures. Acoustic-panelled desks hold the middle ground, focused and unhurried." },
       { src: imgVibranium("5.jpg"), orientation: "landscape", caption: "Brass-framed glass panels alternate with solid partitions along the private cabin block, letting light pass through without dissolving boundaries. The curved deep-blue fluted wall anchors the corridor, its ribbed surface absorbing light differently at every angle." },
