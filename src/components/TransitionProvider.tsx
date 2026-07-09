@@ -14,6 +14,7 @@ type NavigateOptions = {
   rect?: DOMRect;
   color?: string;
   imageSrc?: string;
+  imagePosition?: string;
 };
 
 type TransitionContextType = {
@@ -64,7 +65,7 @@ export default function TransitionProvider({
         isNavigating.current = false;
         arriving.current = false;
         const img = overlayImgRef.current;
-        if (img) { img.style.display = "none"; img.src = ""; }
+        if (img) { img.style.display = "none"; img.src = ""; img.style.objectPosition = ""; }
       },
     });
   }, [pathname]);
@@ -80,7 +81,7 @@ export default function TransitionProvider({
       const overlay = overlayRef.current;
       if (!overlay) { router.push(href); return; }
 
-      const { rect, color = "#faf9f7", imageSrc } = options ?? {};
+      const { rect, color = "#faf9f7", imageSrc, imagePosition } = options ?? {};
 
       if (rect) {
         // Load the card image (already in browser cache) into the overlay
@@ -88,6 +89,9 @@ export default function TransitionProvider({
         if (img && imageSrc) {
           img.src = imageSrc;
           img.style.display = "block";
+          // Match the hero's object-position so the crop is identical when
+          // the overlay fades out and the hero beneath is revealed — no jump.
+          img.style.objectPosition = imagePosition ?? "center center";
         }
 
         // Position overlay exactly over the card image
@@ -107,7 +111,7 @@ export default function TransitionProvider({
           top: 0,
           left: 0,
           width: "100vw",
-          height: "100vh",
+          height: "100dvh",
           duration: 0.85,
           ease: "power4.inOut",
           onComplete: () => router.push(href),
@@ -118,7 +122,7 @@ export default function TransitionProvider({
         if (img) img.style.display = "none";
         gsap.set(overlay, {
           top: 0, left: 0,
-          width: "100vw", height: "100vh",
+          width: "100vw", height: "100dvh",
           background: "#faf9f7",
         });
         gsap.to(overlay, {
@@ -138,7 +142,7 @@ export default function TransitionProvider({
       <div
         ref={overlayRef}
         className="fixed z-[200] pointer-events-none overflow-hidden"
-        style={{ opacity: 0, top: 0, left: 0, width: "100vw", height: "100vh" }}
+        style={{ opacity: 0, top: 0, left: 0, width: "100vw", height: "100dvh" }}
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img

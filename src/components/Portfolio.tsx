@@ -69,13 +69,13 @@ export default function Portfolio({ limit }: { limit?: number }) {
     }
   }
 
-  function handleClick(e: React.MouseEvent<HTMLElement>, slug: string, color: string) {
+  function handleClick(e: React.MouseEvent<HTMLElement>, slug: string, color: string, heroPosition?: string) {
     if (drag.current.moved) return;
     const imageEl = e.currentTarget.querySelector<HTMLElement>("[data-project-image]");
     const rect = imageEl?.getBoundingClientRect();
     const imgEl = imageEl?.querySelector<HTMLImageElement>("img");
     const imageSrc = imgEl?.currentSrc || imgEl?.src;
-    navigate(`/projects/${slug}`, { rect, color, imageSrc });
+    navigate(`/projects/${slug}`, { rect, color, imageSrc, imagePosition: heroPosition });
   }
 
   return (
@@ -113,7 +113,7 @@ export default function Portfolio({ limit }: { limit?: number }) {
           <article
             key={project.slug}
             className="shrink-0 group cursor-pointer"
-            onClick={(e) => handleClick(e, project.slug, project.color)}
+            onClick={(e) => handleClick(e, project.slug, project.color, project.heroPosition)}
             onMouseEnter={() => setHoveredSlug(project.slug)}
             onMouseLeave={() => setHoveredSlug(null)}
           >
