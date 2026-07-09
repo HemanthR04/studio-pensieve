@@ -319,7 +319,10 @@ export default function ProjectPageClient({ project }: { project: Project }) {
       <ScrollProgress />
 
       {/* ── Hero ──────────────────────────────────────────────────── */}
-      <div className="relative h-dvh w-full overflow-hidden">
+      <div
+        className={project.heroAspect ? "relative w-full overflow-hidden" : "relative w-full h-dvh overflow-hidden"}
+        style={project.heroAspect ? { aspectRatio: project.heroAspect } : undefined}
+      >
         <div className={`absolute inset-0 ${project.bg}`}>
           {heroSrc && (
             <Image

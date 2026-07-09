@@ -35,6 +35,7 @@ export type Project = {
   heroPositionWide?: string;   // CSS object-position for 16:9+ viewports (Windows laptops) — falls back to heroPosition
   heroZoomMobile?: number;     // forced extra scale (<768px) to trim a photo's empty sky/wall — object-position's Y axis has no effect on mobile (always height-constrained)
   heroOriginMobile?: string;   // transform-origin paired with heroZoomMobile, e.g. "center bottom"
+  heroAspect?: string;         // CSS aspect-ratio for the hero container (e.g. "4/3"); omit for full-viewport h-dvh
   blur?: string;
   description?: string[];     // paragraphs
   credits?: ProjectCredit[];
@@ -244,7 +245,7 @@ export const projects: Project[] = [
     hero:  imgKishore("2.jpg"),
     heroPosition: "center 65%",
     heroPositionWide: "center 55%",
-    blur:  B["public/Projects/Lime & Light Residence/2.jpg"],
+    heroAspect: "4/3",
 
     description: [
       "This residence is conceived as a calm, materially rich home where spaces unfold with quiet continuity. Guided by a Japandi sensibility and subtle Indian nuances, the design balances restraint with warmth, letting material, light, and proportion shape the experience.",
