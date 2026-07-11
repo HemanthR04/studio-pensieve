@@ -90,7 +90,7 @@ export default function ContactPage() {
                   href="https://instagram.com/studiopensieve"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm font-light text-foreground/70 hover:text-foreground transition-colors"
+                  className="text-sm font-bold text-foreground/70 hover:text-foreground transition-colors"
                 >
                   Instagram
                 </a>
@@ -98,7 +98,7 @@ export default function ContactPage() {
                   href="https://www.linkedin.com/company/studiopensieve/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm font-light text-foreground/70 hover:text-foreground transition-colors"
+                  className="text-sm font-bold text-foreground/70 hover:text-foreground transition-colors"
                 >
                   LinkedIn
                 </a>
