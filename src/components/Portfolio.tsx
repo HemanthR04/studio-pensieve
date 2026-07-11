@@ -79,7 +79,7 @@ export default function Portfolio({ limit }: { limit?: number }) {
   }
 
   return (
-    <section id="portfolio" className="relative pb-16 overflow-hidden" onMouseMove={handleMouseMove}>
+    <section id="portfolio" className="relative pb-16" onMouseMove={handleMouseMove}>
 
       {/* Dynamic per-project gradient layers — cross-fade on hover */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">

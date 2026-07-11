@@ -110,7 +110,7 @@ export default function TransitionProvider({
         gsap.to(overlay, {
           top: 0,
           left: 0,
-          width: "100%",
+          width: "100vw",
           height: "100dvh",
           duration: 0.85,
           ease: "power4.inOut",
@@ -122,7 +122,7 @@ export default function TransitionProvider({
         if (img) img.style.display = "none";
         gsap.set(overlay, {
           top: 0, left: 0,
-          width: "100%", height: "100dvh",
+          width: "100vw", height: "100dvh",
           background: "#faf9f7",
         });
         gsap.to(overlay, {
@@ -142,7 +142,7 @@ export default function TransitionProvider({
       <div
         ref={overlayRef}
         className="fixed z-[200] pointer-events-none overflow-hidden"
-        style={{ opacity: 0, top: 0, left: 0, width: "100%", height: "100dvh" }}
+        style={{ opacity: 0, top: 0, left: 0, width: "100vw", height: "100dvh" }}
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img

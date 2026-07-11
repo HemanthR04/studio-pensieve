@@ -49,7 +49,7 @@ export default function Home() {
 
         {/* ── View all CTA ───────────────────────────────── */}
         <div className="px-8 md:px-16 py-14 border-t border-foreground/10">
-          <div className="mx-auto max-w-7xl flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+          <div className="mx-auto max-w-7xl flex items-center justify-between">
             <p className="text-[11px] tracking-[0.2em] uppercase text-foreground/70">
               Showing 5 of {projects.length} projects
             </p>
@@ -65,10 +65,10 @@ export default function Home() {
 
         {/* ── Stats bar ──────────────────────────────────── */}
         <div className="px-8 md:px-16 py-16 md:py-20 border-t border-foreground/10">
-          <div className="mx-auto max-w-7xl grid grid-cols-3 gap-3 md:gap-8">
+          <div className="mx-auto max-w-7xl grid grid-cols-3 gap-8">
             {STATS.map(({ value, label }) => (
               <div key={label}>
-                <p className="font-display text-xl md:text-4xl font-medium mb-1">{value}</p>
+                <p className="font-display text-3xl md:text-4xl font-medium mb-1">{value}</p>
                 <p className="text-[11px] tracking-[0.18em] uppercase text-foreground/40">{label}</p>
               </div>
             ))}
