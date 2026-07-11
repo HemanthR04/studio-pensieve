@@ -10,17 +10,17 @@ export const metadata: Metadata = {
 const SERVICES = [
   {
     index: "01",
-    title: "Interior Design",
-    description:
-      "From a single room to a complete home, restaurant, or workplace — we approach every interior with the same rigour. Understanding how people live and work, what they value, and how space can quietly support that life. We handle everything from concept through to construction, furniture selection, and final styling.",
-    deliverables: ["Concept development", "Space planning", "Material & finish selection", "Furniture design & procurement", "Lighting design", "Construction documentation", "Site supervision", "Art & object curation"],
-  },
-  {
-    index: "02",
     title: "Architecture",
     description:
       "New builds, extensions, and adaptive reuse. We approach architecture as a discipline of listening — to the land, the climate, and the brief. Our architectural work is rooted in place, shaped by material honesty, and designed to age with grace. We work across residential and mixed-use typologies.",
     deliverables: ["Site analysis & feasibility", "Concept design", "Schematic & design development", "Construction documentation", "Local authority approvals", "Contract administration", "Site oversight"],
+  },
+  {
+    index: "02",
+    title: "Interior Design",
+    description:
+      "From a single room to a complete home, restaurant, or workplace — we approach every interior with the same rigour. Understanding how people live and work, what they value, and how space can quietly support that life. We handle everything from concept through to construction, furniture selection, and final styling.",
+    deliverables: ["Concept development", "Space planning", "Material & finish selection", "Furniture design & procurement", "Lighting design", "Construction documentation", "Site supervision", "Art & object curation"],
   },
 ];
 
