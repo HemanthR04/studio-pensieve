@@ -14,13 +14,13 @@ const STATS = [
 const SERVICES = [
   {
     index: "01",
-    title: "Architecture",
-    desc:  "New builds and adaptive reuse rooted in place, shaped by material honesty, and designed to age with grace.",
+    title: "Interior Design",
+    desc:  "Homes, workplaces, and hospitality spaces designed around the people who inhabit them — unhurried, personal, and built to last.",
   },
   {
     index: "02",
-    title: "Interior Design",
-    desc:  "Homes, workplaces, and hospitality spaces designed around the people who inhabit them — unhurried, personal, and built to last.",
+    title: "Architecture",
+    desc:  "New builds and adaptive reuse rooted in place, shaped by material honesty, and designed to age with grace.",
   },
 ];
 
