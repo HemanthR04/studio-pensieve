@@ -207,7 +207,7 @@ export default function MenuProvider({ children }: { children: React.ReactNode }
           </div>
 
           {/* Bottom bar */}
-          <div className="flex items-end justify-between px-8 md:px-14 pb-10 md:pb-12 shrink-0">
+          <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between px-8 md:px-14 pb-10 md:pb-12 shrink-0">
             <div className="flex flex-col gap-1">
               <a
                 href="https://instagram.com/studiopensieve"
