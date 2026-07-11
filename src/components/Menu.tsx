@@ -35,6 +35,7 @@ const STRIP_IMAGES = [
 
 export default function MenuProvider({ children }: { children: React.ReactNode }) {
   const pathname    = usePathname();
+  const isHome      = pathname === "/";
   const [open, setOpen]       = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const overlayRef   = useRef<HTMLDivElement>(null);
@@ -135,7 +136,7 @@ export default function MenuProvider({ children }: { children: React.ReactNode }
       <button
         onClick={openMenu}
         aria-label="Open menu"
-        className={`hidden md:block fixed top-1/2 -translate-y-1/2 right-7 z-[120] text-[11px] font-black tracking-[0.22em] uppercase text-white mix-blend-difference transition-opacity duration-300 ${open || !scrolled ? "opacity-0 pointer-events-none" : "opacity-100"}`}
+        className={`${isHome ? "" : "hidden md:block"} fixed top-1/2 -translate-y-1/2 right-7 z-[120] text-[11px] font-black tracking-[0.22em] uppercase text-white mix-blend-difference transition-opacity duration-300 ${open || !scrolled ? "opacity-0 pointer-events-none" : "opacity-100"}`}
       >
         Menu
       </button>

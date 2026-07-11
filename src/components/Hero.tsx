@@ -6,6 +6,7 @@ import Link from "next/link";
 import gsap from "gsap";
 
 import blurUrls from "@/data/blurDataUrls.json";
+import { useMenu } from "@/components/Menu";
 
 const IMAGES = [
   {
@@ -33,6 +34,7 @@ const IMAGES = [
 const INTERVAL = 5000; // ms per slide
 
 export default function Hero() {
+  const { openMenu } = useMenu();
   const navRef      = useRef<HTMLElement>(null);
   const heroRef     = useRef<HTMLElement>(null);
   const firstRender = useRef(true);
@@ -103,13 +105,21 @@ export default function Hero() {
           ))}
         </div>
 
-        <Link
-          href="/contact"
-          className="text-[11px] tracking-[0.2em] uppercase text-white/70 hover:text-white transition-colors flex items-center gap-2"
-        >
-          <span className="inline-block w-1.5 h-1.5 rounded-full bg-white/80" />
-          Contact
-        </Link>
+        <div className="flex items-center gap-6">
+          <Link
+            href="/contact"
+            className="hidden md:flex text-[11px] tracking-[0.2em] uppercase text-white/70 hover:text-white transition-colors items-center gap-2"
+          >
+            <span className="inline-block w-1.5 h-1.5 rounded-full bg-white/80" />
+            Contact
+          </Link>
+          <button
+            onClick={openMenu}
+            className="md:hidden text-[11px] tracking-[0.2em] uppercase text-white/70 hover:text-white transition-colors"
+          >
+            Menu
+          </button>
+        </div>
       </nav>
 
       {/* ── Hero ───────────────────────────────────────────────── */}
