@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Services | Studio Pensieve",
-  description: "Interior design and architecture services by Studio Pensieve — thoughtful spaces built around how people live and work.",
+  description: "Architecture and interior design services by Studio Pensieve — thoughtful spaces built around how people live and work.",
 };
 
 const SERVICES = [

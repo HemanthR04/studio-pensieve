@@ -15,28 +15,28 @@ const caveat = Caveat({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.studiopensieve.com"),
-  title: "Studio Pensieve | Interior Design, Bangalore",
+  title: "Studio Pensieve | Architecture & Interior Design, Bangalore",
   description:
-    "Studio Pensieve is a Bangalore-based interior design firm crafting thoughtful, timeless spaces.",
-  keywords: ["interior design", "Bangalore", "Studio Pensieve", "home design", "commercial interiors"],
+    "Studio Pensieve is a Bangalore-based architecture and interior design firm crafting thoughtful, timeless spaces.",
+  keywords: ["architecture", "interior design", "Bangalore", "Studio Pensieve", "home design", "commercial interiors"],
   authors: [{ name: "Studio Pensieve" }],
   icons: {
     icon: "/logo.png",
     apple: "/logo.png",
   },
   openGraph: {
-    title: "Studio Pensieve | Interior Design, Bangalore",
+    title: "Studio Pensieve | Architecture & Interior Design, Bangalore",
     description:
-      "Studio Pensieve is a Bangalore-based interior design firm crafting thoughtful, timeless spaces.",
+      "Studio Pensieve is a Bangalore-based architecture and interior design firm crafting thoughtful, timeless spaces.",
     type: "website",
     locale: "en_IN",
     images: [{ url: "/og-default.jpg", width: 1200, height: 630, alt: "Studio Pensieve" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Studio Pensieve | Interior Design, Bangalore",
+    title: "Studio Pensieve | Architecture & Interior Design, Bangalore",
     description:
-      "Studio Pensieve is a Bangalore-based interior design firm crafting thoughtful, timeless spaces.",
+      "Studio Pensieve is a Bangalore-based architecture and interior design firm crafting thoughtful, timeless spaces.",
     images: ["/og-default.jpg"],
   },
 };
