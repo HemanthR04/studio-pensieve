@@ -56,7 +56,7 @@ const MOBILE_IMAGES = [
   },
 ];
 
-const INTERVAL = 5000; // ms per slide
+const INTERVAL = 3500; // ms per slide
 
 export default function Hero() {
   const { openMenu } = useMenu();
