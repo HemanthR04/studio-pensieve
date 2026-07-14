@@ -16,6 +16,7 @@ const ROOT            = new URL("..", import.meta.url).pathname;
 const PROJECTS_DIR    = join(ROOT, "public/Projects");
 const LANDING_DIR     = join(ROOT, "public/LANDING PHOTOS");
 const MOBILE_HERO_DIR = join(ROOT, "public/Mobile Hero Images");
+const JOURNAL_DIR     = join(ROOT, "public/Journal Pictures");
 const JPEG_QUALITY    = 80;
 
 let totalBefore = 0;
@@ -69,8 +70,9 @@ function mb(b)  { return (b / 1024 / 1024).toFixed(2) + " MB"; }
 const projectFiles = await walk(PROJECTS_DIR);
 const landingFiles = await walk(LANDING_DIR);
 const mobileHeroFiles = await walk(MOBILE_HERO_DIR);
-const files = [...projectFiles, ...landingFiles, ...mobileHeroFiles];
-console.log(`\nProcessing ${files.length} files in public/Projects + public/LANDING PHOTOS + public/Mobile Hero Images…\n`);
+const journalFiles = await walk(JOURNAL_DIR);
+const files = [...projectFiles, ...landingFiles, ...mobileHeroFiles, ...journalFiles];
+console.log(`\nProcessing ${files.length} files in public/Projects + public/LANDING PHOTOS + public/Mobile Hero Images + public/Journal Pictures…\n`);
 
 for (const f of files) {
   const ext = extname(f).toLowerCase();

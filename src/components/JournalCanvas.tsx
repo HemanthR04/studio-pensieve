@@ -1,217 +1,114 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-/* ─── image paths ─────────────────────────────────────────────── */
+import journalImages from "@/data/journalImages.json";
 
-function emb(f: string): string {
-  return `/Projects/Vana/${encodeURIComponent(f)}`;
-}
-function kishore(f: string): string {
-  return `/Projects/Lime%20%26%20Light%20Residence/${encodeURIComponent(f)}`;
-}
-function chanpatna(f: string): string {
-  return `/Projects/Verandah%20House/${encodeURIComponent(f)}`;
-}
-function rajankunte(f: string): string {
-  return `/Projects/Adapted%20House/${encodeURIComponent(f)}`;
-}
-function rmk(f: string): string {
-  return `/Projects/RMK%20Antheia/${encodeURIComponent(f)}`;
-}
-function uber(f: string): string {
-  return `/Projects/Mana/${encodeURIComponent(f)}`;
-}
-function vibranium(f: string): string {
-  return `/Projects/Vibranium%20Office/${encodeURIComponent(f)}`;
-}
+/* ─── layout generation ───────────────────────────────────────────
+   The journal source images are unsorted phone/camera exports, not a
+   hand-picked story, so positions/rotations/sizes are generated
+   deterministically from each image's index + aspect ratio (a seeded
+   PRNG, not Math.random — must match between server and client render). */
 
-const SK = {
-  croquis:      "/sketches/croquis.jpg",
-  avery:        "/sketches/avery.jpg",
-  ruskin:       "/sketches/ruskin.jpg",
-  melnikov:     "/sketches/melnikov.jpg",
-  archBiel:     "/sketches/arch-biel.jpg",
-  pencilHouse:  "/sketches/pencil-house.jpg",
-  woodenStruct: "/sketches/wooden-struct.jpg",
-  modernHouse:  "/sketches/modern-house.jpg",
-  toulouse:     "/sketches/toulouse.jpg",
-  braga:        "/sketches/braga.jpg",
-  initial:      "/sketches/initial.jpg",
-  cupola:       "/sketches/cupola.jpg",
-  archDrawing:  "/sketches/arch-drawing.png",
-  atelier:      "/sketches/atelier.jpg",
-  castelo:      "/sketches/castelo.jpg",
-  // aliases used in extended clusters
-  pencil:       "/sketches/pencil-house.jpg",
-  wooden:       "/sketches/wooden-struct.jpg",
-  init:         "/sketches/initial.jpg",
-};
-
-/* ─── types ───────────────────────────────────────────────────── */
+type ManifestImage = { file: string; width: number; height: number };
 
 type ImgItem = {
-  kind: "photo" | "sketch";
   src: string;
   w: number;
   h: number;
   x: number;
   y: number;
-  z: number;       // translateZ for 3-D depth — also drives stacking order within cluster
-  rot: number;
-};
-
-type TextItem = {
-  kind: "text";
-  lines: string[];
-  size: number;
-  x: number;
-  y: number;
   z: number;
   rot: number;
+  priority: boolean;
 };
 
-type CanvasItem = ImgItem | TextItem;
+function mulberry32(seed: number) {
+  let a = seed;
+  return function rand() {
+    a |= 0; a = (a + 0x6D2B79F5) | 0;
+    let t = Math.imul(a ^ (a >>> 15), 1 | a);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
 
-/* ─── canvas ──────────────────────────────────────────────────── */
+const CLUSTER_SPACING_X = 600;
+const START_X = 70;
 
-const CANVAS_W = 9800;
-const CANVAS_H = 1600;
+function boxFor(img: ManifestImage, longEdge: number): { w: number; h: number } {
+  const ratio = img.width / img.height;
+  return ratio >= 1
+    ? { w: Math.round(longEdge), h: Math.round(longEdge / ratio) }
+    : { w: Math.round(longEdge * ratio), h: Math.round(longEdge) };
+}
 
-/* ─── items ───────────────────────────────────────────────────── */
+function buildItems(images: ManifestImage[]): ImgItem[] {
+  const items: ImgItem[] = [];
 
-/* Rule: within each cluster items overlap by ~30-50 px.
-   z controls stacking: higher z = on top.
-   rot: anchor photos near 0°, secondary pieces ±3-8°, accents up to ±11°.  */
+  for (let c = 0; c * 2 < images.length; c++) {
+    const hero = images[c * 2];
+    const sat  = images[c * 2 + 1] as ManifestImage | undefined;
+    const rand = mulberry32(c * 97 + 13);
 
-const ITEMS: CanvasItem[] = [
+    const baseX = START_X + c * CLUSTER_SPACING_X;
+    // Gentle wave so clusters don't sit on a single horizontal line
+    const baseY = 140 + Math.sin(c * 0.7) * 90 + (rand() - 0.5) * 60;
 
-  // ── I · Arrival ───────────────────────────────────────────────
-  //   hero foyer anchored straight; sketch slides behind-right; small foyer peeks below
-  { kind:"photo",  src:emb(" 1 Foyer.jpg"),           w:292, h:220, x:52,  y:118, z:30,  rot:0    },
-  { kind:"sketch", src:SK.croquis,                    w:228, h:168, x:288, y:72,  z:50,  rot:-6   },
-  { kind:"photo",  src:emb(" 2 Foyer.jpg"),           w:130, h:173, x:72,  y:325, z:70,  rot:4    },
-  { kind:"text",   lines:["EMB Pristine", "2024"],    size:21, x:52,  y:538, z:20, rot:-2 },
+    const heroBox = boxFor(hero, 250 + rand() * 70);
+    const heroX = baseX;
+    const heroY = Math.max(40, baseY);
+    items.push({
+      src: hero.file,
+      w: heroBox.w,
+      h: heroBox.h,
+      x: heroX,
+      y: heroY,
+      z: 25 + Math.round(rand() * 20),
+      rot: (rand() - 0.5) * 6,
+      priority: c < 4,
+    });
 
-  // ── II · Living ───────────────────────────────────────────────
-  //   sketch top; large living overlaps sketch bottom-half; tiny crockery tucks into corner
-  { kind:"sketch", src:SK.avery,                      w:242, h:182, x:570, y:52,  z:25,  rot:4    },
-  { kind:"photo",  src:emb("6 Living room.jpg"),      w:288, h:216, x:575, y:262, z:50,  rot:-1.5 },
-  { kind:"photo",  src:emb("5 Crockery Bar.jpg"),     w:116, h:154, x:832, y:145, z:70,  rot:9    },
-  { kind:"text",   lines:["living"],                  size:15, x:576, y:526, z:20, rot:1  },
+    if (sat) {
+      const satBox = boxFor(sat, 130 + rand() * 60);
+      const satX = heroX + heroBox.w * (0.45 + rand() * 0.2);
+      const satY = heroY + heroBox.h * (0.4 + rand() * 0.3);
+      items.push({
+        src: sat.file,
+        w: satBox.w,
+        h: satBox.h,
+        x: satX,
+        y: satY,
+        z: 55 + Math.round(rand() * 20),
+        rot: (rand() - 0.5) * 18,
+        priority: c < 4,
+      });
+    }
+  }
 
-  // ── III · Open Plan ───────────────────────────────────────────
-  //   large hero straight; toulouse sketch overlaps top-right; dining peeks bottom-left
-  { kind:"photo",  src:emb("11 Living + Dining.jpg"), w:322, h:242, x:1082, y:88,  z:30, rot:-1   },
-  { kind:"sketch", src:SK.toulouse,                   w:218, h:164, x:1365, y:48,  z:50, rot:6    },
-  { kind:"photo",  src:emb(" 3 Dining area.jpg"),     w:148, h:198, x:1098, y:386, z:70, rot:-7   },
-  { kind:"text",   lines:["open plan"],               size:14, x:1368, y:298, z:20, rot:2 },
-
-  // ── IV · Material ─────────────────────────────────────────────
-  //   arch drawing floats top; kitchen overlaps it below; ruskin slides in from left
-  { kind:"sketch", src:SK.archDrawing,                w:278, h:180, x:1668, y:68,  z:25, rot:-2   },
-  { kind:"photo",  src:emb("12 Kitchen.jpg"),         w:255, h:192, x:1872, y:182, z:55, rot:-3   },
-  { kind:"sketch", src:SK.ruskin,                     w:172, h:228, x:1675, y:318, z:70, rot:5    },
-  { kind:"text",   lines:["material"],                size:14, x:1888, y:420, z:20, rot:-1 },
-
-  // ── V · Light ─────────────────────────────────────────────────
-  //   bedroom hero; archBiel sketch overlaps top-right; balcony+dining tucks below
-  { kind:"photo",  src:emb("17 Master bedroom.jpg"),  w:298, h:224, x:2228, y:98,  z:30, rot:-1.5 },
-  { kind:"sketch", src:SK.archBiel,                   w:252, h:188, x:2498, y:52,  z:50, rot:6    },
-  { kind:"photo",  src:emb("9 Balcony + Dining.jpg"), w:195, h:147, x:2242, y:368, z:70, rot:-5   },
-  { kind:"text",   lines:["light", "+ volume"],       size:18, x:2495, y:322, z:20, rot:2 },
-
-  // ── VI · Study ────────────────────────────────────────────────
-  //   braga sketch top; son's room overlaps; castelo slides behind right
-  { kind:"sketch", src:SK.braga,                      w:232, h:175, x:2825, y:65,  z:25, rot:3    },
-  { kind:"photo",  src:emb("14 Son_s room.jpg"),      w:245, h:185, x:2838, y:272, z:50, rot:-2   },
-  { kind:"sketch", src:SK.castelo,                    w:225, h:170, x:3102, y:142, z:45, rot:8    },
-  { kind:"photo",  src:emb(" 4 Dining area.jpg"),     w:152, h:203, x:3118, y:362, z:65, rot:-6   },
-  { kind:"text",   lines:["study"],                   size:14, x:2838, y:505, z:20, rot:-2 },
-
-  // ── VII · Bedroom ─────────────────────────────────────────────
-  //   son's room large hero; cupola behind-right; guest room below
-  { kind:"photo",  src:emb("10 Guest room_study.jpg"),w:308, h:232, x:3418, y:92,  z:30, rot:-1   },
-  { kind:"sketch", src:SK.cupola,                     w:155, h:194, x:3705, y:68,  z:50, rot:5    },
-  { kind:"photo",  src:emb("18 Master bedroom.jpg"),  w:192, h:145, x:3432, y:378, z:70, rot:-7   },
-  { kind:"text",   lines:["detail →"],               size:14, x:3708, y:312, z:20, rot:3 },
-
-  // ── VIII · Threshold ──────────────────────────────────────────
-  //   modern house sketch; bathroom overlaps; master bedroom 2 slides right
-  { kind:"sketch", src:SK.modernHouse,                w:242, h:182, x:4025, y:75,  z:25, rot:7    },
-  { kind:"photo",  src:emb("20 Study bathroom.jpg"),  w:148, h:198, x:4038, y:305, z:55, rot:-5   },
-  { kind:"photo",  src:emb("19 Son_s bathroom.jpg"),  w:185, h:248, x:4298, y:132, z:60, rot:-8   },
-  { kind:"text",   lines:["threshold"],               size:15, x:4042, y:552, z:20, rot:-2 },
-
-  // ── IX · New Horizons / Kishore ───────────────────────────────
-  //   atelier sketch; kishore 1 hero; kishore 2 small right; melnikov peeks bottom
-  { kind:"sketch", src:SK.atelier,                    w:202, h:150, x:4598, y:58,  z:25, rot:-3   },
-  { kind:"photo",  src:kishore("1.jpg"),              w:308, h:232, x:4608, y:262, z:50, rot:-1.5 },
-  { kind:"photo",  src:kishore("2.jpg"),              w:138, h:184, x:4928, y:118, z:65, rot:8    },
-  { kind:"sketch", src:SK.melnikov,                   w:195, h:146, x:4942, y:345, z:40, rot:-6   },
-  { kind:"text",   lines:["onwards →"],               size:19, x:4614, y:545, z:20, rot:1  },
-
-  // ── X · Grain (Chanpatna) ─────────────────────────────────────
-  //   pencil-house anchors top; chanpatna photo overlaps; wooden struct tucks below
-  { kind:"sketch", src:SK.pencil,                     w:235, h:177, x:5380, y:62,  z:25, rot:-3   },
-  { kind:"photo",  src:chanpatna("1.jpg"),             w:290, h:218, x:5598, y:90,  z:45, rot:2    },
-  { kind:"sketch", src:SK.wooden,                     w:208, h:156, x:5388, y:298, z:60, rot:6    },
-  { kind:"photo",  src:chanpatna("3.jpg"),             w:148, h:198, x:5858, y:165, z:65, rot:-8   },
-  { kind:"text",   lines:["grain", "+ warmth"],        size:20, x:5605, y:355, z:20, rot:-2 },
-
-  // ── XI · The Sketch Comes First ───────────────────────────────
-  //   initial sketch top; rajankunte hero; chanpatna 5 accent right
-  { kind:"sketch", src:SK.init,                       w:248, h:188, x:5945, y:52,  z:25, rot:4    },
-  { kind:"photo",  src:rajankunte("1.jpg"),            w:272, h:205, x:5958, y:295, z:50, rot:-1.5 },
-  { kind:"photo",  src:chanpatna("5.jpg"),             w:150, h:200, x:6215, y:118, z:68, rot:9    },
-  { kind:"text",   lines:["the sketch", "comes first"], size:16, x:6220, y:372, z:20, rot:-3 },
-
-  // ── XII · Material Honesty (RmK) ─────────────────────────────
-  //   rmk hero straight; wooden struct floats top-right; rajankunte 3 peeks below
-  { kind:"photo",  src:rmk("1.jpg"),                  w:298, h:224, x:6462, y:80,  z:30, rot:-2   },
-  { kind:"sketch", src:SK.wooden,                     w:192, h:144, x:6730, y:52,  z:50, rot:6    },
-  { kind:"photo",  src:rajankunte("3.jpg"),            w:155, h:207, x:6472, y:358, z:68, rot:-7   },
-  { kind:"text",   lines:["material", "honesty"],      size:17, x:6732, y:252, z:20, rot:2  },
-  { kind:"photo",  src:rmk("4.jpg"),                  w:218, h:164, x:6882, y:155, z:45, rot:8    },
-
-  // ── XIII · What the client said (Uber) ───────────────────────
-  //   long text as hero; uber photo flanks; pencil sketch balances
-  { kind:"text",   lines:["make it feel", "like it was", "always there"], size:15, x:7235, y:248, z:20, rot:1 },
-  { kind:"photo",  src:chanpatna("2.jpg"),             w:238, h:180, x:6995, y:72,  z:30, rot:3    },
-  { kind:"sketch", src:SK.pencil,                     w:178, h:134, x:7242, y:58,  z:52, rot:-5   },
-  { kind:"photo",  src:uber("1.jpg"),                  w:148, h:198, x:7005, y:308, z:62, rot:-4   },
-  { kind:"text",   lines:["—client note,", "Chanpatna"],  size:11, x:7250, y:408, z:20, rot:0 },
-
-  // ── XIV · Light Study (Vibranium) ────────────────────────────
-  //   vibranium hero; init sketch top-right; uber 3 below; poetic text
-  { kind:"photo",  src:vibranium("1.jpg"),             w:305, h:230, x:7515, y:88,  z:30, rot:-1   },
-  { kind:"sketch", src:SK.init,                       w:195, h:148, x:7792, y:62,  z:52, rot:7    },
-  { kind:"photo",  src:uber("3.jpg"),                  w:165, h:220, x:7528, y:372, z:68, rot:-6   },
-  { kind:"text",   lines:["every room", "has a mood", "before it", "has a plan"],  size:14, x:7795, y:268, z:20, rot:-2 },
-
-  // ── XV · Drawn by Hand (RmK + Vibranium) ────────────────────
-  //   rmk 6 straight; wooden struct accent; vibranium 3 tucks right; text
-  { kind:"photo",  src:rmk("6.jpg"),                  w:252, h:190, x:8082, y:78,  z:30, rot:2    },
-  { kind:"sketch", src:SK.wooden,                     w:218, h:164, x:8088, y:325, z:58, rot:-4   },
-  { kind:"photo",  src:vibranium("3.jpg"),             w:162, h:216, x:8342, y:108, z:62, rot:8    },
-  { kind:"text",   lines:["drawn by hand", "built by hand"],  size:16, x:8348, y:382, z:20, rot:-3 },
-
-  // ── XVI · Threshold (Uber + Rajankunte) ──────────────────────
-  //   uber 5 hero; rajankunte 5 overlaps; arch-biel revisited behind
-  { kind:"photo",  src:uber("5.jpg"),                  w:295, h:222, x:8655, y:85,  z:30, rot:-1.5 },
-  { kind:"sketch", src:SK.archBiel,                   w:225, h:170, x:8660, y:358, z:55, rot:5    },
-  { kind:"photo",  src:rajankunte("5.jpg"),            w:148, h:198, x:8928, y:145, z:65, rot:-7   },
-  { kind:"text",   lines:["the threshold", "between rooms", "is a pause"],  size:14, x:8932, y:392, z:20, rot:2 },
-  { kind:"text",   lines:["∎"],                        size:28, x:9200, y:490, z:20, rot:0 },
-];
+  return items;
+}
 
 /* ─── component ───────────────────────────────────────────────── */
 
 export default function JournalCanvas() {
   const sceneRef  = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLDivElement>(null);
+
+  const items = useMemo(() => buildItems(journalImages as ManifestImage[]), []);
+
+  const bounds = useMemo(() => {
+    const maxX = Math.max(...items.map(it => it.x + it.w));
+    const maxY = Math.max(...items.map(it => it.y + it.h));
+    return {
+      w: maxX + 200,
+      h: Math.max(700, maxY + 200),
+      cx: (Math.min(...items.map(it => it.x)) + maxX) / 2,
+      cy: (Math.min(...items.map(it => it.y)) + maxY) / 2,
+    };
+  }, [items]);
 
   useEffect(() => {
     document.body.style.overflow = "hidden";
@@ -223,12 +120,9 @@ export default function JournalCanvas() {
     const scene  = sceneRef.current;
     if (!canvas || !scene) return;
 
-    // Content lives roughly x: 52–5200, y: 48–600 — centre on that, not the full canvas
-    const CONTENT_CX = 2626;
-    const CONTENT_CY = 324;
     const offset = {
-      x: Math.round(window.innerWidth  / 2 - CONTENT_CX),
-      y: Math.round(window.innerHeight / 2 - CONTENT_CY),
+      x: Math.round(window.innerWidth  / 2 - bounds.cx),
+      y: Math.round(window.innerHeight / 2 - bounds.cy),
     };
     const tilt      = { x: 0, y: 0 };
     const tiltTgt   = { x: 0, y: 0 };
@@ -246,8 +140,8 @@ export default function JournalCanvas() {
       tilt.y += (tiltTgt.y - tilt.y) * 0.06;
       applyScene();
       if (!drag.active && (Math.abs(velocity.x) > 0.05 || Math.abs(velocity.y) > 0.05)) {
-        offset.x = clamp(offset.x + velocity.x, -(CANVAS_W - window.innerWidth + 200), 200);
-        offset.y = clamp(offset.y + velocity.y, -(CANVAS_H - window.innerHeight + 200), 200);
+        offset.x = clamp(offset.x + velocity.x, -(bounds.w - window.innerWidth + 200), 200);
+        offset.y = clamp(offset.y + velocity.y, -(bounds.h - window.innerHeight + 200), 200);
         velocity.x *= 0.93;
         velocity.y *= 0.93;
         applyCanvas();
@@ -266,8 +160,8 @@ export default function JournalCanvas() {
         velocity.x = ((e.clientX - lastMouse.x) / dt) * 16;
         velocity.y = ((e.clientY - lastMouse.y) / dt) * 16;
         lastMouse.x = e.clientX; lastMouse.y = e.clientY; lastMouse.t = now;
-        offset.x = clamp(drag.ox + (e.clientX - drag.sx), -(CANVAS_W - window.innerWidth + 200), 200);
-        offset.y = clamp(drag.oy + (e.clientY - drag.sy), -(CANVAS_H - window.innerHeight + 200), 200);
+        offset.x = clamp(drag.ox + (e.clientX - drag.sx), -(bounds.w - window.innerWidth + 200), 200);
+        offset.y = clamp(drag.oy + (e.clientY - drag.sy), -(bounds.h - window.innerHeight + 200), 200);
         applyCanvas();
       }
     }
@@ -296,8 +190,8 @@ export default function JournalCanvas() {
       velocity.x = ((t.clientX - lastMouse.x) / dt) * 16;
       velocity.y = ((t.clientY - lastMouse.y) / dt) * 16;
       lastMouse.x = t.clientX; lastMouse.y = t.clientY; lastMouse.t = now;
-      offset.x = clamp(drag.ox + (t.clientX - drag.sx), -(CANVAS_W - window.innerWidth + 200), 200);
-      offset.y = clamp(drag.oy + (t.clientY - drag.sy), -(CANVAS_H - window.innerHeight + 200), 200);
+      offset.x = clamp(drag.ox + (t.clientX - drag.sx), -(bounds.w - window.innerWidth + 200), 200);
+      offset.y = clamp(drag.oy + (t.clientY - drag.sy), -(bounds.h - window.innerHeight + 200), 200);
       applyCanvas();
     }
     function onTouchEnd() { drag.active = false; }
@@ -318,7 +212,7 @@ export default function JournalCanvas() {
       window.removeEventListener("touchmove",  onTouchMove);
       window.removeEventListener("touchend",   onTouchEnd);
     };
-  }, []);
+  }, [bounds]);
 
   return (
     <div
@@ -341,71 +235,43 @@ export default function JournalCanvas() {
           ref={canvasRef}
           className="absolute"
           style={{
-            width: CANVAS_W,
-            height: CANVAS_H,
+            width: bounds.w,
+            height: bounds.h,
             transformStyle: "preserve-3d",
             userSelect: "none",
             willChange: "transform",
           }}
         >
-          {ITEMS.map((item, i) => {
-            const base: React.CSSProperties = {
-              position: "absolute",
-              left: item.x,
-              top: item.y,
-              transform: `rotate(${item.rot}deg) translateZ(${item.z}px)`,
-              transformStyle: "preserve-3d",
-            };
-
-            if (item.kind === "text") {
-              return (
-                <div key={i} style={{
-                  ...base,
-                  fontFamily: "var(--font-caveat), cursive",
-                  fontSize: item.size,
-                  lineHeight: 1.3,
-                  color: "rgba(38,28,18,0.48)",
-                  whiteSpace: "nowrap",
-                  letterSpacing: "0.01em",
-                }}>
-                  {item.lines.map((line, j) => <div key={j}>{line}</div>)}
-                </div>
-              );
-            }
-
-            return (
-              <div
-                key={i}
-                className="transition-[scale] duration-300 ease-out hover:scale-[1.025]"
-                style={{ ...base }}
-              >
-                {/* white border only on photos — makes them read like prints */}
-                <div style={{
-                  display: "inline-block",
-                  padding: item.kind === "photo" ? "5px" : "0",
-                  background: item.kind === "photo" ? "#faf8f5" : "transparent",
-                  boxShadow: item.kind === "photo"
-                    ? "0 3px 20px rgba(0,0,0,0.13), 0 1px 5px rgba(0,0,0,0.07)"
-                    : "none",
-                }}>
-                  <Image
-                    src={item.src}
-                    alt=""
-                    width={item.w}
-                    height={item.h}
-                    style={{
-                      width: item.w,
-                      height: item.h,
-                      objectFit: item.kind === "sketch" ? "contain" : "cover",
-                      display: "block",
-                    }}
-                    draggable={false}
-                    priority={i < 10}
-                  />
-                </div>
+          {items.map((item) => (
+            <div
+              key={item.src}
+              className="absolute transition-[scale] duration-300 ease-out hover:scale-[1.025]"
+              style={{
+                left: item.x,
+                top: item.y,
+                transform: `rotate(${item.rot}deg) translateZ(${item.z}px)`,
+                transformStyle: "preserve-3d",
+              }}
+            >
+              <div style={{
+                display: "inline-block",
+                padding: "5px",
+                background: "#faf8f5",
+                boxShadow: "0 3px 20px rgba(0,0,0,0.13), 0 1px 5px rgba(0,0,0,0.07)",
+              }}>
+                <Image
+                  src={item.src}
+                  alt=""
+                  width={item.w}
+                  height={item.h}
+                  style={{ width: item.w, height: item.h, objectFit: "cover", display: "block" }}
+                  draggable={false}
+                  priority={item.priority}
+                  sizes={`${Math.max(item.w, item.h)}px`}
+                />
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
       </div>
 
