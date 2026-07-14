@@ -4,13 +4,15 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useMenu } from "@/components/Menu";
 
-export default function PageHeader() {
+export default function PageHeader({ transparent = false }: { transparent?: boolean }) {
   const { openMenu } = useMenu();
   const pathname    = usePathname();
 
   return (
     <header
-      className="fixed top-0 left-0 right-0 z-[90] flex items-center justify-between px-8 md:px-14 h-14 bg-[#faf9f7]/90 backdrop-blur-sm border-b border-foreground/[0.06]"
+      className={`fixed top-0 left-0 right-0 z-[90] flex items-center justify-between px-8 md:px-14 h-14 transition-colors ${
+        transparent ? "bg-transparent" : "bg-[#faf9f7]/90 backdrop-blur-sm border-b border-foreground/[0.06]"
+      }`}
     >
       <Link
         href="/"

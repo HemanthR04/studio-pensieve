@@ -26,6 +26,7 @@ const TARGETS = [
   "public/Mobile Hero Images/2.jpg",
   "public/Mobile Hero Images/3.jpg",
   "public/Mobile Hero Images/4.jpg",
+  "public/Mobile Hero Images/5.jpg",
   // Project hero/cover images
   "public/Projects/Vana/ 1 Foyer.jpg",
   "public/Projects/Vana/8 Living room.jpg",
@@ -46,6 +47,8 @@ const TARGETS = [
   "public/Projects/Mana/9.jpg",
   // Team photo
   "public/Team/Team.jpeg",
+  // Journal wall
+  ...Array.from({ length: 59 }, (_, i) => `public/Journal Pictures/${i + 1}.jpg`),
 ];
 
 // Load existing entries so we only recompute what changed

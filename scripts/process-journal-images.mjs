@@ -9,7 +9,7 @@
  *     the journal reads roughly chronologically.
  *   - Writes src/data/journalImages.json: [{ file, width, height }, …] — the
  *     compressed, post-rotation pixel size of each image, consumed by
- *     JournalCanvas to lay images out with correct aspect ratios.
+ *     JournalWall to lay images out with correct aspect ratios.
  *
  * Run: node scripts/process-journal-images.mjs
  */

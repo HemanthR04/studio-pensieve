@@ -10,6 +10,7 @@
   --color-foreground: var(--foreground);
   --font-sans:    "General Sans", sans-serif;
   --font-display: "General Sans", sans-serif;
+  --font-handwritten: var(--font-caveat), cursive;
 }
 
 html {
