@@ -50,6 +50,10 @@ const MOBILE_IMAGES = [
     src:  "/Mobile Hero Images/4.jpg",
     blur: blurUrls["public/Mobile Hero Images/4.jpg"],
   },
+  {
+    src:  "/Mobile Hero Images/5.jpg",
+    blur: blurUrls["public/Mobile Hero Images/5.jpg"],
+  },
 ];
 
 const INTERVAL = 5000; // ms per slide
