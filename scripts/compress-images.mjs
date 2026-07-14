@@ -12,10 +12,11 @@ import sharp from "sharp";
 import { readdir, stat, readFile, writeFile, unlink } from "fs/promises";
 import { join, extname, basename } from "path";
 
-const ROOT          = new URL("..", import.meta.url).pathname;
-const PROJECTS_DIR  = join(ROOT, "public/Projects");
-const LANDING_DIR   = join(ROOT, "public/LANDING PHOTOS");
-const JPEG_QUALITY  = 80;
+const ROOT            = new URL("..", import.meta.url).pathname;
+const PROJECTS_DIR    = join(ROOT, "public/Projects");
+const LANDING_DIR     = join(ROOT, "public/LANDING PHOTOS");
+const MOBILE_HERO_DIR = join(ROOT, "public/Mobile Hero Images");
+const JPEG_QUALITY    = 80;
 
 let totalBefore = 0;
 let totalAfter  = 0;
@@ -67,8 +68,9 @@ function mb(b)  { return (b / 1024 / 1024).toFixed(2) + " MB"; }
 
 const projectFiles = await walk(PROJECTS_DIR);
 const landingFiles = await walk(LANDING_DIR);
-const files = [...projectFiles, ...landingFiles];
-console.log(`\nProcessing ${files.length} files in public/Projects + public/LANDING PHOTOS…\n`);
+const mobileHeroFiles = await walk(MOBILE_HERO_DIR);
+const files = [...projectFiles, ...landingFiles, ...mobileHeroFiles];
+console.log(`\nProcessing ${files.length} files in public/Projects + public/LANDING PHOTOS + public/Mobile Hero Images…\n`);
 
 for (const f of files) {
   const ext = extname(f).toLowerCase();

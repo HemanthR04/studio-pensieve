@@ -7,8 +7,9 @@ import gsap from "gsap";
 
 import blurUrls from "@/data/blurDataUrls.json";
 import { useMenu } from "@/components/Menu";
+import useIsMobile from "@/hooks/useIsMobile";
 
-const IMAGES = [
+const DESKTOP_IMAGES = [
   {
     src:  "/LANDING PHOTOS/1.jpg",
     blur: undefined,
@@ -31,16 +32,45 @@ const IMAGES = [
   },
 ];
 
+// Portrait (9:16-ish) crops shot specifically for phone-width viewports
+const MOBILE_IMAGES = [
+  {
+    src:  "/Mobile Hero Images/1.jpg",
+    blur: blurUrls["public/Mobile Hero Images/1.jpg"],
+  },
+  {
+    src:  "/Mobile Hero Images/2.jpg",
+    blur: blurUrls["public/Mobile Hero Images/2.jpg"],
+  },
+  {
+    src:  "/Mobile Hero Images/3.jpg",
+    blur: blurUrls["public/Mobile Hero Images/3.jpg"],
+  },
+  {
+    src:  "/Mobile Hero Images/4.jpg",
+    blur: blurUrls["public/Mobile Hero Images/4.jpg"],
+  },
+];
+
 const INTERVAL = 5000; // ms per slide
 
 export default function Hero() {
   const { openMenu } = useMenu();
+  const isMobile     = useIsMobile();
+  const IMAGES       = isMobile ? MOBILE_IMAGES : DESKTOP_IMAGES;
   const navRef      = useRef<HTMLElement>(null);
   const heroRef     = useRef<HTMLElement>(null);
   const firstRender = useRef(true);
   const [current, setCurrent] = useState(0);
   const [prev, setPrev]       = useState<number | null>(null);
   const [scrolled, setScrolled] = useState(false);
+
+  // Reset slide position when switching between mobile/desktop image sets
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- intentional: keep `current` in range when IMAGES swaps length
+    setCurrent(0);
+    setPrev(null);
+  }, [isMobile]);
 
   // Auto-cycle images
   useEffect(() => {
@@ -51,7 +81,7 @@ export default function Hero() {
       });
     }, INTERVAL);
     return () => clearInterval(id);
-  }, []);
+  }, [IMAGES.length]);
 
   // Scroll: hide nav
   useEffect(() => {

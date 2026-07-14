@@ -21,6 +21,11 @@ const TARGETS = [
   "public/LANDING PHOTOS/3.jpg",
   "public/LANDING PHOTOS/4.jpg",
   "public/LANDING PHOTOS/5.jpg",
+  // Mobile hero slideshow
+  "public/Mobile Hero Images/1.jpg",
+  "public/Mobile Hero Images/2.jpg",
+  "public/Mobile Hero Images/3.jpg",
+  "public/Mobile Hero Images/4.jpg",
   // Project hero/cover images
   "public/Projects/Vana/ 1 Foyer.jpg",
   "public/Projects/Vana/8 Living room.jpg",
