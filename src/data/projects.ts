@@ -339,6 +339,7 @@ export const projects: Project[] = [
     ],
 
     images: [
+      { src: imgRajiv("1.jpg"), orientation: "portrait"  },
       { src: imgRajiv("2.jpg"), orientation: "portrait",  caption: "The dining table is conceived as a sculptural piece, with a solid base supporting a stone top. Its weight and materiality ground the space, balancing the softness of light, fabric, and surrounding elements." },
       { src: imgRajiv("3.jpg"), orientation: "landscape", caption: "A relaxed living space shaped by soft curves and quiet materiality. The furniture takes cues from the rolling topography of the golf course beyond, translating it into gentle forms, muted tones, and an easy, unhurried atmosphere." },
       { src: imgRajiv("4.jpg"), orientation: "portrait",  pairedCaption: ["The kitchen is defined by muted green cabinetry and textured tiles, framed by fluted glass partitions that keep the space open yet contained."] },
