@@ -18,20 +18,10 @@ export default function CustomCursor() {
     };
 
     const onOver = (e: MouseEvent) => {
-      const pinning = !!(e.target as HTMLElement).closest('[data-cursor="pin"]');
       const hovering = !!(e.target as HTMLElement).closest(
         "a, button, [role='button'], label, select"
       );
-      if (pinning) {
-        el.style.width  = "18px";
-        el.style.height = "6px";
-        el.style.background = "rgba(214, 199, 168, 0.85)";
-        el.style.border = "none";
-        el.style.borderRadius = "2px";
-        el.style.marginLeft = "-9px";
-        el.style.marginTop  = "-3px";
-        el.style.rotate = "-8deg";
-      } else if (hovering) {
+      if (hovering) {
         el.style.width  = "20px";
         el.style.height = "20px";
         el.style.background = "transparent";

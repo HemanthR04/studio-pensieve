@@ -137,7 +137,7 @@ function JournalCard({
       className="mx-auto"
       style={{ width: `${item.widthPct}%`, transform: `rotate(${item.rot}deg)` }}
     >
-      <button onClick={onOpen} data-cursor="pin" className="group block w-full text-left relative">
+      <button onClick={onOpen} className="group block w-full text-left relative">
         {item.hasTape && (
           <span
             aria-hidden
