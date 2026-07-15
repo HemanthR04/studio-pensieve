@@ -25,7 +25,6 @@ export default function PageHeader({ transparent = false }: { transparent?: bool
         {[
           { label: "Projects", href: "/projects" },
           { label: "Services", href: "/services" },
-          { label: "Journal",  href: "/journal" },
           { label: "About",    href: "/about" },
         ].map(({ label, href }) => {
           const isActive = pathname === href || (href !== "/" && pathname.startsWith(href));

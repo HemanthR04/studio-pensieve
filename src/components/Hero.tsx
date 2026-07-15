@@ -126,7 +126,6 @@ export default function Hero() {
           {[
             { label: "Projects", href: "/projects" },
             { label: "Services", href: "/services" },
-            { label: "Journal",  href: "/journal"  },
             { label: "About",    href: "/about"    },
           ].map(({ label, href }) => (
             <Link
